@@ -1,0 +1,132 @@
+[{"stream_name":"stderr","time":7.878039394,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":7.878104668,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":7.878111636,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":7.878115742,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stderr","time":8.487802836,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":8.487839746,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":8.487845703,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":8.48784946,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stdout","time":23.058472696,"data":"Cihaz: cuda | Torch 2.10.0+cu128\n"}
+,{"stream_name":"stdout","time":130.41798466,"data":"Veri kumesi: /kaggle/input/datasets/yusufmurtaza01/chest-xray-pneumonia-balanced-dataset\n"}
+,{"stream_name":"stdout","time":130.418048121,"data":"  ckpt raw  : /kaggle/input/notebooks/hakankarateke/segmentation-ablation-lung-focused-vit/ablation_vit_raw.pth\n"}
+,{"stream_name":"stdout","time":130.418055408,"data":"  ckpt roi  : /kaggle/input/notebooks/hakankarateke/segmentation-ablation-lung-focused-vit/ablation_vit_roi.pth\n"}
+,{"stream_name":"stdout","time":130.418060659,"data":"  ckpt lung : /kaggle/input/notebooks/hakankarateke/segmentation-ablation-lung-focused-vit/ablation_vit_lung.pth\n"}
+,{"stream_name":"stdout","time":130.542046722,"data":"Toplam 8530 goruntu\n"}
+,{"stream_name":"stdout","time":130.542080323,"data":"sinif  NORMAL  PNEUMONIA\n"}
+,{"stream_name":"stdout","time":130.542086394,"data":"split                   \n"}
+,{"stream_name":"stdout","time":130.542091839,"data":"test       15         15\n"}
+,{"stream_name":"stdout","time":130.542097148,"data":"train    3400       3400\n"}
+,{"stream_name":"stdout","time":130.542101452,"data":"val       850        850\n"}
+,{"stream_name":"stdout","time":130.542105633,"data":"\n"}
+,{"stream_name":"stdout","time":130.542109834,"data":"NORMAL   : 1575 kaynak -\u003e 4265 dosya  (augmente: 2690)\n"}
+,{"stream_name":"stdout","time":130.542115002,"data":"PNEUMONIA: 4265 kaynak -\u003e 4265 dosya  (augmente: 0)\n"}
+,{"stream_name":"stdout","time":136.507581562,"data":"Bolme imzalari: {'train': 'ccf23597ec992137', 'val': '779ac7f6455a7ac8', 'test': '3a25cbb40ab471d7'}\n"}
+,{"stream_name":"stdout","time":136.507642006,"data":"Ablasyon kosumuyla ESLESTI.\n"}
+,{"stream_name":"stdout","time":136.55055608,"data":"==========================================================================\n"}
+,{"stream_name":"stdout","time":136.550610305,"data":"  DEGERLENDIRME ALT KUMELERI\n"}
+,{"stream_name":"stdout","time":136.550618597,"data":"==========================================================================\n"}
+,{"stream_name":"stdout","time":136.550624559,"data":"  orijinal_test       : N= 864 | NORMAL= 432 PNEUMONIA= 432\n"}
+,{"stream_name":"stdout","time":136.550629843,"data":"  kaynak_temiz        : N= 949 | NORMAL=  85 PNEUMONIA= 864\n"}
+,{"stream_name":"stdout","time":136.550635435,"data":"  hasta_temiz         : N= 178 | NORMAL=  40 PNEUMONIA= 138\n"}
+,{"stream_name":"stdout","time":136.550640924,"data":"  sizintili_NORMAL    : N=1615 | NORMAL= 751 PNEUMONIA= 864\n"}
+,{"stream_name":"stdout","time":136.550645883,"data":"==========================================================================\n"}
+,{"stream_name":"stdout","time":136.550662634,"data":"\n"}
+,{"stream_name":"stdout","time":136.550667083,"data":"Cikarim yapilacak benzersiz goruntu: 1715\n"}
+,{"stream_name":"stdout","time":142.928935935,"data":"  raw   yuklendi (Val F1 0.9769)\n"}
+,{"stream_name":"stdout","time":146.5669657,"data":"  roi   yuklendi (Val F1 0.9801)\n"}
+,{"stream_name":"stdout","time":149.47360721,"data":"  lung  yuklendi (Val F1 0.9766)\n"}
+,{"stream_name":"stdout","time":162.650934859,"data":"\n"}
+,{"stream_name":"stdout","time":162.650991617,"data":"ianpan/chest-x-ray-basic yukleniyor...\n"}
+,{"stream_name":"stderr","time":163.050001377,"data":"Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stderr","time":163.050054999,"data":"\n"}
+,{"stream_name":"stderr","time":163.050062086,"data":"Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stderr","time":163.131008665,"data":"A new version of the following files was downloaded from https://huggingface.co/ianpan/chest-x-ray-basic:\n"}
+,{"stream_name":"stderr","time":163.13104932,"data":"- configuration.py\n"}
+,{"stream_name":"stderr","time":163.131057129,"data":". Make sure to double-check they do not contain any added malicious code. To avoid downloading new versions of the code file, you can pin a revision.\n"}
+,{"stream_name":"stderr","time":163.131062381,"data":"\n"}
+,{"stream_name":"stderr","time":163.131067447,"data":"A new version of the following files was downloaded from https://huggingface.co/ianpan/chest-x-ray-basic:\n"}
+,{"stream_name":"stderr","time":163.131072424,"data":"- configuration.py\n"}
+,{"stream_name":"stderr","time":163.131077015,"data":". Make sure to double-check they do not contain any added malicious code. To avoid downloading new versions of the code file, you can pin a revision.\n"}
+,{"stream_name":"stderr","time":167.862424967,"data":"A new version of the following files was downloaded from https://huggingface.co/ianpan/chest-x-ray-basic:\n"}
+,{"stream_name":"stderr","time":167.862462341,"data":"- unet.py\n"}
+,{"stream_name":"stderr","time":167.862468088,"data":". Make sure to double-check they do not contain any added malicious code. To avoid downloading new versions of the code file, you can pin a revision.\n"}
+,{"stream_name":"stderr","time":167.862473043,"data":"\n"}
+,{"stream_name":"stderr","time":167.86247735,"data":"A new version of the following files was downloaded from https://huggingface.co/ianpan/chest-x-ray-basic:\n"}
+,{"stream_name":"stderr","time":167.862482366,"data":"- unet.py\n"}
+,{"stream_name":"stderr","time":167.862486999,"data":". Make sure to double-check they do not contain any added malicious code. To avoid downloading new versions of the code file, you can pin a revision.\n"}
+,{"stream_name":"stderr","time":167.863403485,"data":"A new version of the following files was downloaded from https://huggingface.co/ianpan/chest-x-ray-basic:\n"}
+,{"stream_name":"stderr","time":167.863426236,"data":"- modeling.py\n"}
+,{"stream_name":"stderr","time":167.863432261,"data":"- unet.py\n"}
+,{"stream_name":"stderr","time":167.863453968,"data":". Make sure to double-check they do not contain any added malicious code. To avoid downloading new versions of the code file, you can pin a revision.\n"}
+,{"stream_name":"stderr","time":167.86346013,"data":"\n"}
+,{"stream_name":"stderr","time":167.863465003,"data":"A new version of the following files was downloaded from https://huggingface.co/ianpan/chest-x-ray-basic:\n"}
+,{"stream_name":"stderr","time":167.863477836,"data":"- modeling.py\n"}
+,{"stream_name":"stderr","time":167.863481409,"data":"- unet.py\n"}
+,{"stream_name":"stderr","time":167.86348513,"data":". Make sure to double-check they do not contain any added malicious code. To avoid downloading new versions of the code file, you can pin a revision.\n"}
+,{"stream_name":"stdout","time":174.829202558,"data":"Segmentasyon modeli hazir.\n"}
+,{"stream_name":"stdout","time":175.065578502,"data":"Cikarim basliyor (1715 goruntu x 3 kol)...\n"}
+,{"stream_name":"stdout","time":209.088326542,"data":"  300/1715 (34 sn)\n"}
+,{"stream_name":"stdout","time":241.095197735,"data":"  600/1715 (66 sn)\n"}
+,{"stream_name":"stdout","time":274.672038571,"data":"  900/1715 (100 sn)\n"}
+,{"stream_name":"stdout","time":305.321719606,"data":"  1200/1715 (130 sn)\n"}
+,{"stream_name":"stdout","time":339.741109798,"data":"  1500/1715 (165 sn)\n"}
+,{"stream_name":"stdout","time":364.85736099,"data":"  bitti: 1715 goruntu, 190 sn\n"}
+,{"stream_name":"stdout","time":364.887068315,"data":"Istatistik araclari hazir.\n"}
+,{"stream_name":"stdout","time":386.658954295,"data":"====================================================================================================================================\n"}
+,{"stream_name":"stdout","time":386.659034257,"data":"  SIZINTILI vs TEMIZ IC TEST\n"}
+,{"stream_name":"stdout","time":386.659042806,"data":"====================================================================================================================================\n"}
+,{"stream_name":"stdout","time":386.659048277,"data":"                     alt kume  kol    N  NORMAL  PNEU   AUC  GA alt  GA ust    AP  Acc (dengeli)  F1 (dengeli)  Duyarlilik  Ozgulluk\n"}
+,{"stream_name":"stdout","time":386.659053021,"data":"    Orijinal test (sizintili)  raw  864     432   432 0.998   0.996   0.999 0.998          0.980         0.980       0.979     0.981\n"}
+,{"stream_name":"stdout","time":386.659057789,"data":"    Orijinal test (sizintili)  roi  864     432   432 0.998   0.996   0.999 0.998          0.973         0.973       0.961     0.986\n"}
+,{"stream_name":"stdout","time":386.659062642,"data":"    Orijinal test (sizintili) lung  864     432   432 0.998   0.996   0.999 0.998          0.983         0.982       0.972     0.993\n"}
+,{"stream_name":"stdout","time":386.659068919,"data":"    Yalnizca sizintili NORMAL  raw 1615     751   864 0.998   0.997   0.999 0.999          0.980         0.980       0.979     0.980\n"}
+,{"stream_name":"stdout","time":386.659075175,"data":"    Yalnizca sizintili NORMAL  roi 1615     751   864 0.999   0.998   0.999 0.999          0.979         0.979       0.964     0.995\n"}
+,{"stream_name":"stdout","time":386.659080448,"data":"    Yalnizca sizintili NORMAL lung 1615     751   864 0.998   0.996   0.999 0.998          0.980         0.980       0.969     0.992\n"}
+,{"stream_name":"stdout","time":386.659085624,"data":"          Kaynak duzeyi temiz  raw  949      85   864 0.994   0.987   0.998 0.999          0.972         0.972       0.979     0.965\n"}
+,{"stream_name":"stdout","time":386.65909083,"data":"          Kaynak duzeyi temiz  roi  949      85   864 0.992   0.985   0.998 0.999          0.958         0.958       0.963     0.953\n"}
+,{"stream_name":"stdout","time":386.65909558,"data":"          Kaynak duzeyi temiz lung  949      85   864 0.996   0.992   0.998 1.000          0.972         0.972       0.968     0.976\n"}
+,{"stream_name":"stdout","time":386.659101508,"data":"Hasta duzeyi temiz (birincil)  raw  178      40   138 0.989   0.974   0.999 0.997          0.952         0.952       0.954     0.950\n"}
+,{"stream_name":"stdout","time":386.659110683,"data":"Hasta duzeyi temiz (birincil)  roi  178      40   138 0.987   0.968   0.998 0.996          0.938         0.937       0.926     0.950\n"}
+,{"stream_name":"stdout","time":386.659131511,"data":"Hasta duzeyi temiz (birincil) lung  178      40   138 0.995   0.988   0.999 0.999          0.970         0.969       0.964     0.975\n"}
+,{"stream_name":"stdout","time":386.659136836,"data":"====================================================================================================================================\n"}
+,{"stream_name":"stdout","time":386.659140732,"data":"  Esige bagli olcutler, cok olan sinifin tekrarli ornekleme ile dengelenmesiyle\n"}
+,{"stream_name":"stdout","time":386.659144582,"data":"  hesaplandi (200 cekilis ortalamasi, esik = 0,50).\n"}
+,{"stream_name":"stdout","time":386.860587438,"data":"====================================================================================================\n"}
+,{"stream_name":"stdout","time":386.860664394,"data":"  SIZINTININ KATKISI  (pozitif kume sabit; yalnizca negatif kume degisiyor)\n"}
+,{"stream_name":"stdout","time":386.860671322,"data":"====================================================================================================\n"}
+,{"stream_name":"stdout","time":392.276097029,"data":" kol  AUC sizintili NORMAL  AUC temiz NORMAL  fark       temiz GA  n NORMAL sizintili  n NORMAL temiz\n"}
+,{"stream_name":"stdout","time":392.276158653,"data":" raw                 0.998             0.993 0.005 [0.985, 0.999]                 751              40\n"}
+,{"stream_name":"stdout","time":392.276166843,"data":" roi                 0.999             0.991 0.007 [0.979, 0.999]                 751              40\n"}
+,{"stream_name":"stdout","time":392.27617246,"data":"lung                 0.998             0.996 0.002 [0.992, 0.999]                 751              40\n"}
+,{"stream_name":"stdout","time":392.276177884,"data":"====================================================================================================\n"}
+,{"stream_name":"stdout","time":392.276183692,"data":"\n"}
+,{"stream_name":"stdout","time":392.276188438,"data":"  NORMAL goruntulerde P(pnomoni) ortalamasi\n"}
+,{"stream_name":"stdout","time":392.276193239,"data":"  kol      sizintili     temiz       MWU p\n"}
+,{"stream_name":"stdout","time":392.276197858,"data":"  raw         0.0215    0.0571    2.38e-01\n"}
+,{"stream_name":"stdout","time":392.276202562,"data":"  roi         0.0069    0.0518    9.68e-01\n"}
+,{"stream_name":"stdout","time":392.276207268,"data":"  lung        0.0109    0.0351    5.98e-01\n"}
+,{"stream_name":"stdout","time":394.176725895,"data":"==============================================================================\n"}
+,{"stream_name":"stdout","time":394.176784664,"data":"  OZET — hasta duzeyi temiz alt kume (birincil sonuc)\n"}
+,{"stream_name":"stdout","time":394.176795051,"data":"==============================================================================\n"}
+,{"stream_name":"stdout","time":394.176801396,"data":"  raw    orijinal 0.9981  -\u003e  temiz 0.9893  GA [0.974, 0.999]  dusus +0.0088\n"}
+,{"stream_name":"stdout","time":394.176806459,"data":"  roi    orijinal 0.9976  -\u003e  temiz 0.9873  GA [0.968, 0.998]  dusus +0.0103\n"}
+,{"stream_name":"stdout","time":394.176811353,"data":"  lung   orijinal 0.9982  -\u003e  temiz 0.9951  GA [0.988, 0.999]  dusus +0.0030\n"}
+,{"stream_name":"stdout","time":394.176815808,"data":"==============================================================================\n"}
+,{"stream_name":"stdout","time":394.176820428,"data":"  clean_fig_01_auc.png                  0.07 MB\n"}
+,{"stream_name":"stdout","time":394.176825246,"data":"  clean_fig_02_prob_dist.png            0.07 MB\n"}
+,{"stream_name":"stdout","time":394.176830306,"data":"  clean_internal_metrics.csv            0.00 MB\n"}
+,{"stream_name":"stdout","time":394.176846116,"data":"  clean_internal_summary.json           0.00 MB\n"}
+,{"stream_name":"stdout","time":394.176850479,"data":"  clean_leakage_effect.csv              0.00 MB\n"}
+,{"stream_name":"stdout","time":394.176854026,"data":"  clean_per_image.csv                   0.27 MB\n"}
+,{"stream_name":"stderr","time":399.344223224,"data":"/usr/local/lib/python3.12/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":399.344285675,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":399.503695299,"data":"/usr/local/lib/python3.12/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":399.50375198,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":400.099830192,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to notebook\n"}
+,{"stream_name":"stderr","time":400.422948498,"data":"[NbConvertApp] Writing 284635 bytes to __notebook__.ipynb\n"}
+,{"stream_name":"stderr","time":402.822799602,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to html\n"}
+,{"stream_name":"stderr","time":403.780508232,"data":"[NbConvertApp] Support files will be in __results___files/\n"}
+,{"stream_name":"stderr","time":403.780567085,"data":"[NbConvertApp] Making directory __results___files\n"}
+,{"stream_name":"stderr","time":403.781905736,"data":"[NbConvertApp] Making directory __results___files\n"}
+,{"stream_name":"stderr","time":403.781932973,"data":"[NbConvertApp] Writing 523132 bytes to __results__.html\n"}
+]

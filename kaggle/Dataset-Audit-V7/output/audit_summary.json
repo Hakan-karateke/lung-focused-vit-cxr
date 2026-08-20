@@ -1,0 +1,27 @@
+{
+  "toplam_goruntu": 8530,
+  "sinif_sayilari": {
+    "NORMAL": 4265,
+    "PNEUMONIA": 4265
+  },
+  "kermany_referans": {
+    "NORMAL": 1583,
+    "PNEUMONIA": 4273
+  },
+  "fazlalik": {
+    "NORMAL": 2682,
+    "PNEUMONIA": -8
+  },
+  "kermany_semasina_uymayan": 2750,
+  "hasta_anahtari_yok": 0,
+  "farkli_hasta": 2775,
+  "birebir_kopya_dosya": 62,
+  "yakin_kopya_cift": 676473,
+  "yakin_kopya_farkli_split": 218500,
+  "yakin_kopya_farkli_sinif": 157168,
+  "hasta_sizintisi": {
+    "train-val": 620,
+    "train-test": 610,
+    "val-test": 200
+  }
+}

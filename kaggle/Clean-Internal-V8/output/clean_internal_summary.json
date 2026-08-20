@@ -1,0 +1,93 @@
+{
+  "bolme_imzalari": {
+    "train": "ccf23597ec992137",
+    "val": "779ac7f6455a7ac8",
+    "test": "3a25cbb40ab471d7"
+  },
+  "alt_kume_boyutlari": {
+    "orijinal_test": {
+      "N": 864,
+      "NORMAL": 432,
+      "PNEUMONIA": 432
+    },
+    "kaynak_temiz": {
+      "N": 949,
+      "NORMAL": 85,
+      "PNEUMONIA": 864
+    },
+    "hasta_temiz": {
+      "N": 178,
+      "NORMAL": 40,
+      "PNEUMONIA": 138
+    },
+    "sizintili_NORMAL": {
+      "N": 1615,
+      "NORMAL": 751,
+      "PNEUMONIA": 864
+    }
+  },
+  "auc": {
+    "orijinal_test__raw": 0.9981299296982167,
+    "orijinal_test__roi": 0.9976262431412894,
+    "orijinal_test__lung": 0.9981513631687242,
+    "sizintili_NORMAL__raw": 0.9981983898012525,
+    "sizintili_NORMAL__roi": 0.998560561227006,
+    "sizintili_NORMAL__lung": 0.9975726808699512,
+    "kaynak_temiz__raw": 0.9937363834422658,
+    "kaynak_temiz__roi": 0.9924700435729847,
+    "kaynak_temiz__lung": 0.9957516339869281,
+    "hasta_temiz__raw": 0.9893115942028986,
+    "hasta_temiz__roi": 0.9873188405797101,
+    "hasta_temiz__lung": 0.995108695652174
+  },
+  "auc_ci": {
+    "orijinal_test__raw": [
+      0.9960664223251028,
+      0.9994748799725651
+    ],
+    "orijinal_test__roi": [
+      0.9957291130829903,
+      0.9989714613340193
+    ],
+    "orijinal_test__lung": [
+      0.9963238918895747,
+      0.9994376393175584
+    ],
+    "sizintili_NORMAL__raw": [
+      0.9967619948093899,
+      0.9992865993490161
+    ],
+    "sizintili_NORMAL__roi": [
+      0.9976619137446368,
+      0.9992402491122947
+    ],
+    "sizintili_NORMAL__lung": [
+      0.9958567974182572,
+      0.9988874787320611
+    ],
+    "kaynak_temiz__raw": [
+      0.9874860430283223,
+      0.9982713779956427
+    ],
+    "kaynak_temiz__roi": [
+      0.9853210103485839,
+      0.997712758714597
+    ],
+    "kaynak_temiz__lung": [
+      0.992156862745098,
+      0.9984208197167757
+    ],
+    "hasta_temiz__raw": [
+      0.9744565217391304,
+      0.9987318840579711
+    ],
+    "hasta_temiz__roi": [
+      0.9682971014492754,
+      0.9983695652173913
+    ],
+    "hasta_temiz__lung": [
+      0.9882201086956521,
+      0.9994610507246376
+    ]
+  }
+}

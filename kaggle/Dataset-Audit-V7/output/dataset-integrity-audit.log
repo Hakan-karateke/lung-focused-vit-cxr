@@ -1,0 +1,159 @@
+[{"stream_name":"stderr","time":6.21096066,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":6.211010101,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":6.211017224,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":6.211021347,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stderr","time":6.759721058,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":6.759758953,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":6.759764661,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":6.759769165,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stdout","time":27.021308024,"data":"Veri kumesi: /kaggle/input/datasets/yusufmurtaza01/chest-xray-pneumonia-balanced-dataset\n"}
+,{"stream_name":"stdout","time":27.021369084,"data":"\n"}
+,{"stream_name":"stdout","time":27.021377282,"data":"Toplam 8530 goruntu\n"}
+,{"stream_name":"stdout","time":27.021382508,"data":"sinif  NORMAL  PNEUMONIA\n"}
+,{"stream_name":"stdout","time":27.021387002,"data":"split                   \n"}
+,{"stream_name":"stdout","time":27.021391425,"data":"test       15         15\n"}
+,{"stream_name":"stdout","time":27.021395622,"data":"train    3400       3400\n"}
+,{"stream_name":"stdout","time":27.021399812,"data":"val       850        850\n"}
+,{"stream_name":"stdout","time":27.068604479,"data":"====================================================================================\n"}
+,{"stream_name":"stdout","time":27.068637883,"data":"  DOSYA ADI SEMALARI  (sinifa gore, ilk 12)\n"}
+,{"stream_name":"stdout","time":27.068645504,"data":"====================================================================================\n"}
+,{"stream_name":"stdout","time":27.068650843,"data":"\n"}
+,{"stream_name":"stdout","time":27.06865742,"data":"  NORMAL  (8 farkli sema)\n"}
+,{"stream_name":"stdout","time":27.068666587,"data":"      1431  NORMAL#-IM-#-#_aug_#\n"}
+,{"stream_name":"stdout","time":27.068670086,"data":"       999  IM-#-#_aug_#\n"}
+,{"stream_name":"stdout","time":27.068673282,"data":"       850  NORMAL#-IM-#-#\n"}
+,{"stream_name":"stdout","time":27.06867646,"data":"       582  IM-#-#\n"}
+,{"stream_name":"stdout","time":27.068679837,"data":"       157  IM-#-#-#_aug_#\n"}
+,{"stream_name":"stdout","time":27.068683077,"data":"       103  NORMAL#-IM-#-#-#_aug_#\n"}
+,{"stream_name":"stdout","time":27.068686292,"data":"        84  IM-#-#-#\n"}
+,{"stream_name":"stdout","time":27.068689392,"data":"        59  NORMAL#-IM-#-#-#\n"}
+,{"stream_name":"stdout","time":27.068692592,"data":"\n"}
+,{"stream_name":"stdout","time":27.068695645,"data":"  PNEUMONIA  (3 farkli sema)\n"}
+,{"stream_name":"stdout","time":27.068698806,"data":"      2772  person#_bacteria_#\n"}
+,{"stream_name":"stdout","time":27.068701922,"data":"      1492  person#_virus_#\n"}
+,{"stream_name":"stdout","time":27.068705178,"data":"         1  person#_virus_#_#\n"}
+,{"stream_name":"stdout","time":27.068708353,"data":"\n"}
+,{"stream_name":"stdout","time":27.068711474,"data":"====================================================================================\n"}
+,{"stream_name":"stdout","time":27.068714955,"data":"  KERMANY SEMASINA UYMAYAN DOSYALAR\n"}
+,{"stream_name":"stdout","time":27.068727364,"data":"====================================================================================\n"}
+,{"stream_name":"stdout","time":27.068730237,"data":"kermany_semasi  False  True \n"}
+,{"stream_name":"stdout","time":27.068732688,"data":"sinif                       \n"}
+,{"stream_name":"stdout","time":27.068735104,"data":"NORMAL           2749   1516\n"}
+,{"stream_name":"stdout","time":27.068737637,"data":"PNEUMONIA           1   4264\n"}
+,{"stream_name":"stdout","time":27.068740087,"data":"\n"}
+,{"stream_name":"stdout","time":27.068742473,"data":"  2750 dosya Kermany semasina uymuyor -\u003e YABANCI KAYNAK ISARETI\n"}
+,{"stream_name":"stdout","time":27.068745472,"data":"  Ornekler: ['IM-0001-0001_aug_856.jpg', 'IM-0003-0001_aug_596.jpg', 'IM-0005-0001_aug_181.jpg', 'IM-0006-0001_aug_1687.jpg', 'IM-0006-0001_aug_2166.jpg', 'IM-0009-0001_aug_1746.jpg', 'IM-0010-0001_aug_1119.jpg', 'IM-0011-0001-0001_aug_1622.jpg']\n"}
+,{"stream_name":"stdout","time":27.157640873,"data":"Hasta anahtari cikarilamayan: 0 / 8530\n"}
+,{"stream_name":"stdout","time":27.157662097,"data":"Farkli hasta sayisi: 2775\n"}
+,{"stream_name":"stdout","time":27.15766633,"data":"sinif\n"}
+,{"stream_name":"stdout","time":27.157670367,"data":"NORMAL       1108\n"}
+,{"stream_name":"stdout","time":27.157674252,"data":"PNEUMONIA    1667\n"}
+,{"stream_name":"stdout","time":33.511727723,"data":"\n"}
+,{"stream_name":"stdout","time":33.51178401,"data":"Bolme imzalari: {'train': 'ccf23597ec992137', 'val': '779ac7f6455a7ac8', 'test': '3a25cbb40ab471d7'}\n"}
+,{"stream_name":"stdout","time":33.511791718,"data":"  (ablasyon: train ccf23597ec992137 · val 779ac7f6455a7ac8 · test 3a25cbb40ab471d7)\n"}
+,{"stream_name":"stdout","time":33.511797369,"data":"\n"}
+,{"stream_name":"stdout","time":33.511814754,"data":"====================================================================================\n"}
+,{"stream_name":"stdout","time":33.511822696,"data":"  HASTA DUZEYI SIZINTI DENETIMI\n"}
+,{"stream_name":"stdout","time":33.511827461,"data":"====================================================================================\n"}
+,{"stream_name":"stdout","time":33.511832743,"data":"  train  \u003c-\u003e val  :   620 ortak hasta | val tarafinda 755 goruntu etkileniyor\n"}
+,{"stream_name":"stdout","time":33.511838258,"data":"  train  \u003c-\u003e test :   610 ortak hasta | test tarafinda 756 goruntu etkileniyor\n"}
+,{"stream_name":"stdout","time":33.511843246,"data":"  val    \u003c-\u003e test :   200 ortak hasta | test tarafinda 261 goruntu etkileniyor\n"}
+,{"stream_name":"stdout","time":33.511848513,"data":"====================================================================================\n"}
+,{"stream_name":"stdout","time":33.511853919,"data":"  NOT: Dosya adi + boyut denetimi bu tur sizintiyi YAKALAYAMAZ.\n"}
+,{"stream_name":"stdout","time":33.712777415,"data":"Karma hesaplaniyor (~birkac dakika)...\n"}
+,{"stream_name":"stdout","time":85.209432687,"data":"  2000/8530 (51 sn)\n"}
+,{"stream_name":"stdout","time":132.580790181,"data":"  4000/8530 (99 sn)\n"}
+,{"stream_name":"stdout","time":160.100753329,"data":"  6000/8530 (126 sn)\n"}
+,{"stream_name":"stdout","time":198.57892894,"data":"  8000/8530 (165 sn)\n"}
+,{"stream_name":"stdout","time":205.445942947,"data":"tamam (172 sn)\n"}
+,{"stream_name":"stdout","time":205.446006717,"data":"\n"}
+,{"stream_name":"stdout","time":205.446015669,"data":"====================================================================================\n"}
+,{"stream_name":"stdout","time":205.446021727,"data":"  BIREBIR KOPYA (icerik MD5)\n"}
+,{"stream_name":"stdout","time":205.446026644,"data":"====================================================================================\n"}
+,{"stream_name":"stdout","time":205.446064783,"data":"  Kopya iceren dosya sayisi: 62 | farkli kopya grubu: 30\n"}
+,{"stream_name":"stdout","time":205.44606976,"data":"  Birden fazla SINIFTA gecen kopya grubu: 0\n"}
+,{"stream_name":"stdout","time":205.446074157,"data":"  Birden fazla SPLITTE gecen kopya grubu : 11\n"}
+,{"stream_name":"stdout","time":205.446078061,"data":"                                  n     siniflar      splitler\n"}
+,{"stream_name":"stdout","time":205.446081806,"data":"md5                                                           \n"}
+,{"stream_name":"stdout","time":205.446086107,"data":"05c43c853e8209bf0423f73a6f0a8c58  2     [NORMAL]       [train]\n"}
+,{"stream_name":"stdout","time":205.446091007,"data":"061c1fac2e79c2d435a6d4c1e35894e7  2  [PNEUMONIA]       [train]\n"}
+,{"stream_name":"stdout","time":205.446095551,"data":"077fce04eafc798401239d127a84f5f0  2  [PNEUMONIA]       [train]\n"}
+,{"stream_name":"stdout","time":205.446100319,"data":"23cd1cdafc40ad7f67e6d076ffec52ab  2  [PNEUMONIA]  [train, val]\n"}
+,{"stream_name":"stdout","time":205.44610425,"data":"23d698733d4709babc2bf0b40ea67cf4  2  [PNEUMONIA]       [train]\n"}
+,{"stream_name":"stdout","time":205.446107969,"data":"3eaf3d1e7d169b19c280ff54c291cd0f  2  [PNEUMONIA]       [train]\n"}
+,{"stream_name":"stdout","time":205.446111814,"data":"4a8541c3e481489acfeb8bd6b58c6e85  2  [PNEUMONIA]       [train]\n"}
+,{"stream_name":"stdout","time":205.446115535,"data":"56dea5c125ea059d9de1ce6a7676c00d  2  [PNEUMONIA]  [train, val]\n"}
+,{"stream_name":"stdout","time":205.446119367,"data":"62f9117f9c56340e6d34a93de32f320c  2  [PNEUMONIA]  [train, val]\n"}
+,{"stream_name":"stdout","time":205.446123662,"data":"6438db6b162d478c8109e020c3c61b0d  2  [PNEUMONIA]  [train, val]\n"}
+,{"stream_name":"stdout","time":205.633559708,"data":"Yakin kopya taramasi (8530 x 8530)...\n"}
+,{"stream_name":"stdout","time":205.920284511,"data":"  400/8530 (0 sn)\n"}
+,{"stream_name":"stdout","time":206.974851101,"data":"  2400/8530 (1 sn)\n"}
+,{"stream_name":"stdout","time":208.104929855,"data":"  4400/8530 (2 sn)\n"}
+,{"stream_name":"stdout","time":209.21154248,"data":"  6400/8530 (4 sn)\n"}
+,{"stream_name":"stdout","time":210.317198903,"data":"  8400/8530 (5 sn)\n"}
+,{"stream_name":"stdout","time":210.317238021,"data":"tamam (5 sn) | 676473 yakin cift\n"}
+,{"stream_name":"stdout","time":210.818182969,"data":"\n"}
+,{"stream_name":"stdout","time":210.818218486,"data":"====================================================================================\n"}
+,{"stream_name":"stdout","time":210.818224294,"data":"  YAKIN KOPYA (dHash Hamming \u003c= 3)\n"}
+,{"stream_name":"stdout","time":210.818228663,"data":"====================================================================================\n"}
+,{"stream_name":"stdout","time":210.818232547,"data":"  Toplam cift            : 676473\n"}
+,{"stream_name":"stdout","time":210.818236821,"data":"  Farkli SPLIT arasi     : 218500   \u003c-- sizinti riski\n"}
+,{"stream_name":"stdout","time":210.818240285,"data":"  Farkli SINIF arasi     : 157168   \u003c-- etiket celiskisi\n"}
+,{"stream_name":"stdout","time":210.818244138,"data":"  Etkilenen dosya sayisi : 7730\n"}
+,{"stream_name":"stdout","time":210.818247709,"data":"\n"}
+,{"stream_name":"stdout","time":210.818250733,"data":"  Ornek ciftler:\n"}
+,{"stream_name":"stdout","time":210.818254014,"data":"             ad_i split_i sinif_i                              ad_j split_j sinif_j  mesafe\n"}
+,{"stream_name":"stdout","time":210.818257349,"data":"IM-0001-0001.jpeg   train  NORMAL          IM-0001-0001_aug_856.jpg   train  NORMAL       2\n"}
+,{"stream_name":"stdout","time":210.818271124,"data":"IM-0001-0001.jpeg   train  NORMAL                 IM-0010-0001.jpeg   train  NORMAL       3\n"}
+,{"stream_name":"stdout","time":210.818274436,"data":"IM-0001-0001.jpeg   train  NORMAL                 IM-0016-0001.jpeg   train  NORMAL       2\n"}
+,{"stream_name":"stdout","time":210.818277685,"data":"IM-0001-0001.jpeg   train  NORMAL                 IM-0045-0001.jpeg   train  NORMAL       3\n"}
+,{"stream_name":"stdout","time":210.818280932,"data":"IM-0001-0001.jpeg   train  NORMAL         NORMAL2-IM-0052-0001.jpeg   train  NORMAL       3\n"}
+,{"stream_name":"stdout","time":210.818284009,"data":"IM-0001-0001.jpeg   train  NORMAL         NORMAL2-IM-0073-0001.jpeg   train  NORMAL       3\n"}
+,{"stream_name":"stdout","time":210.818287167,"data":"IM-0001-0001.jpeg   train  NORMAL         NORMAL2-IM-0111-0001.jpeg   train  NORMAL       2\n"}
+,{"stream_name":"stdout","time":210.818290395,"data":"IM-0001-0001.jpeg   train  NORMAL NORMAL2-IM-0111-0001_aug_2489.jpg   train  NORMAL       3\n"}
+,{"stream_name":"stdout","time":210.818293546,"data":"IM-0001-0001.jpeg   train  NORMAL         NORMAL2-IM-0132-0001.jpeg   train  NORMAL       3\n"}
+,{"stream_name":"stdout","time":210.818297157,"data":"IM-0001-0001.jpeg   train  NORMAL         NORMAL2-IM-0213-0001.jpeg   train  NORMAL       2\n"}
+,{"stream_name":"stdout","time":214.616286069,"data":"====================================================================================\n"}
+,{"stream_name":"stdout","time":214.616332004,"data":"  COZUNURLUK DAGILIMI (sinifa gore)\n"}
+,{"stream_name":"stdout","time":214.616342175,"data":"====================================================================================\n"}
+,{"stream_name":"stdout","time":214.616348077,"data":"                w                                                               h                                                          en_boy                                          \n"}
+,{"stream_name":"stdout","time":214.616356093,"data":"            count     mean     std    min     25%     50%     75%     max   count     mean     std    min     25%     50%     75%     max   count  mean   std   min   25%   50%   75%   max\n"}
+,{"stream_name":"stdout","time":214.616361988,"data":"sinif                                                                                                                                                                                      \n"}
+,{"stream_name":"stdout","time":214.616368492,"data":"NORMAL     4265.0  1693.92  305.04  912.0  1484.0  1663.0  1854.0  2916.0  4265.0  1384.98  342.90  496.0  1148.0  1333.0  1558.0  2713.0  4265.0  1.25  0.15  0.88  1.14  1.24  1.34  2.11\n"}
+,{"stream_name":"stdout","time":214.616374198,"data":"PNEUMONIA  4265.0  1195.03  285.26  384.0  1000.0  1160.0  1360.0  2772.0  4265.0   819.56  271.01  127.0   640.0   776.0   960.0  2304.0  4265.0  1.51  0.25  0.84  1.36  1.49  1.65  3.38\n"}
+,{"stream_name":"stdout","time":214.61637926,"data":"\n"}
+,{"stream_name":"stdout","time":214.616383743,"data":"  En sik gorulen (genislik x yukseklik) degerleri:\n"}
+,{"stream_name":"stdout","time":214.616388428,"data":"    NORMAL    : 1246x931 (9), 1596x1306 (9), 1936x1677 (8), 1828x1357 (8), 1364x1148 (8)\n"}
+,{"stream_name":"stdout","time":214.616393453,"data":"    PNEUMONIA : 1072x648 (7), 1008x704 (7), 992x592 (6), 1216x872 (6), 1080x728 (6)\n"}
+,{"stream_name":"stdout","time":215.585659619,"data":"====================================================================================\n"}
+,{"stream_name":"stdout","time":215.585715936,"data":"  DENETIM RAPORU\n"}
+,{"stream_name":"stdout","time":215.585723403,"data":"====================================================================================\n"}
+,{"stream_name":"stdout","time":215.585740499,"data":"  NORMAL    :  4265  (Kermany: 1583)  fazlalik: +2682\n"}
+,{"stream_name":"stdout","time":215.585745215,"data":"  PNEUMONIA :  4265  (Kermany: 4273)  fazlalik: -8\n"}
+,{"stream_name":"stdout","time":215.585748823,"data":"\n"}
+,{"stream_name":"stdout","time":215.585752211,"data":"  Kermany semasina uymayan dosya : 2750\n"}
+,{"stream_name":"stdout","time":215.585755648,"data":"  Hasta anahtari cikarilamayan   : 0\n"}
+,{"stream_name":"stdout","time":215.585758997,"data":"  Birebir kopya dosya            : 62\n"}
+,{"stream_name":"stdout","time":215.58576246,"data":"  Yakin kopya cift               : 676473  (farkli split: 218500, farkli sinif: 157168)\n"}
+,{"stream_name":"stdout","time":215.585766114,"data":"  Hasta sizintisi                : {'train-val': 620, 'train-test': 610, 'val-test': 200}\n"}
+,{"stream_name":"stdout","time":215.585769788,"data":"====================================================================================\n"}
+,{"stream_name":"stdout","time":215.585774949,"data":"\n"}
+,{"stream_name":"stdout","time":215.585781205,"data":"  BULGULAR\n"}
+,{"stream_name":"stdout","time":215.585783427,"data":"    - Yabanci adlandirma semasi -\u003e NORMAL sinifina baska kaynaktan goruntu eklenmis olabilir\n"}
+,{"stream_name":"stdout","time":215.585786178,"data":"    - HASTA DUZEYI SIZINTI -\u003e ic test metrikleri iyimser\n"}
+,{"stream_name":"stdout","time":215.585791496,"data":"    - Bolmeler arasi yakin kopya -\u003e cogaltma kaynakli sizinti\n"}
+,{"stream_name":"stdout","time":215.585794211,"data":"    - Siniflar arasi yakin kopya -\u003e etiket celiskisi\n"}
+,{"stream_name":"stdout","time":215.585796641,"data":"\n"}
+,{"stream_name":"stdout","time":215.585798926,"data":"  Bu bulgular makalenin Kisitlar bolumunde ACIKCA belirtilmelidir.\n"}
+,{"stream_name":"stdout","time":215.585801321,"data":"====================================================================================\n"}
+,{"stream_name":"stderr","time":218.05096657,"data":"/usr/local/lib/python3.12/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":218.051004273,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":218.200528726,"data":"/usr/local/lib/python3.12/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":218.200562234,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":218.790113741,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to notebook\n"}
+,{"stream_name":"stderr","time":219.087408492,"data":"[NbConvertApp] Writing 231724 bytes to __notebook__.ipynb\n"}
+,{"stream_name":"stderr","time":221.400729498,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to html\n"}
+,{"stream_name":"stderr","time":222.239614014,"data":"[NbConvertApp] Support files will be in __results___files/\n"}
+,{"stream_name":"stderr","time":222.239666754,"data":"[NbConvertApp] Making directory __results___files\n"}
+,{"stream_name":"stderr","time":222.240097378,"data":"[NbConvertApp] Writing 380187 bytes to __results__.html\n"}
+]

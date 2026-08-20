@@ -1,0 +1,218 @@
+[{"stream_name":"stderr","time":5.761429624,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":5.761518324,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":5.761529133,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":5.761533303,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stderr","time":6.302148172,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":6.302200116,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":6.302206387,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":6.3022104389999996,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stdout","time":18.432767545,"data":"Cihaz: cuda | Torch 2.10.0+cu128\n"}
+,{"stream_name":"stdout","time":329.536271113,"data":"Bulunanlar\n"}
+,{"stream_name":"stdout","time":329.536324635,"data":"  veri kumesi : /kaggle/input/datasets/yusufmurtaza01/chest-xray-pneumonia-balanced-dataset\n"}
+,{"stream_name":"stdout","time":329.536332635,"data":"  RSNA        : /kaggle/input/competitions/rsna-pneumonia-detection-challenge\n"}
+,{"stream_name":"stdout","time":329.536338223,"data":"  NIH         : /kaggle/input/datasets/nih-chest-xrays/data\n"}
+,{"stream_name":"stdout","time":329.536343558,"data":"  ckpt raw    : ablation_vit_raw.pth\n"}
+,{"stream_name":"stdout","time":329.536348395,"data":"  ckpt roi    : ablation_vit_roi.pth\n"}
+,{"stream_name":"stdout","time":329.536353223,"data":"  ckpt lung   : ablation_vit_lung.pth\n"}
+,{"stream_name":"stdout","time":342.276438901,"data":"Modeller yuklendi | girdi 224x224 | dolgu degeri 122\n"}
+,{"stream_name":"stdout","time":352.503827404,"data":"ianpan/chest-x-ray-basic yukleniyor...\n"}
+,{"stream_name":"stderr","time":352.789204133,"data":"Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stderr","time":352.789249065,"data":"\n"}
+,{"stream_name":"stderr","time":352.789254278,"data":"Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stderr","time":353.262626128,"data":"A new version of the following files was downloaded from https://huggingface.co/ianpan/chest-x-ray-basic:\n"}
+,{"stream_name":"stderr","time":353.262664944,"data":"- configuration.py\n"}
+,{"stream_name":"stderr","time":353.26267663,"data":". Make sure to double-check they do not contain any added malicious code. To avoid downloading new versions of the code file, you can pin a revision.\n"}
+,{"stream_name":"stderr","time":353.262681108,"data":"\n"}
+,{"stream_name":"stderr","time":353.262698116,"data":"A new version of the following files was downloaded from https://huggingface.co/ianpan/chest-x-ray-basic:\n"}
+,{"stream_name":"stderr","time":353.262704123,"data":"- configuration.py\n"}
+,{"stream_name":"stderr","time":353.262709198,"data":". Make sure to double-check they do not contain any added malicious code. To avoid downloading new versions of the code file, you can pin a revision.\n"}
+,{"stream_name":"stderr","time":358.141690957,"data":"A new version of the following files was downloaded from https://huggingface.co/ianpan/chest-x-ray-basic:\n"}
+,{"stream_name":"stderr","time":358.141731159,"data":"- unet.py\n"}
+,{"stream_name":"stderr","time":358.141748873,"data":". Make sure to double-check they do not contain any added malicious code. To avoid downloading new versions of the code file, you can pin a revision.\n"}
+,{"stream_name":"stderr","time":358.141753723,"data":"\n"}
+,{"stream_name":"stderr","time":358.141757134,"data":"A new version of the following files was downloaded from https://huggingface.co/ianpan/chest-x-ray-basic:\n"}
+,{"stream_name":"stderr","time":358.141760901,"data":"- unet.py\n"}
+,{"stream_name":"stderr","time":358.141764355,"data":". Make sure to double-check they do not contain any added malicious code. To avoid downloading new versions of the code file, you can pin a revision.\n"}
+,{"stream_name":"stderr","time":358.142557509,"data":"A new version of the following files was downloaded from https://huggingface.co/ianpan/chest-x-ray-basic:\n"}
+,{"stream_name":"stderr","time":358.142577783,"data":"- modeling.py\n"}
+,{"stream_name":"stderr","time":358.14258241,"data":"- unet.py\n"}
+,{"stream_name":"stderr","time":358.142586266,"data":". Make sure to double-check they do not contain any added malicious code. To avoid downloading new versions of the code file, you can pin a revision.\n"}
+,{"stream_name":"stderr","time":358.142590248,"data":"\n"}
+,{"stream_name":"stderr","time":358.142593868,"data":"A new version of the following files was downloaded from https://huggingface.co/ianpan/chest-x-ray-basic:\n"}
+,{"stream_name":"stderr","time":358.142597566,"data":"- modeling.py\n"}
+,{"stream_name":"stderr","time":358.142601332,"data":"- unet.py\n"}
+,{"stream_name":"stderr","time":358.14260512,"data":". Make sure to double-check they do not contain any added malicious code. To avoid downloading new versions of the code file, you can pin a revision.\n"}
+,{"stream_name":"stdout","time":366.32301958,"data":"Segmentasyon modeli hazir.\n"}
+,{"stream_name":"stdout","time":366.348838609,"data":"On-isleme hatti hazir.\n"}
+,{"stream_name":"stdout","time":366.373439804,"data":"Geometrik bolgelerin kapladigi alan:\n"}
+,{"stream_name":"stdout","time":366.373460487,"data":"  corners       : %19.1\n"}
+,{"stream_name":"stdout","time":366.373466132,"data":"  border        : %29.6\n"}
+,{"stream_name":"stdout","time":366.373472183,"data":"  subdiaphragm  : %28.1\n"}
+,{"stream_name":"stdout","time":366.373505505,"data":"  upper         : %20.1\n"}
+,{"stream_name":"stdout","time":366.373511036,"data":"  center        : %19.6\n"}
+,{"stream_name":"stdout","time":366.373517185,"data":"\n"}
+,{"stream_name":"stdout","time":366.373522319,"data":"11 kosul: baseline, lungs, non_lungs, corners, border, subdiaphragm, upper, center, rand_lungs, rand_20, rand_30\n"}
+,{"stream_name":"stdout","time":373.497412112,"data":"  ic test imzasi: 3a25cbb40ab471d7  (beklenen 3a25cbb40ab471d7)\n"}
+,{"stream_name":"stdout","time":401.307871934,"data":"Ic test : 864 goruntu\n"}
+,{"stream_name":"stdout","time":401.307929279,"data":"RSNA    : 500 goruntu\n"}
+,{"stream_name":"stdout","time":401.307953333,"data":"NIH     : 500 goruntu\n"}
+,{"stream_name":"stdout","time":401.501804048,"data":"\n"}
+,{"stream_name":"stdout","time":401.501874672,"data":"\u003e\u003e\u003e Ic test (864 goruntu x 11 kosul x 3 kol)...\n"}
+,{"stream_name":"stdout","time":497.750504057,"data":"    [Ic test] 200/864 (96 sn)\n"}
+,{"stream_name":"stdout","time":596.889595368,"data":"    [Ic test] 400/864 (195 sn)\n"}
+,{"stream_name":"stdout","time":695.521603033,"data":"    [Ic test] 600/864 (294 sn)\n"}
+,{"stream_name":"stdout","time":795.049638117,"data":"    [Ic test] 800/864 (394 sn)\n"}
+,{"stream_name":"stdout","time":826.950246993,"data":"  [Ic test] bitti: 864 goruntu, 425 sn\n"}
+,{"stream_name":"stdout","time":826.950293665,"data":"\n"}
+,{"stream_name":"stdout","time":826.95029717,"data":"\u003e\u003e\u003e RSNA (500 goruntu x 11 kosul x 3 kol)...\n"}
+,{"stream_name":"stdout","time":924.115761294,"data":"    [RSNA] 200/500 (97 sn)\n"}
+,{"stream_name":"stdout","time":1021.407767168,"data":"    [RSNA] 400/500 (194 sn)\n"}
+,{"stream_name":"stdout","time":1070.077775613,"data":"  [RSNA] bitti: 500 goruntu, 243 sn\n"}
+,{"stream_name":"stdout","time":1070.077813048,"data":"\n"}
+,{"stream_name":"stdout","time":1070.077817918,"data":"\u003e\u003e\u003e NIH (500 goruntu x 11 kosul x 3 kol)...\n"}
+,{"stream_name":"stdout","time":1169.36084531,"data":"    [NIH] 200/500 (99 sn)\n"}
+,{"stream_name":"stdout","time":1268.780573201,"data":"    [NIH] 400/500 (199 sn)\n"}
+,{"stream_name":"stdout","time":1318.386534921,"data":"  [NIH] bitti: 500 goruntu, 249 sn\n"}
+,{"stream_name":"stdout","time":1520.618778975,"data":"========================================================================================================================\n"}
+,{"stream_name":"stdout","time":1520.618828958,"data":"  OKLUZYON SONUCLARI  (dAUC = baseline - kapali;  net etki = dAUC - alan eslesmeli rastgele)\n"}
+,{"stream_name":"stdout","time":1520.618837298,"data":"========================================================================================================================\n"}
+,{"stream_name":"stdout","time":1520.618843146,"data":"\n"}
+,{"stream_name":"stdout","time":1520.618847973,"data":"--- Ic test ---\n"}
+,{"stream_name":"stdout","time":1520.618853281,"data":" kol        kosul   alan    AUC   dAUC  GA alt  GA ust  DeLong p  net etki\n"}
+,{"stream_name":"stdout","time":1520.618858158,"data":" raw        lungs 0.2469 0.9896 0.0085  0.0045  0.0134    0.0002    0.0041\n"}
+,{"stream_name":"stdout","time":1520.618863109,"data":" raw    non_lungs 0.7531 0.7799 0.2183  0.1892  0.2496    0.0000       NaN\n"}
+,{"stream_name":"stdout","time":1520.618868174,"data":" raw      corners 0.1914 0.9981 0.0000 -0.0015  0.0013    0.9880   -0.0013\n"}
+,{"stream_name":"stdout","time":1520.61887277,"data":" raw       border 0.2956 0.9895 0.0086  0.0046  0.0139    0.0002    0.0042\n"}
+,{"stream_name":"stdout","time":1520.618877536,"data":" raw subdiaphragm 0.2812 0.9961 0.0020  0.0001  0.0042    0.0562   -0.0024\n"}
+,{"stream_name":"stdout","time":1520.618882275,"data":" raw        upper 0.2009 0.9948 0.0034  0.0012  0.0065    0.0084    0.0020\n"}
+,{"stream_name":"stdout","time":1520.618887073,"data":" raw       center 0.1964 0.9962 0.0020  0.0006  0.0037    0.0149    0.0006\n"}
+,{"stream_name":"stdout","time":1520.618895106,"data":" raw   rand_lungs 0.2470 0.9936 0.0045  0.0018  0.0078    0.0023       NaN\n"}
+,{"stream_name":"stdout","time":1520.618898564,"data":" raw      rand_20 0.2000 0.9968 0.0013 -0.0006  0.0035    0.1957       NaN\n"}
+,{"stream_name":"stdout","time":1520.618901714,"data":" raw      rand_30 0.3000 0.9937 0.0044  0.0012  0.0087    0.0221       NaN\n"}
+,{"stream_name":"stdout","time":1520.618904766,"data":" roi        lungs 0.4062 0.9747 0.0229  0.0159  0.0310    0.0000    0.0129\n"}
+,{"stream_name":"stdout","time":1520.618917335,"data":" roi    non_lungs 0.5938 0.9656 0.0320  0.0227  0.0432    0.0000       NaN\n"}
+,{"stream_name":"stdout","time":1520.618922716,"data":" roi      corners 0.1914 0.9941 0.0035  0.0010  0.0069    0.0177    0.0024\n"}
+,{"stream_name":"stdout","time":1520.618927849,"data":" roi       border 0.2956 0.9915 0.0062  0.0023  0.0116    0.0052   -0.0015\n"}
+,{"stream_name":"stdout","time":1520.618933235,"data":" roi subdiaphragm 0.2812 0.9906 0.0071  0.0038  0.0113    0.0001   -0.0006\n"}
+,{"stream_name":"stdout","time":1520.618938695,"data":" roi        upper 0.2009 0.9954 0.0022  0.0003  0.0046    0.0380    0.0011\n"}
+,{"stream_name":"stdout","time":1520.618952905,"data":" roi       center 0.1964 0.9939 0.0037  0.0014  0.0066    0.0047    0.0026\n"}
+,{"stream_name":"stdout","time":1520.618957111,"data":" roi   rand_lungs 0.4061 0.9876 0.0101  0.0053  0.0155    0.0001       NaN\n"}
+,{"stream_name":"stdout","time":1520.618960753,"data":" roi      rand_20 0.2000 0.9965 0.0011 -0.0003  0.0026    0.1158       NaN\n"}
+,{"stream_name":"stdout","time":1520.618964372,"data":" roi      rand_30 0.3000 0.9900 0.0077  0.0042  0.0117    0.0001       NaN\n"}
+,{"stream_name":"stdout","time":1520.618967696,"data":"lung        lungs 0.4062 0.7395 0.2587  0.2260  0.2915    0.0000    0.2270\n"}
+,{"stream_name":"stdout","time":1520.618972255,"data":"lung    non_lungs 0.5938 0.9968 0.0014  0.0006  0.0025    0.0025       NaN\n"}
+,{"stream_name":"stdout","time":1520.618975717,"data":"lung      corners 0.1914 0.9968 0.0013  0.0001  0.0032    0.0931   -0.0073\n"}
+,{"stream_name":"stdout","time":1520.618979019,"data":"lung       border 0.2956 0.9966 0.0016 -0.0002  0.0039    0.1223   -0.0160\n"}
+,{"stream_name":"stdout","time":1520.61898221,"data":"lung subdiaphragm 0.2812 0.9947 0.0034  0.0017  0.0056    0.0004   -0.0142\n"}
+,{"stream_name":"stdout","time":1520.618985624,"data":"lung        upper 0.2009 0.9969 0.0012  0.0002  0.0026    0.0349   -0.0074\n"}
+,{"stream_name":"stdout","time":1520.618988887,"data":"lung       center 0.1964 0.9962 0.0020  0.0007  0.0036    0.0079   -0.0066\n"}
+,{"stream_name":"stdout","time":1520.618992644,"data":"lung   rand_lungs 0.4062 0.9665 0.0317  0.0222  0.0418    0.0000       NaN\n"}
+,{"stream_name":"stdout","time":1520.618996188,"data":"lung      rand_20 0.1999 0.9896 0.0086  0.0043  0.0142    0.0005       NaN\n"}
+,{"stream_name":"stdout","time":1520.618999414,"data":"lung      rand_30 0.3000 0.9806 0.0176  0.0110  0.0253    0.0000       NaN\n"}
+,{"stream_name":"stdout","time":1520.619002934,"data":"\n"}
+,{"stream_name":"stdout","time":1520.619006405,"data":"--- RSNA ---\n"}
+,{"stream_name":"stdout","time":1520.61901026,"data":" kol        kosul   alan    AUC   dAUC  GA alt  GA ust  DeLong p  net etki\n"}
+,{"stream_name":"stdout","time":1520.619014389,"data":" raw        lungs 0.2357 0.8950 0.0289  0.0101  0.0495    0.0045   -0.0132\n"}
+,{"stream_name":"stdout","time":1520.619018502,"data":" raw    non_lungs 0.7643 0.8046 0.1192  0.0830  0.1517    0.0000       NaN\n"}
+,{"stream_name":"stdout","time":1520.619022212,"data":" raw      corners 0.1914 0.9134 0.0104  0.0009  0.0206    0.0443   -0.0092\n"}
+,{"stream_name":"stdout","time":1520.619025712,"data":" raw       border 0.2956 0.9022 0.0216  0.0095  0.0346    0.0007   -0.0435\n"}
+,{"stream_name":"stdout","time":1520.619029319,"data":" raw subdiaphragm 0.2812 0.9086 0.0152  0.0046  0.0268    0.0060   -0.0499\n"}
+,{"stream_name":"stdout","time":1520.619032969,"data":" raw        upper 0.2009 0.8970 0.0269  0.0137  0.0421    0.0002    0.0072\n"}
+,{"stream_name":"stdout","time":1520.619036713,"data":" raw       center 0.1964 0.9035 0.0204  0.0069  0.0340    0.0039    0.0007\n"}
+,{"stream_name":"stdout","time":1520.619040345,"data":" raw   rand_lungs 0.2357 0.8818 0.0421  0.0230  0.0613    0.0000       NaN\n"}
+,{"stream_name":"stdout","time":1520.619044244,"data":" raw      rand_20 0.2000 0.9042 0.0196  0.0042  0.0343    0.0109       NaN\n"}
+,{"stream_name":"stdout","time":1520.61904782,"data":" raw      rand_30 0.3000 0.8587 0.0651  0.0416  0.0893    0.0000       NaN\n"}
+,{"stream_name":"stdout","time":1520.619051308,"data":" roi        lungs 0.3990 0.8418 0.0821  0.0517  0.1146    0.0000    0.0260\n"}
+,{"stream_name":"stdout","time":1520.619054973,"data":" roi    non_lungs 0.6010 0.8700 0.0539  0.0264  0.0830    0.0002       NaN\n"}
+,{"stream_name":"stdout","time":1520.619064299,"data":" roi      corners 0.1914 0.9155 0.0084 -0.0041  0.0208    0.2062   -0.0004\n"}
+,{"stream_name":"stdout","time":1520.619068071,"data":" roi       border 0.2956 0.9002 0.0237  0.0088  0.0393    0.0021   -0.0052\n"}
+,{"stream_name":"stdout","time":1520.619071631,"data":" roi subdiaphragm 0.2812 0.9083 0.0156  0.0041  0.0270    0.0062   -0.0133\n"}
+,{"stream_name":"stdout","time":1520.619075246,"data":" roi        upper 0.2009 0.8936 0.0303  0.0111  0.0495    0.0015    0.0215\n"}
+,{"stream_name":"stdout","time":1520.619078861,"data":" roi       center 0.1964 0.9117 0.0122 -0.0019  0.0269    0.0972    0.0034\n"}
+,{"stream_name":"stdout","time":1520.619082793,"data":" roi   rand_lungs 0.3990 0.8678 0.0561  0.0303  0.0818    0.0000       NaN\n"}
+,{"stream_name":"stdout","time":1520.619087065,"data":" roi      rand_20 0.2000 0.9151 0.0088 -0.0044  0.0220    0.1896       NaN\n"}
+,{"stream_name":"stdout","time":1520.619090784,"data":" roi      rand_30 0.3000 0.8950 0.0289  0.0096  0.0491    0.0055       NaN\n"}
+,{"stream_name":"stdout","time":1520.619095173,"data":"lung        lungs 0.3990 0.6822 0.2543  0.2080  0.3005    0.0000    0.1493\n"}
+,{"stream_name":"stdout","time":1520.619099456,"data":"lung    non_lungs 0.6010 0.9231 0.0133  0.0049  0.0220    0.0027       NaN\n"}
+,{"stream_name":"stdout","time":1520.61910342,"data":"lung      corners 0.1914 0.9327 0.0037 -0.0045  0.0117    0.3609   -0.0399\n"}
+,{"stream_name":"stdout","time":1520.619106966,"data":"lung       border 0.2956 0.9303 0.0061 -0.0001  0.0121    0.0455   -0.0657\n"}
+,{"stream_name":"stdout","time":1520.619110461,"data":"lung subdiaphragm 0.2812 0.9157 0.0207  0.0070  0.0338    0.0022   -0.0511\n"}
+,{"stream_name":"stdout","time":1520.619114025,"data":"lung        upper 0.2009 0.9222 0.0142  0.0058  0.0234    0.0022   -0.0295\n"}
+,{"stream_name":"stdout","time":1520.619117588,"data":"lung       center 0.1964 0.9321 0.0044 -0.0029  0.0130    0.2581   -0.0393\n"}
+,{"stream_name":"stdout","time":1520.619121433,"data":"lung   rand_lungs 0.3990 0.8315 0.1050  0.0772  0.1338    0.0000       NaN\n"}
+,{"stream_name":"stdout","time":1520.6191253,"data":"lung      rand_20 0.1999 0.8928 0.0437  0.0262  0.0625    0.0000       NaN\n"}
+,{"stream_name":"stdout","time":1520.619128988,"data":"lung      rand_30 0.3000 0.8646 0.0718  0.0485  0.0972    0.0000       NaN\n"}
+,{"stream_name":"stdout","time":1520.619132611,"data":"\n"}
+,{"stream_name":"stdout","time":1520.619135854,"data":"--- NIH ---\n"}
+,{"stream_name":"stdout","time":1520.619139244,"data":" kol        kosul   alan    AUC    dAUC  GA alt  GA ust  DeLong p  net etki\n"}
+,{"stream_name":"stdout","time":1520.619142877,"data":" raw        lungs 0.2368 0.6610  0.0302  0.0023  0.0566    0.0311    0.0229\n"}
+,{"stream_name":"stdout","time":1520.619146621,"data":" raw    non_lungs 0.7632 0.6318  0.0594  0.0126  0.1045    0.0124       NaN\n"}
+,{"stream_name":"stdout","time":1520.619150133,"data":" raw      corners 0.1914 0.7082 -0.0170 -0.0351 -0.0004    0.0615   -0.0323\n"}
+,{"stream_name":"stdout","time":1520.619153749,"data":" raw       border 0.2956 0.6955 -0.0043 -0.0250  0.0159    0.6854   -0.0238\n"}
+,{"stream_name":"stdout","time":1520.61915736,"data":" raw subdiaphragm 0.2812 0.6865  0.0047 -0.0136  0.0224    0.6033   -0.0148\n"}
+,{"stream_name":"stdout","time":1520.619160894,"data":" raw        upper 0.2009 0.6929 -0.0017 -0.0235  0.0207    0.8791   -0.0170\n"}
+,{"stream_name":"stdout","time":1520.619164498,"data":" raw       center 0.1964 0.6894  0.0018 -0.0175  0.0216    0.8614   -0.0136\n"}
+,{"stream_name":"stdout","time":1520.619168032,"data":" raw   rand_lungs 0.2368 0.6839  0.0073 -0.0209  0.0355    0.6286       NaN\n"}
+,{"stream_name":"stdout","time":1520.619177268,"data":" raw      rand_20 0.2000 0.6759  0.0154 -0.0098  0.0407    0.2214       NaN\n"}
+,{"stream_name":"stdout","time":1520.619181794,"data":" raw      rand_30 0.3000 0.6718  0.0194 -0.0132  0.0517    0.2299       NaN\n"}
+,{"stream_name":"stdout","time":1520.619185293,"data":" roi        lungs 0.3982 0.6291  0.0662  0.0263  0.1060    0.0007    0.0101\n"}
+,{"stream_name":"stdout","time":1520.619188803,"data":" roi    non_lungs 0.6018 0.6793  0.0160 -0.0233  0.0547    0.4114       NaN\n"}
+,{"stream_name":"stdout","time":1520.619193048,"data":" roi      corners 0.1914 0.7045 -0.0092 -0.0278  0.0097    0.3272   -0.0150\n"}
+,{"stream_name":"stdout","time":1520.619197084,"data":" roi       border 0.2956 0.6982 -0.0029 -0.0281  0.0224    0.8226   -0.0208\n"}
+,{"stream_name":"stdout","time":1520.619200736,"data":" roi subdiaphragm 0.2812 0.7044 -0.0091 -0.0293  0.0115    0.3637   -0.0270\n"}
+,{"stream_name":"stdout","time":1520.619204396,"data":" roi        upper 0.2009 0.6892  0.0061 -0.0171  0.0280    0.6002    0.0003\n"}
+,{"stream_name":"stdout","time":1520.619208041,"data":" roi       center 0.1964 0.6951  0.0002 -0.0183  0.0186    0.9835   -0.0056\n"}
+,{"stream_name":"stdout","time":1520.619211708,"data":" roi   rand_lungs 0.3982 0.6392  0.0561  0.0225  0.0898    0.0014       NaN\n"}
+,{"stream_name":"stdout","time":1520.619215291,"data":" roi      rand_20 0.2000 0.6895  0.0058 -0.0143  0.0250    0.5674       NaN\n"}
+,{"stream_name":"stdout","time":1520.619218954,"data":" roi      rand_30 0.3000 0.6775  0.0178 -0.0064  0.0441    0.1717       NaN\n"}
+,{"stream_name":"stdout","time":1520.619224771,"data":"lung        lungs 0.3982 0.6022  0.1030  0.0493  0.1594    0.0002    0.0312\n"}
+,{"stream_name":"stdout","time":1520.619228724,"data":"lung    non_lungs 0.6018 0.6933  0.0118  0.0013  0.0231    0.0368       NaN\n"}
+,{"stream_name":"stdout","time":1520.619232313,"data":"lung      corners 0.1914 0.7008  0.0044 -0.0072  0.0156    0.4556   -0.0156\n"}
+,{"stream_name":"stdout","time":1520.619235877,"data":"lung       border 0.2956 0.6996  0.0055 -0.0025  0.0144    0.1877   -0.0307\n"}
+,{"stream_name":"stdout","time":1520.619239318,"data":"lung subdiaphragm 0.2812 0.6684  0.0367  0.0192  0.0552    0.0001    0.0005\n"}
+,{"stream_name":"stdout","time":1520.619242845,"data":"lung        upper 0.2009 0.6955  0.0096 -0.0018  0.0205    0.1015   -0.0104\n"}
+,{"stream_name":"stdout","time":1520.619246514,"data":"lung       center 0.1964 0.6971  0.0081 -0.0032  0.0197    0.1767   -0.0119\n"}
+,{"stream_name":"stdout","time":1520.619250876,"data":"lung   rand_lungs 0.3982 0.6334  0.0718  0.0336  0.1077    0.0001       NaN\n"}
+,{"stream_name":"stdout","time":1520.619255166,"data":"lung      rand_20 0.1999 0.6852  0.0200 -0.0032  0.0413    0.0816       NaN\n"}
+,{"stream_name":"stdout","time":1520.61925913,"data":"lung      rand_30 0.3000 0.6689  0.0362  0.0043  0.0685    0.0259       NaN\n"}
+,{"stream_name":"stdout","time":1520.659943466,"data":"====================================================================================\n"}
+,{"stream_name":"stdout","time":1520.65997971,"data":"  TUTARLILIK DENETIMLERI\n"}
+,{"stream_name":"stdout","time":1520.659986067,"data":"====================================================================================\n"}
+,{"stream_name":"stdout","time":1520.659990342,"data":"  Ic test  C/non_lungs dAUC=+0.0014 OK (etkisiz beklenir)   |   C/lungs dAUC=+0.2587 OK (yikici beklenir)\n"}
+,{"stream_name":"stdout","time":1520.659994758,"data":"  RSNA     C/non_lungs dAUC=+0.0133 BEKLENMEDIK   |   C/lungs dAUC=+0.2543 OK (yikici beklenir)\n"}
+,{"stream_name":"stdout","time":1520.659999565,"data":"  NIH      C/non_lungs dAUC=+0.0118 BEKLENMEDIK   |   C/lungs dAUC=+0.1030 BEKLENMEDIK\n"}
+,{"stream_name":"stdout","time":1520.660016182,"data":"====================================================================================\n"}
+,{"stream_name":"stdout","time":1520.660020647,"data":"  UYARI: beklenen davranis saglanmadi - sonuclari yorumlamadan once inceleyin.\n"}
+,{"stream_name":"stdout","time":1520.660024453,"data":"\n"}
+,{"stream_name":"stdout","time":1520.660028284,"data":"================================================================================================\n"}
+,{"stream_name":"stdout","time":1520.660032122,"data":"  ANA SORU: akcigeri kapatmak, ayni alanda rastgele bir bolgeyi kapatmaktan fazla zarar veriyor mu?\n"}
+,{"stream_name":"stdout","time":1520.66003657,"data":"================================================================================================\n"}
+,{"stream_name":"stdout","time":1520.66004103,"data":"  kume      kol      dAUC(lungs)   dAUC(rand)   net etki   DeLong p\n"}
+,{"stream_name":"stdout","time":1520.66004515,"data":"  Ic test   raw           0.0085       0.0045     0.0041     0.0002\n"}
+,{"stream_name":"stdout","time":1520.660049654,"data":"  Ic test   roi           0.0229       0.0101     0.0129     0.0000\n"}
+,{"stream_name":"stdout","time":1520.660053545,"data":"  Ic test   lung          0.2587       0.0317     0.2270     0.0000\n"}
+,{"stream_name":"stdout","time":1520.660057867,"data":"  RSNA      raw           0.0289       0.0421    -0.0132     0.0045\n"}
+,{"stream_name":"stdout","time":1520.660089943,"data":"  RSNA      roi           0.0821       0.0561     0.0260     0.0000\n"}
+,{"stream_name":"stdout","time":1520.660094357,"data":"  RSNA      lung          0.2543       0.1050     0.1493     0.0000\n"}
+,{"stream_name":"stdout","time":1520.66009875,"data":"  NIH       raw           0.0302       0.0073     0.0229     0.0311\n"}
+,{"stream_name":"stdout","time":1520.660104017,"data":"  NIH       roi           0.0662       0.0561     0.0101     0.0007\n"}
+,{"stream_name":"stdout","time":1520.660109029,"data":"  NIH       lung          0.1030       0.0718     0.0312     0.0002\n"}
+,{"stream_name":"stdout","time":1520.660113995,"data":"================================================================================================\n"}
+,{"stream_name":"stdout","time":1521.561720081,"data":"Kaydedilenler:\n"}
+,{"stream_name":"stdout","time":1521.561756733,"data":"  occ_fig_00_conditions.png             0.28 MB\n"}
+,{"stream_name":"stdout","time":1521.561762587,"data":"  occ_fig_01_net_effect.png             0.08 MB\n"}
+,{"stream_name":"stdout","time":1521.561767323,"data":"  occlusion_predictions.npz             0.25 MB\n"}
+,{"stream_name":"stdout","time":1521.561771827,"data":"  occlusion_results.csv                 0.01 MB\n"}
+,{"stream_name":"stdout","time":1521.561775795,"data":"  occlusion_summary.json                0.00 MB\n"}
+,{"stream_name":"stderr","time":1527.494574235,"data":"/usr/local/lib/python3.12/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":1527.49463039,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":1527.635014122,"data":"/usr/local/lib/python3.12/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":1527.635074242,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":1528.249702185,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to notebook\n"}
+,{"stream_name":"stderr","time":1528.578139337,"data":"[NbConvertApp] Writing 525209 bytes to __notebook__.ipynb\n"}
+,{"stream_name":"stderr","time":1530.903524949,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to html\n"}
+,{"stream_name":"stderr","time":1531.842723827,"data":"[NbConvertApp] Support files will be in __results___files/\n"}
+,{"stream_name":"stderr","time":1531.842785089,"data":"[NbConvertApp] Making directory __results___files\n"}
+,{"stream_name":"stderr","time":1531.843218769,"data":"[NbConvertApp] Making directory __results___files\n"}
+,{"stream_name":"stderr","time":1531.843553595,"data":"[NbConvertApp] Writing 531340 bytes to __results__.html\n"}
+]

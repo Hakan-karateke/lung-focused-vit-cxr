@@ -1,0 +1,142 @@
+[{"stream_name":"stderr","time":8.216028316,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":8.216120132,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":8.216128119,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":8.216132457,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stderr","time":8.888667113,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":8.888701946,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":8.888707351,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":8.888711338,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stdout","time":24.934248084,"data":"Cihaz: cuda | sinif basina 250 goruntu | tau = 0.2\n"}
+,{"stream_name":"stdout","time":421.917130323,"data":"Bulunanlar\n"}
+,{"stream_name":"stdout","time":421.917198154,"data":"  ckpt raw  : /kaggle/input/notebooks/hakankarateke/segmentation-ablation-lung-focused-vit/ablation_vit_raw.pth\n"}
+,{"stream_name":"stdout","time":421.917206668,"data":"  ckpt roi  : /kaggle/input/notebooks/hakankarateke/segmentation-ablation-lung-focused-vit/ablation_vit_roi.pth\n"}
+,{"stream_name":"stdout","time":421.917213211,"data":"  ckpt lung : /kaggle/input/notebooks/hakankarateke/segmentation-ablation-lung-focused-vit/ablation_vit_lung.pth\n"}
+,{"stream_name":"stdout","time":421.917219298,"data":"  RSNA : /kaggle/input/competitions/rsna-pneumonia-detection-challenge\n"}
+,{"stream_name":"stdout","time":421.917224453,"data":"  NIH  : /kaggle/input/datasets/nih-chest-xrays/data\n"}
+,{"stream_name":"stdout","time":421.91722957,"data":"  ic LFR: {'raw': 120, 'roi': 120, 'lung': 120}\n"}
+,{"stream_name":"stdout","time":428.377015897,"data":"  raw   yuklendi (Val F1 0.9769)\n"}
+,{"stream_name":"stdout","time":432.165690177,"data":"  roi   yuklendi (Val F1 0.9801)\n"}
+,{"stream_name":"stdout","time":435.736321956,"data":"  lung  yuklendi (Val F1 0.9766)\n"}
+,{"stream_name":"stdout","time":450.859060605,"data":"\n"}
+,{"stream_name":"stdout","time":450.859090856,"data":"ianpan/chest-x-ray-basic yukleniyor...\n"}
+,{"stream_name":"stderr","time":451.212881501,"data":"Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stderr","time":451.212931139,"data":"\n"}
+,{"stream_name":"stderr","time":451.212937728,"data":"Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stderr","time":451.346709019,"data":"A new version of the following files was downloaded from https://huggingface.co/ianpan/chest-x-ray-basic:\n"}
+,{"stream_name":"stderr","time":451.346734087,"data":"- configuration.py\n"}
+,{"stream_name":"stderr","time":451.346738891,"data":". Make sure to double-check they do not contain any added malicious code. To avoid downloading new versions of the code file, you can pin a revision.\n"}
+,{"stream_name":"stderr","time":451.346757215,"data":"\n"}
+,{"stream_name":"stderr","time":451.346763255,"data":"A new version of the following files was downloaded from https://huggingface.co/ianpan/chest-x-ray-basic:\n"}
+,{"stream_name":"stderr","time":451.346768695,"data":"- configuration.py\n"}
+,{"stream_name":"stderr","time":451.346784972,"data":". Make sure to double-check they do not contain any added malicious code. To avoid downloading new versions of the code file, you can pin a revision.\n"}
+,{"stream_name":"stderr","time":456.177963107,"data":"A new version of the following files was downloaded from https://huggingface.co/ianpan/chest-x-ray-basic:\n"}
+,{"stream_name":"stderr","time":456.177999849,"data":"- unet.py\n"}
+,{"stream_name":"stderr","time":456.178006171,"data":". Make sure to double-check they do not contain any added malicious code. To avoid downloading new versions of the code file, you can pin a revision.\n"}
+,{"stream_name":"stderr","time":456.178011505,"data":"\n"}
+,{"stream_name":"stderr","time":456.178015917,"data":"A new version of the following files was downloaded from https://huggingface.co/ianpan/chest-x-ray-basic:\n"}
+,{"stream_name":"stderr","time":456.178020631,"data":"- unet.py\n"}
+,{"stream_name":"stderr","time":456.178024942,"data":". Make sure to double-check they do not contain any added malicious code. To avoid downloading new versions of the code file, you can pin a revision.\n"}
+,{"stream_name":"stderr","time":456.178845451,"data":"A new version of the following files was downloaded from https://huggingface.co/ianpan/chest-x-ray-basic:\n"}
+,{"stream_name":"stderr","time":456.178872596,"data":"- modeling.py\n"}
+,{"stream_name":"stderr","time":456.178878651,"data":"- unet.py\n"}
+,{"stream_name":"stderr","time":456.178883787,"data":". Make sure to double-check they do not contain any added malicious code. To avoid downloading new versions of the code file, you can pin a revision.\n"}
+,{"stream_name":"stderr","time":456.17888916,"data":"\n"}
+,{"stream_name":"stderr","time":456.178893965,"data":"A new version of the following files was downloaded from https://huggingface.co/ianpan/chest-x-ray-basic:\n"}
+,{"stream_name":"stderr","time":456.178899353,"data":"- modeling.py\n"}
+,{"stream_name":"stderr","time":456.178904186,"data":"- unet.py\n"}
+,{"stream_name":"stderr","time":456.178909061,"data":". Make sure to double-check they do not contain any added malicious code. To avoid downloading new versions of the code file, you can pin a revision.\n"}
+,{"stream_name":"stdout","time":462.771258886,"data":"Segmentasyon modeli hazir.\n"}
+,{"stream_name":"stdout","time":462.807304525,"data":"Rollout hazir: {'raw': 12, 'roi': 12, 'lung': 12}\n"}
+,{"stream_name":"stdout","time":498.458858498,"data":"RSNA: 500 goruntu\n"}
+,{"stream_name":"stdout","time":498.458924401,"data":"NIH: 500 goruntu\n"}
+,{"stream_name":"stdout","time":498.655392218,"data":"\n"}
+,{"stream_name":"stdout","time":498.655444698,"data":"\u003e\u003e\u003e RSNA (500 goruntu x 3 kol)...\n"}
+,{"stream_name":"stdout","time":515.263263858,"data":"    100/500 (17 sn)\n"}
+,{"stream_name":"stdout","time":530.228068878,"data":"    200/500 (32 sn)\n"}
+,{"stream_name":"stdout","time":545.322679934,"data":"    300/500 (47 sn)\n"}
+,{"stream_name":"stdout","time":560.522498299,"data":"    400/500 (62 sn)\n"}
+,{"stream_name":"stdout","time":575.662045848,"data":"    500/500 (77 sn)\n"}
+,{"stream_name":"stdout","time":575.66210221,"data":"  bitti: 77 sn\n"}
+,{"stream_name":"stdout","time":575.662107411,"data":"\n"}
+,{"stream_name":"stdout","time":575.66211155,"data":"\u003e\u003e\u003e NIH (500 goruntu x 3 kol)...\n"}
+,{"stream_name":"stdout","time":591.750905644,"data":"    100/500 (16 sn)\n"}
+,{"stream_name":"stdout","time":608.137109023,"data":"    200/500 (32 sn)\n"}
+,{"stream_name":"stdout","time":624.52793959,"data":"    300/500 (49 sn)\n"}
+,{"stream_name":"stdout","time":641.060560185,"data":"    400/500 (65 sn)\n"}
+,{"stream_name":"stdout","time":657.542245527,"data":"    500/500 (82 sn)\n"}
+,{"stream_name":"stdout","time":657.542291069,"data":"  bitti: 82 sn\n"}
+,{"stream_name":"stdout","time":657.542296528,"data":"\n"}
+,{"stream_name":"stdout","time":657.542313403,"data":"Toplam kayit: 1000 | geri cekilme: 0\n"}
+,{"stream_name":"stdout","time":657.736567912,"data":"============================================================================================\n"}
+,{"stream_name":"stdout","time":657.736628798,"data":"  AKCIGER-ODAK ORANI  (tau = 0,20)\n"}
+,{"stream_name":"stdout","time":657.736637398,"data":"============================================================================================\n"}
+,{"stream_name":"stdout","time":657.736643892,"data":"   kume  kol   n   ort    ss  medyan  \u003c0,05  \u003e0,50\n"}
+,{"stream_name":"stdout","time":657.736650104,"data":"Ic test  raw 120 0.005 0.011   0.000  0.983  0.000\n"}
+,{"stream_name":"stdout","time":657.73665577,"data":"Ic test  roi 120 0.111 0.130   0.063  0.475  0.017\n"}
+,{"stream_name":"stdout","time":657.736661472,"data":"Ic test lung 120 0.909 0.077   0.927  0.000  1.000\n"}
+,{"stream_name":"stdout","time":657.736667004,"data":"   RSNA  raw 500 0.011 0.037   0.000  0.936  0.000\n"}
+,{"stream_name":"stdout","time":657.736672384,"data":"   RSNA  roi 500 0.043 0.086   0.002  0.786  0.002\n"}
+,{"stream_name":"stdout","time":657.73667824,"data":"   RSNA lung 500 0.952 0.047   0.964  0.000  1.000\n"}
+,{"stream_name":"stdout","time":657.736683853,"data":"    NIH  raw 500 0.017 0.058   0.000  0.922  0.000\n"}
+,{"stream_name":"stdout","time":657.736689456,"data":"    NIH  roi 500 0.048 0.097   0.001  0.780  0.000\n"}
+,{"stream_name":"stdout","time":657.736694913,"data":"    NIH lung 500 0.951 0.049   0.965  0.000  1.000\n"}
+,{"stream_name":"stdout","time":657.736700739,"data":"============================================================================================\n"}
+,{"stream_name":"stdout","time":658.155959375,"data":"\n"}
+,{"stream_name":"stdout","time":658.156044017,"data":"============================================================================================================\n"}
+,{"stream_name":"stdout","time":658.15605275,"data":"  ESLESTIRILMIS KARSILASTIRMA (Wilcoxon isaretli sira)\n"}
+,{"stream_name":"stdout","time":658.156058655,"data":"============================================================================================================\n"}
+,{"stream_name":"stdout","time":658.156063585,"data":"kume karsilastirma   n  medyan fark  GA alt  GA ust  Wilcoxon p  ustun oran\n"}
+,{"stream_name":"stdout","time":658.156068212,"data":"RSNA    lung - raw 500        0.955   0.950   0.960       0.000       1.000\n"}
+,{"stream_name":"stdout","time":658.156072783,"data":"RSNA    lung - roi 500        0.943   0.937   0.947       0.000       1.000\n"}
+,{"stream_name":"stdout","time":658.156077344,"data":"RSNA     roi - raw 500        0.001   0.000   0.002       0.000       0.536\n"}
+,{"stream_name":"stdout","time":658.15608716,"data":" NIH    lung - raw 500        0.957   0.951   0.962       0.000       1.000\n"}
+,{"stream_name":"stdout","time":658.156091182,"data":" NIH    lung - roi 500        0.940   0.932   0.946       0.000       1.000\n"}
+,{"stream_name":"stdout","time":658.156094361,"data":" NIH     roi - raw 500        0.000   0.000   0.000       0.000       0.488\n"}
+,{"stream_name":"stdout","time":658.156097554,"data":"============================================================================================================\n"}
+,{"stream_name":"stdout","time":661.575374097,"data":"================================================================================================\n"}
+,{"stream_name":"stdout","time":661.575434818,"data":"  DIKKAT AKCIGERDEYSE TAHMIN DAHA MI ISABETLI?\n"}
+,{"stream_name":"stdout","time":661.575455939,"data":"================================================================================================\n"}
+,{"stream_name":"stdout","time":661.575460472,"data":"kume  kol  LFR dogru  LFR yanlis   fark  n dogru  n yanlis  MWU p\n"}
+,{"stream_name":"stdout","time":661.575463967,"data":"RSNA  raw      0.010       0.014 -0.004      400       100  0.100\n"}
+,{"stream_name":"stdout","time":661.57546832,"data":"RSNA  roi      0.044       0.039  0.005      435        65  0.178\n"}
+,{"stream_name":"stdout","time":661.575472122,"data":"RSNA lung      0.952       0.948  0.004      420        80  0.089\n"}
+,{"stream_name":"stdout","time":661.575475672,"data":" NIH  raw      0.013       0.023 -0.010      307       193  0.416\n"}
+,{"stream_name":"stdout","time":661.575479571,"data":" NIH  roi      0.042       0.061 -0.019      331       169  0.230\n"}
+,{"stream_name":"stdout","time":661.575483661,"data":" NIH lung      0.948       0.957 -0.009      322       178  0.172\n"}
+,{"stream_name":"stdout","time":661.575487319,"data":"================================================================================================\n"}
+,{"stream_name":"stdout","time":661.575490455,"data":"\n"}
+,{"stream_name":"stdout","time":661.575493506,"data":"====================================================================================\n"}
+,{"stream_name":"stdout","time":661.57549761,"data":"  MASKE ALANI DENETIMI  (tam karede akciger orani; makul araligin %15-45 oldugu varsayilir)\n"}
+,{"stream_name":"stdout","time":661.57550146,"data":"====================================================================================\n"}
+,{"stream_name":"stdout","time":661.575504902,"data":"kume   n   ort    ss  medyan   min  maks  supheli (\u003c0,15 | \u003e0,45)  cok kucuk (\u003c0,08)\n"}
+,{"stream_name":"stdout","time":661.575509068,"data":"RSNA 500 0.236 0.055   0.233 0.112 0.413                    0.056              0.000\n"}
+,{"stream_name":"stdout","time":661.575512472,"data":" NIH 500 0.237 0.055   0.234 0.102 0.418                    0.044              0.000\n"}
+,{"stream_name":"stdout","time":661.57551639,"data":"====================================================================================\n"}
+,{"stream_name":"stdout","time":661.868912223,"data":"\n"}
+,{"stream_name":"stdout","time":661.868946129,"data":"========================================================================\n"}
+,{"stream_name":"stdout","time":661.868951219,"data":"  OZET\n"}
+,{"stream_name":"stdout","time":661.868969844,"data":"========================================================================\n"}
+,{"stream_name":"stdout","time":661.868974429,"data":"  RSNA   LFR: raw=0.011 | roi=0.043 | lung=0.952\n"}
+,{"stream_name":"stdout","time":661.868978634,"data":"  NIH    LFR: raw=0.017 | roi=0.048 | lung=0.951\n"}
+,{"stream_name":"stdout","time":661.868982833,"data":"  Ic     LFR: raw=0.005 | roi=0.111 | lung=0.909\n"}
+,{"stream_name":"stdout","time":661.868987199,"data":"========================================================================\n"}
+,{"stream_name":"stdout","time":661.868991191,"data":"  extlfr_aggregate_maps.npz               1.93 MB\n"}
+,{"stream_name":"stdout","time":661.868995639,"data":"  extlfr_fig_01_distributions.png         0.14 MB\n"}
+,{"stream_name":"stdout","time":661.868999567,"data":"  extlfr_fig_02_aggregate.png             0.96 MB\n"}
+,{"stream_name":"stdout","time":661.869002904,"data":"  extlfr_mask_area.csv                    0.00 MB\n"}
+,{"stream_name":"stdout","time":661.869006887,"data":"  extlfr_per_image.csv                    0.16 MB\n"}
+,{"stream_name":"stdout","time":661.869022833,"data":"  extlfr_summary.csv                      0.00 MB\n"}
+,{"stream_name":"stdout","time":661.869027253,"data":"  extlfr_vs_correctness.csv               0.00 MB\n"}
+,{"stream_name":"stdout","time":661.869031275,"data":"  extlfr_wilcoxon.csv                     0.00 MB\n"}
+,{"stream_name":"stderr","time":667.986128074,"data":"/usr/local/lib/python3.12/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":667.986173088,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":668.155002552,"data":"/usr/local/lib/python3.12/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":668.155038195,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":668.860748905,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to notebook\n"}
+,{"stream_name":"stderr","time":669.231345897,"data":"[NbConvertApp] Writing 1214408 bytes to __notebook__.ipynb\n"}
+,{"stream_name":"stderr","time":671.772663244,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to html\n"}
+,{"stream_name":"stderr","time":672.833384861,"data":"[NbConvertApp] Support files will be in __results___files/\n"}
+,{"stream_name":"stderr","time":672.83344531,"data":"[NbConvertApp] Making directory __results___files\n"}
+,{"stream_name":"stderr","time":672.833933896,"data":"[NbConvertApp] Making directory __results___files\n"}
+,{"stream_name":"stderr","time":672.834761566,"data":"[NbConvertApp] Writing 511985 bytes to __results__.html\n"}
+]

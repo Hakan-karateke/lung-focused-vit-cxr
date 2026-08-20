@@ -1,0 +1,37 @@
+{
+  "kosullar": [
+    "baseline",
+    "lungs",
+    "non_lungs",
+    "corners",
+    "border",
+    "subdiaphragm",
+    "upper",
+    "center",
+    "rand_lungs",
+    "rand_20",
+    "rand_30"
+  ],
+  "kontrol_eslesmesi": {
+    "lungs": "rand_lungs",
+    "non_lungs": null,
+    "corners": "rand_20",
+    "center": "rand_20",
+    "upper": "rand_20",
+    "border": "rand_30",
+    "subdiaphragm": "rand_30"
+  },
+  "alan_oranlari": {
+    "corners": 0.19140625,
+    "border": 0.2955994897959184,
+    "subdiaphragm": 0.28125,
+    "upper": 0.20089285714285715,
+    "center": 0.19642857142857142
+  },
+  "dolgu_degeri": 122,
+  "n": {
+    "Ic test": 864,
+    "RSNA": 500,
+    "NIH": 500
+  }
+}
