@@ -1,0 +1,36 @@
+# ── Line endings ─────────────────────────────────────────────────────────
+# Normalise to LF inside the repository, check out native on each platform.
+* text=auto
+
+*.py    text
+*.tex   text
+*.cls   text
+*.sty   text
+*.md    text
+*.csv   text
+*.json  text
+*.ipynb text
+*.html  text
+*.svg   text
+
+# ── Git LFS ──────────────────────────────────────────────────────────────
+# Figures are regenerated on every manuscript revision. Without LFS each
+# regeneration would append a fresh multi-megabyte blob to history forever;
+# with LFS the pointer changes and the payload is deduplicated. Current LFS
+# payload is ~45 MB, well inside GitHub's 1 GB free quota.
+*.png  filter=lfs diff=lfs merge=lfs -text
+*.pdf  filter=lfs diff=lfs merge=lfs -text
+*.npz  filter=lfs diff=lfs merge=lfs -text
+*.docx filter=lfs diff=lfs merge=lfs -text
+*.eps  filter=lfs diff=lfs merge=lfs -text
+
+# ── Diff behaviour ───────────────────────────────────────────────────────
+# Notebooks are JSON; a textual diff is noisy but still more useful than none.
+*.ipynb diff
+
+# ── Language statistics (GitHub Linguist) ────────────────────────────────
+# Vendored IEEE template files should not count towards repository language
+# breakdown, and generated output should not be presented as source.
+paper/ieeecolor.cls linguist-vendored
+paper/generic.sty   linguist-vendored
+kaggle/**/output/** linguist-generated
