@@ -1,0 +1,270 @@
+7.5s 1 0.00s - Debugger warning: It seems that frozen modules are being used, which may
+7.5s 2 0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
+7.5s 3 0.00s - to python to disable frozen modules.
+7.5s 4 0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
+8.1s 5 0.00s - Debugger warning: It seems that frozen modules are being used, which may
+8.1s 6 0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
+8.1s 7 0.00s - to python to disable frozen modules.
+8.1s 8 0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
+22.5s 9 ==============================================================
+22.5s 10 Cihaz : cuda
+22.5s 11 GPU   : Tesla T4
+22.5s 12 VRAM  : 15.6 GB
+22.5s 13 Torch : 2.10.0+cu128
+22.5s 14 Kollar: raw, roi, lung   |  QUICK_TEST = False
+22.5s 15 Onbellek: /kaggle/working/_ablation_cache
+22.5s 16 ==============================================================
+264.3s 17 Bulunan girdiler
+264.3s 18 Siniflandirma : /kaggle/input/datasets/yusufmurtaza01/chest-xray-pneumonia-balanced-dataset
+264.3s 19 RSNA          : /kaggle/input/competitions/rsna-pneumonia-detection-challenge
+264.3s 20 NIH           : /kaggle/input/datasets/nih-chest-xrays/data
+264.6s 21 ======================================================================
+264.6s 22 VERI BOLMESI
+264.6s 23 ======================================================================
+264.6s 24 Havuz: val(1700) + test(30) | train sizintisi: 0
+264.6s 25 TRAIN :  6800 | NORMAL:3400  PNEUMONIA:3400 | imza ccf23597ec992137
+264.6s 26 VAL   :   864 | NORMAL: 432  PNEUMONIA: 432 | imza 779ac7f6455a7ac8
+264.6s 27 TEST  :   864 | NORMAL: 432  PNEUMONIA: 432 | imza 3a25cbb40ab471d7
+264.6s 28 ----------------------------------------------------------------------
+264.6s 29 val <-> test cakisma : 0
+264.6s 30 train <-> val/test   : 0
+264.6s 31 ======================================================================
+278.2s 32 ianpan/chest-x-ray-basic yukleniyor... (transformers 5.0.0 )
+278.4s 33 Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+278.4s 34 
+278.4s 35 Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+278.6s 36 A new version of the following files was downloaded from https://huggingface.co/ianpan/chest-x-ray-basic:
+278.6s 37 - configuration.py
+278.6s 38 . Make sure to double-check they do not contain any added malicious code. To avoid downloading new versions of the code file, you can pin a revision.
+278.6s 39 
+278.6s 40 A new version of the following files was downloaded from https://huggingface.co/ianpan/chest-x-ray-basic:
+278.6s 41 - configuration.py
+278.6s 42 . Make sure to double-check they do not contain any added malicious code. To avoid downloading new versions of the code file, you can pin a revision.
+283.4s 43 A new version of the following files was downloaded from https://huggingface.co/ianpan/chest-x-ray-basic:
+283.4s 44 - unet.py
+283.4s 45 . Make sure to double-check they do not contain any added malicious code. To avoid downloading new versions of the code file, you can pin a revision.
+283.4s 46 
+283.4s 47 A new version of the following files was downloaded from https://huggingface.co/ianpan/chest-x-ray-basic:
+283.4s 48 - unet.py
+283.4s 49 . Make sure to double-check they do not contain any added malicious code. To avoid downloading new versions of the code file, you can pin a revision.
+283.4s 50 A new version of the following files was downloaded from https://huggingface.co/ianpan/chest-x-ray-basic:
+283.4s 51 - modeling.py
+283.4s 52 - unet.py
+283.4s 53 . Make sure to double-check they do not contain any added malicious code. To avoid downloading new versions of the code file, you can pin a revision.
+283.4s 54 
+283.4s 55 A new version of the following files was downloaded from https://huggingface.co/ianpan/chest-x-ray-basic:
+283.4s 56 - modeling.py
+283.4s 57 - unet.py
+283.4s 58 . Make sure to double-check they do not contain any added malicious code. To avoid downloading new versions of the code file, you can pin a revision.
+291.1s 59 Segmentasyon modeli hazir (akciger Dice: R=0.957, L=0.948 - model karti degeri).
+291.2s 60 Uc kollu on-isleme hatti hazir.
+291.4s 61 Uc kol icin cevrimdisi on-isleme basliyor...
+291.4s 62 
+352.0s 63 [train] 500/6800  (61 sn)
+410.6s 64 [train] 1000/6800  (119 sn)
+470.3s 65 [train] 1500/6800  (179 sn)
+528.8s 66 [train] 2000/6800  (237 sn)
+589.4s 67 [train] 2500/6800  (298 sn)
+649.7s 68 [train] 3000/6800  (358 sn)
+706.4s 69 [train] 3500/6800  (415 sn)
+758.8s 70 [train] 4000/6800  (467 sn)
+812.3s 71 [train] 4500/6800  (521 sn)
+863.8s 72 [train] 5000/6800  (572 sn)
+915.8s 73 [train] 5500/6800  (624 sn)
+968.5s 74 [train] 6000/6800  (677 sn)
+1020.0s 75 [train] 6500/6800  (729 sn)
+1051.6s 76 [train] tamam: 6800 kayit | geri cekilme=0 | hata=0 | 760 sn
+1108.2s 77 [val] 500/864  (57 sn)
+1148.7s 78 [val] tamam: 864 kayit | geri cekilme=0 | hata=0 | 97 sn
+1204.3s 79 [test] 500/864  (56 sn)
+1243.9s 80 [test] tamam: 864 kayit | geri cekilme=0 | hata=0 | 95 sn
+1243.9s 81 
+1243.9s 82 Onbellek hazir: /kaggle/working/_ablation_cache  |  toplam geri cekilme: 0
+1248.2s 83 Downloading: "https://download.pytorch.org/models/vit_b_16-c867db91.pth" to /root/.cache/torch/hub/checkpoints/vit_b_16-c867db91.pth
+1248.2s 84 0%|          | 0.00/330M [00:00<?, ?B/s]
+1248.3s 85 0%|          | 0.00/330M [00:00<?, ?B/s]  1%|▏         | 4.88M/330M [00:00<00:06, 50.7MB/s]
+1248.4s 86 1%|▏         | 4.88M/330M [00:00<00:06, 50.7MB/s]  7%|▋         | 23.2M/330M [00:00<00:02, 134MB/s]
+1248.5s 87 7%|▋         | 23.2M/330M [00:00<00:02, 134MB/s]  14%|█▍        | 46.1M/330M [00:00<00:01, 182MB/s]
+1248.6s 88 14%|█▍        | 46.1M/330M [00:00<00:01, 182MB/s] 21%|██        | 69.6M/330M [00:00<00:01, 207MB/s]
+1248.7s 89 21%|██        | 69.6M/330M [00:00<00:01, 207MB/s] 28%|██▊       | 93.2M/330M [00:00<00:01, 221MB/s]
+1248.8s 90 28%|██▊       | 93.2M/330M [00:00<00:01, 221MB/s] 35%|███▌      | 116M/330M [00:00<00:00, 227MB/s]
+1248.9s 91 35%|███▌      | 116M/330M [00:00<00:00, 227MB/s]  42%|████▏     | 138M/330M [00:00<00:00, 210MB/s]
+1249.1s 92 42%|████▏     | 138M/330M [00:00<00:00, 210MB/s] 48%|████▊     | 158M/330M [00:00<00:00, 202MB/s]
+1249.2s 93 48%|████▊     | 158M/330M [00:00<00:00, 202MB/s] 54%|█████▎    | 178M/330M [00:00<00:00, 195MB/s]
+1249.3s 94 54%|█████▎    | 178M/330M [00:00<00:00, 195MB/s] 59%|█████▉    | 196M/330M [00:01<00:00, 192MB/s]
+1249.4s 95 59%|█████▉    | 196M/330M [00:01<00:00, 192MB/s] 65%|██████▌   | 215M/330M [00:01<00:00, 191MB/s]
+1249.5s 96 65%|██████▌   | 215M/330M [00:01<00:00, 191MB/s] 71%|███████   | 233M/330M [00:01<00:00, 189MB/s]
+1249.6s 97 71%|███████   | 233M/330M [00:01<00:00, 189MB/s] 76%|███████▌  | 251M/330M [00:01<00:00, 187MB/s]
+1249.7s 98 76%|███████▌  | 251M/330M [00:01<00:00, 187MB/s] 81%|████████▏ | 269M/330M [00:01<00:00, 183MB/s]
+1249.8s 99 81%|████████▏ | 269M/330M [00:01<00:00, 183MB/s] 87%|████████▋ | 288M/330M [00:01<00:00, 189MB/s]
+1249.9s 100 87%|████████▋ | 288M/330M [00:01<00:00, 189MB/s] 94%|█████████▎| 309M/330M [00:01<00:00, 197MB/s]
+1250.0s 101 94%|█████████▎| 309M/330M [00:01<00:00, 197MB/s]100%|█████████▉| 330M/330M [00:01<00:00, 202MB/s]
+1250.0s 102 100%|█████████▉| 330M/330M [00:01<00:00, 202MB/s]100%|██████████| 330M/330M [00:01<00:00, 194MB/s]
+1250.1s 103 100%|██████████| 330M/330M [00:01<00:00, 194MB/s]
+1250.1s 104 
+1250.1s 105 
+1250.4s 106 
+1250.4s 107 ======================================================================
+1250.4s 108 KOL: raw  (A · Segmentasyonsuz)  |  15 epoch  |  n_train = 6800
+1250.4s 109 ======================================================================
+1522.5s 110 Ep  1 | TR kayip 0.1721 F1 0.9335 | VAL kayip 0.1219 F1 0.9529 acc 0.9537 *
+1792.9s 111 Ep  2 | TR kayip 0.1141 F1 0.9617 | VAL kayip 0.1296 F1 0.9632 acc 0.9630 *
+2062.8s 112 Ep  3 | TR kayip 0.0969 F1 0.9683 | VAL kayip 0.1674 F1 0.9453 acc 0.9479
+2332.1s 113 Ep  4 | TR kayip 0.0821 F1 0.9735 | VAL kayip 0.0936 F1 0.9703 acc 0.9699 *
+2601.6s 114 Ep  5 | TR kayip 0.0735 F1 0.9756 | VAL kayip 0.0875 F1 0.9686 acc 0.9688
+2871.7s 115 Ep  6 | TR kayip 0.0647 F1 0.9794 | VAL kayip 0.1286 F1 0.9596 acc 0.9606
+3141.3s 116 Ep  7 | TR kayip 0.0504 F1 0.9842 | VAL kayip 0.1269 F1 0.9669 acc 0.9676
+3411.6s 117 Ep  8 | TR kayip 0.0543 F1 0.9822 | VAL kayip 0.0835 F1 0.9747 acc 0.9745 *
+3681.3s 118 Ep  9 | TR kayip 0.0455 F1 0.9848 | VAL kayip 0.1523 F1 0.9642 acc 0.9653
+3951.3s 119 Ep 10 | TR kayip 0.0413 F1 0.9862 | VAL kayip 0.0843 F1 0.9757 acc 0.9757 *
+4221.9s 120 Ep 11 | TR kayip 0.0367 F1 0.9891 | VAL kayip 0.0781 F1 0.9745 acc 0.9745
+4491.8s 121 Ep 12 | TR kayip 0.0269 F1 0.9910 | VAL kayip 0.0894 F1 0.9769 acc 0.9769 *
+4761.7s 122 Ep 13 | TR kayip 0.0288 F1 0.9903 | VAL kayip 0.1075 F1 0.9765 acc 0.9769
+5031.2s 123 Ep 14 | TR kayip 0.0248 F1 0.9921 | VAL kayip 0.0951 F1 0.9754 acc 0.9757
+5301.4s 124 Ep 15 | TR kayip 0.0222 F1 0.9925 | VAL kayip 0.0997 F1 0.9754 acc 0.9757
+5301.4s 125 -> en iyi Val F1 = 0.9769  (4051 sn)
+5302.7s 126 
+5302.7s 127 ======================================================================
+5302.7s 128 KOL: roi  (B · Yalnizca RoI kirpma)  |  15 epoch  |  n_train = 6800
+5302.7s 129 ======================================================================
+5572.0s 130 Ep  1 | TR kayip 0.1941 F1 0.9267 | VAL kayip 0.1371 F1 0.9516 acc 0.9525 *
+5841.7s 131 Ep  2 | TR kayip 0.1280 F1 0.9538 | VAL kayip 0.1057 F1 0.9599 acc 0.9595 *
+6111.8s 132 Ep  3 | TR kayip 0.1048 F1 0.9642 | VAL kayip 0.1408 F1 0.9494 acc 0.9514
+6380.7s 133 Ep  4 | TR kayip 0.0884 F1 0.9691 | VAL kayip 0.1022 F1 0.9646 acc 0.9653 *
+6650.1s 134 Ep  5 | TR kayip 0.0843 F1 0.9715 | VAL kayip 0.1185 F1 0.9695 acc 0.9699 *
+6918.8s 135 Ep  6 | TR kayip 0.0662 F1 0.9775 | VAL kayip 0.1120 F1 0.9684 acc 0.9688
+7189.7s 136 Ep  7 | TR kayip 0.0552 F1 0.9809 | VAL kayip 0.0937 F1 0.9718 acc 0.9722 *
+7458.9s 137 Ep  8 | TR kayip 0.0508 F1 0.9833 | VAL kayip 0.0910 F1 0.9765 acc 0.9769 *
+7728.1s 138 Ep  9 | TR kayip 0.0426 F1 0.9868 | VAL kayip 0.1479 F1 0.9567 acc 0.9583
+7997.5s 139 Ep 10 | TR kayip 0.0377 F1 0.9868 | VAL kayip 0.0826 F1 0.9777 acc 0.9780 *
+8267.4s 140 Ep 11 | TR kayip 0.0314 F1 0.9904 | VAL kayip 0.1071 F1 0.9741 acc 0.9745
+8537.4s 141 Ep 12 | TR kayip 0.0229 F1 0.9913 | VAL kayip 0.0932 F1 0.9778 acc 0.9780 *
+8807.1s 142 Ep 13 | TR kayip 0.0297 F1 0.9912 | VAL kayip 0.1104 F1 0.9764 acc 0.9769
+9077.3s 143 Ep 14 | TR kayip 0.0191 F1 0.9935 | VAL kayip 0.0939 F1 0.9801 acc 0.9803 *
+9347.6s 144 Ep 15 | TR kayip 0.0193 F1 0.9931 | VAL kayip 0.0925 F1 0.9801 acc 0.9803
+9347.6s 145 -> en iyi Val F1 = 0.9801  (4045 sn)
+9348.9s 146 
+9348.9s 147 ======================================================================
+9348.9s 148 KOL: lung  (C · Maske + RoI (onerilen))  |  15 epoch  |  n_train = 6800
+9348.9s 149 ======================================================================
+9618.4s 150 Ep  1 | TR kayip 0.2016 F1 0.9243 | VAL kayip 0.1503 F1 0.9483 acc 0.9479 *
+9888.3s 151 Ep  2 | TR kayip 0.1359 F1 0.9552 | VAL kayip 0.1402 F1 0.9479 acc 0.9479
+10157.8s 152 Ep  3 | TR kayip 0.1156 F1 0.9608 | VAL kayip 0.1414 F1 0.9403 acc 0.9433
+10427.9s 153 Ep  4 | TR kayip 0.1042 F1 0.9639 | VAL kayip 0.1046 F1 0.9684 acc 0.9688 *
+10697.7s 154 Ep  5 | TR kayip 0.0928 F1 0.9689 | VAL kayip 0.1031 F1 0.9744 acc 0.9745 *
+10967.4s 155 Ep  6 | TR kayip 0.0886 F1 0.9676 | VAL kayip 0.1013 F1 0.9669 acc 0.9676
+11236.7s 156 Ep  7 | TR kayip 0.0789 F1 0.9730 | VAL kayip 0.1295 F1 0.9646 acc 0.9653
+11506.1s 157 Ep  8 | TR kayip 0.0701 F1 0.9751 | VAL kayip 0.1505 F1 0.9518 acc 0.9537
+11776.8s 158 Ep  9 | TR kayip 0.0648 F1 0.9780 | VAL kayip 0.1557 F1 0.9518 acc 0.9537
+12047.1s 159 Ep 10 | TR kayip 0.0598 F1 0.9795 | VAL kayip 0.1270 F1 0.9643 acc 0.9653
+12316.9s 160 Ep 11 | TR kayip 0.0518 F1 0.9832 | VAL kayip 0.0997 F1 0.9693 acc 0.9699
+12586.5s 161 Ep 12 | TR kayip 0.0412 F1 0.9873 | VAL kayip 0.1103 F1 0.9742 acc 0.9745
+12856.0s 162 Ep 13 | TR kayip 0.0430 F1 0.9872 | VAL kayip 0.1101 F1 0.9680 acc 0.9688
+13124.8s 163 Ep 14 | TR kayip 0.0365 F1 0.9876 | VAL kayip 0.0933 F1 0.9766 acc 0.9769 *
+13394.7s 164 Ep 15 | TR kayip 0.0387 F1 0.9858 | VAL kayip 0.0966 F1 0.9766 acc 0.9769
+13394.7s 165 -> en iyi Val F1 = 0.9766  (4045 sn)
+13394.7s 166 
+13394.7s 167 ======================================================================
+13394.7s 168 Tum kollarin egitimi tamamlandi (202.5 dk)
+13394.7s 169 raw   en iyi Val F1 = 0.9769
+13394.7s 170 roi   en iyi Val F1 = 0.9801
+13394.7s 171 lung  en iyi Val F1 = 0.9766
+13394.7s 172 ======================================================================
+13407.7s 173 [raw  ] Acc 0.9803 | F1 0.9803 | AUC 0.9981
+13419.9s 174 [roi  ] Acc 0.9734 | F1 0.9730 | AUC 0.9976
+13432.1s 175 [lung ] Acc 0.9826 | F1 0.9825 | AUC 0.9982
+13432.1s 176 
+13432.1s 177 ==============================================================
+13432.1s 178 IC TEST OZETI
+13432.1s 179 ==============================================================
+13432.1s 180 N     AUC      AP     Acc      F1
+13432.1s 181 kol
+13432.1s 182 raw   864  0.9981  0.9983  0.9803  0.9803
+13432.1s 183 roi   864  0.9976  0.9977  0.9734  0.9730
+13432.1s 184 lung  864  0.9982  0.9983  0.9826  0.9825
+13432.1s 185 ==============================================================
+13516.4s 186 RSNA : 800 goruntu (400 pnomoni / 400 normal)
+13516.4s 187 NIH  : 800 goruntu (400 pnomoni / 400 normal)
+13516.6s 188 
+13516.6s 189 >>> RSNA cikarimi (800 goruntu, uc kol)...
+13537.3s 190 [RSNA] 200/800  (21 sn)
+13558.1s 191 [RSNA] 400/800  (41 sn)
+13578.9s 192 [RSNA] 600/800  (62 sn)
+13599.7s 193 [RSNA] 800/800  (83 sn)
+13599.7s 194 [RSNA] bitti: 800 goruntu | 83 sn | geri cekilme %0.0
+13599.7s 195 
+13599.7s 196 >>> NIH cikarimi (800 goruntu, uc kol)...
+13621.5s 197 [NIH] 200/800  (22 sn)
+13643.3s 198 [NIH] 400/800  (44 sn)
+13665.5s 199 [NIH] 600/800  (66 sn)
+13687.4s 200 [NIH] 800/800  (88 sn)
+13687.4s 201 [NIH] bitti: 800 goruntu | 88 sn | geri cekilme %0.0
+13687.5s 202 ========================================================================================================
+13687.5s 203 TUM SONUCLAR  (esik = 0,50)
+13687.5s 204 ========================================================================================================
+13687.5s 205 kume  kol   N   AUC    AP   Acc    F1  Duyarlilik  Ozgulluk  Brier   ECE
+13687.5s 206 Ic test  raw 864 0.998 0.998 0.980 0.980       0.979     0.981  0.016 0.014
+13687.5s 207 Ic test  roi 864 0.998 0.998 0.973 0.973       0.961     0.986  0.023 0.023
+13687.5s 208 Ic test lung 864 0.998 0.998 0.983 0.982       0.972     0.993  0.014 0.013
+13687.5s 209 RSNA (yetiskin)  raw 800 0.916 0.899 0.785 0.817       0.962     0.607  0.194 0.198
+13687.5s 210 RSNA (yetiskin)  roi 800 0.918 0.890 0.850 0.861       0.930     0.770  0.142 0.143
+13687.5s 211 RSNA (yetiskin) lung 800 0.926 0.920 0.821 0.843       0.960     0.682  0.173 0.174
+13687.5s 212 NIH ChestX-ray14  raw 800 0.679 0.647 0.606 0.682       0.845     0.367  0.367 0.365
+13687.5s 213 NIH ChestX-ray14  roi 800 0.679 0.645 0.639 0.676       0.752     0.525  0.350 0.345
+13687.5s 214 NIH ChestX-ray14 lung 800 0.689 0.654 0.642 0.695       0.815     0.470  0.348 0.347
+13687.5s 215 ========================================================================================================
+13687.6s 216 Istatistik araclari hazir: DeLong, eslestirilmis bootstrap, McNemar.
+13687.7s 217 Bootstrap (2000 tekrar) hesaplaniyor...
+13687.7s 218 
+13692.9s 219 Ic test: tamam
+13697.7s 220 RSNA (yetiskin): tamam
+13702.5s 221 NIH ChestX-ray14: tamam
+13702.5s 222 
+13702.5s 223 ================================================================================================================
+13702.5s 224 ESLESTIRILMIS KARSILASTIRMALAR  (dAUC > 0 -> ilk kol ustun)
+13702.5s 225 ================================================================================================================
+13702.5s 226 kume karsilastirma   dAUC  GA alt  GA ust  DeLong z  DeLong p McNemar b/c  McNemar p
+13702.5s 227 Ic test    lung - raw  0.000  -0.002   0.002     0.027     0.978       12/10      0.832
+13702.5s 228 Ic test    lung - roi  0.001  -0.001   0.002     0.688     0.491        14/6      0.115
+13702.5s 229 Ic test     roi - raw -0.001  -0.002   0.001    -0.752     0.452        4/10      0.180
+13702.5s 230 RSNA (yetiskin)    lung - raw  0.010  -0.005   0.025     1.306     0.192       56/27      0.002
+13702.5s 231 RSNA (yetiskin)    lung - roi  0.008  -0.007   0.023     1.046     0.296       27/50      0.012
+13702.5s 232 RSNA (yetiskin)     roi - raw  0.002  -0.010   0.013     0.340     0.734       76/24      0.000
+13702.5s 233 NIH ChestX-ray14    lung - raw  0.010  -0.014   0.035     0.805     0.421       68/39      0.007
+13702.5s 234 NIH ChestX-ray14    lung - roi  0.010  -0.013   0.034     0.850     0.395       48/45      0.836
+13702.5s 235 NIH ChestX-ray14     roi - raw -0.000  -0.018   0.017    -0.014     0.989       72/46      0.021
+13702.5s 236 ================================================================================================================
+13702.5s 237 Not: GA aralığı 0'ı içermiyorsa fark %5 düzeyinde anlamlıdır.
+13708.2s 238 [raw  ] n=120  LFR = 0.005 +/- 0.011
+13711.4s 239 [roi  ] n=120  LFR = 0.111 +/- 0.130
+13714.6s 240 [lung ] n=120  LFR = 0.909 +/- 0.077
+13715.9s 241 Kaydedilenler:
+13715.9s 242 abl_fig_01_arms_preview.png                1.2 MB
+13715.9s 243 abl_fig_02_training.png                    0.2 MB
+13715.9s 244 abl_fig_03_auc_by_arm.png                  0.1 MB
+13715.9s 245 abl_fig_04_roc.png                         0.1 MB
+13715.9s 246 abl_fig_05_effect.png                      0.1 MB
+13715.9s 247 abl_fig_06_lfr.png                         0.0 MB
+13715.9s 248 ablation_auc_ci.csv                        0.0 MB
+13715.9s 249 ablation_metrics.csv                       0.0 MB
+13715.9s 250 ablation_pairwise_tests.csv                0.0 MB
+13715.9s 251 ablation_predictions.npz                   0.0 MB
+13715.9s 252 ablation_summary.json                      0.0 MB
+13715.9s 253 ablation_vit_lung.pth                    343.3 MB
+13715.9s 254 ablation_vit_raw.pth                     343.3 MB
+13715.9s 255 ablation_vit_roi.pth                     343.3 MB
+13721.9s 256 /usr/local/lib/python3.12/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\|'
+13721.9s 257 cells[i][c] = re.sub('\\\\\|', '|', cell)
+13722.1s 258 /usr/local/lib/python3.12/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\_'
+13722.1s 259 text = re.sub(r'_', '\_', text) # Escape underscores in display text
+13722.8s 260 [NbConvertApp] Converting notebook __notebook__.ipynb to notebook
+13723.2s 261 [NbConvertApp] Writing 2035111 bytes to __notebook__.ipynb
+13725.7s 262 [NbConvertApp] Converting notebook __notebook__.ipynb to html
+13726.8s 263 [NbConvertApp] Support files will be in __results___files/
+13726.8s 264 [NbConvertApp] Making directory __results___files
+13726.8s 265 [NbConvertApp] Making directory __results___files
+13726.8s 266 [NbConvertApp] Making directory __results___files
+13726.8s 267 [NbConvertApp] Making directory __results___files
+13726.8s 268 [NbConvertApp] Making directory __results___files
+13726.8s 269 [NbConvertApp] Making directory __results___files
+13726.8s 270 [NbConvertApp] Writing 664382 bytes to __results__.html
