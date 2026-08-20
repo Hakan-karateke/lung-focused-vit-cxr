@@ -150,7 +150,7 @@ figure number.
 
 ## Git LFS
 
-Binary artefacts (`*.png`, `*.pdf`, `*.npz`, `*.docx`, `*.eps`) are stored in Git LFS.
+Binary artefacts (`*.png`, `*.jpg`, `*.pdf`, `*.npz`, `*.docx`, `*.eps`) are stored in Git LFS.
 Figures are regenerated on every manuscript revision, and without LFS each
 regeneration would append a fresh multi-megabyte blob to history permanently.
 

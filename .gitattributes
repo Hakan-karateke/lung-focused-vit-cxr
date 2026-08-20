@@ -19,6 +19,8 @@
 # with LFS the pointer changes and the payload is deduplicated. Current LFS
 # payload is ~45 MB, well inside GitHub's 1 GB free quota.
 *.png  filter=lfs diff=lfs merge=lfs -text
+*.jpg  filter=lfs diff=lfs merge=lfs -text
+*.jpeg filter=lfs diff=lfs merge=lfs -text
 *.pdf  filter=lfs diff=lfs merge=lfs -text
 *.npz  filter=lfs diff=lfs merge=lfs -text
 *.docx filter=lfs diff=lfs merge=lfs -text
