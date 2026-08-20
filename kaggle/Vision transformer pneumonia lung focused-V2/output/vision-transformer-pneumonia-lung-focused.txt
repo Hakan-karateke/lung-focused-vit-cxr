@@ -1,0 +1,184 @@
+6.7s 1 0.00s - Debugger warning: It seems that frozen modules are being used, which may
+6.7s 2 0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
+6.7s 3 0.00s - to python to disable frozen modules.
+6.7s 4 0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
+7.3s 5 0.00s - Debugger warning: It seems that frozen modules are being used, which may
+7.3s 6 0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
+7.3s 7 0.00s - to python to disable frozen modules.
+7.3s 8 0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
+20.9s 9 ====================================================
+20.9s 10 Cihaz : cuda
+20.9s 11 GPU   : Tesla T4
+20.9s 12 VRAM  : 15.6 GB
+20.9s 13 ====================================================
+20.9s 14 
+20.9s 15 Hazir | PyTorch 2.9.0+cu126
+31.6s 16 ianpan/chest-x-ray-basic segmentasyon modeli yukleniyor...
+31.8s 17 Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+31.8s 18 
+31.8s 19 Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+31.8s 20 A new version of the following files was downloaded from https://huggingface.co/ianpan/chest-x-ray-basic:
+31.8s 21 - configuration.py
+31.8s 22 . Make sure to double-check they do not contain any added malicious code. To avoid downloading new versions of the code file, you can pin a revision.
+31.8s 23 
+31.8s 24 A new version of the following files was downloaded from https://huggingface.co/ianpan/chest-x-ray-basic:
+31.8s 25 - configuration.py
+31.8s 26 . Make sure to double-check they do not contain any added malicious code. To avoid downloading new versions of the code file, you can pin a revision.
+36.1s 27 A new version of the following files was downloaded from https://huggingface.co/ianpan/chest-x-ray-basic:
+36.1s 28 - unet.py
+36.1s 29 . Make sure to double-check they do not contain any added malicious code. To avoid downloading new versions of the code file, you can pin a revision.
+36.1s 30 
+36.1s 31 A new version of the following files was downloaded from https://huggingface.co/ianpan/chest-x-ray-basic:
+36.1s 32 - unet.py
+36.1s 33 . Make sure to double-check they do not contain any added malicious code. To avoid downloading new versions of the code file, you can pin a revision.
+36.1s 34 A new version of the following files was downloaded from https://huggingface.co/ianpan/chest-x-ray-basic:
+36.1s 35 - modeling.py
+36.1s 36 - unet.py
+36.1s 37 . Make sure to double-check they do not contain any added malicious code. To avoid downloading new versions of the code file, you can pin a revision.
+36.1s 38 
+36.1s 39 A new version of the following files was downloaded from https://huggingface.co/ianpan/chest-x-ray-basic:
+36.1s 40 - modeling.py
+36.1s 41 - unet.py
+36.1s 42 . Make sure to double-check they do not contain any added malicious code. To avoid downloading new versions of the code file, you can pin a revision.
+42.9s 43 Segmentasyon modeli hazir (Dice: R=0.957, L=0.948, Kalp=0.943).
+43.0s 44 Maskeleme + RoI fonksiyonlari hazir.
+48.1s 45 Onizleme hazir: akciger disi (omurga/mediasten/kose dahil) silindi.
+55.8s 46 ==============================================================
+55.8s 47 Havuz: Val(1700) + Test(30) = 1730
+61.9s 48 Train sizintisi yok.
+61.9s 49 Havuzda NORMAL=865, PNEUMONIA=865 | her sette sinif basina=432
+61.9s 50 ==============================================================
+61.9s 51 TRAIN :  6800  | NORMAL:3400  PNEUMONIA:3400
+61.9s 52 VAL   :   864  | NORMAL: 432  PNEUMONIA: 432
+61.9s 53 TEST  :   864  | NORMAL: 432  PNEUMONIA: 432
+61.9s 54 --------------------------------------------------------------
+61.9s 55 Val<->Test cakisma : 0
+61.9s 56 Train<->Val/Test   : 0
+61.9s 57 ==============================================================
+62.1s 58 Offline maskeleme + kirpma basliyor...
+62.1s 59 
+106.6s 60 [train] 500/6800  (44s)
+150.7s 61 [train] 1000/6800  (88s)
+195.3s 62 [train] 1500/6800  (133s)
+238.5s 63 [train] 2000/6800  (176s)
+283.6s 64 [train] 2500/6800  (221s)
+327.5s 65 [train] 3000/6800  (265s)
+369.6s 66 [train] 3500/6800  (307s)
+406.8s 67 [train] 4000/6800  (345s)
+444.4s 68 [train] 4500/6800  (382s)
+480.2s 69 [train] 5000/6800  (418s)
+517.4s 70 [train] 5500/6800  (455s)
+554.9s 71 [train] 6000/6800  (493s)
+591.9s 72 [train] 6500/6800  (530s)
+614.4s 73 [train] tamam: 6800 kayit | fallback=0 | hata=0 | 552s
+655.5s 74 [val] 500/864  (41s)
+685.4s 75 [val] tamam: 864 kayit | fallback=0 | hata=0 | 71s
+726.4s 76 [test] 500/864  (41s)
+755.7s 77 [test] tamam: 864 kayit | fallback=0 | hata=0 | 71s
+755.7s 78 
+755.7s 79 Onbellek hazir: /kaggle/working/lung_focused
+755.9s 80 ========================================================
+755.9s 81 ONBELLEKLENMIS (AKCIGER-ODAKLI) VERI
+755.9s 82 ========================================================
+755.9s 83 TRAIN :  6800 | NORMAL:3400  PNEUMONIA:3400
+755.9s 84 VAL   :   864 | NORMAL: 432  PNEUMONIA: 432
+755.9s 85 TEST  :   864 | NORMAL: 432  PNEUMONIA: 432
+755.9s 86 ========================================================
+757.9s 87 Downloading: "https://download.pytorch.org/models/vit_b_16-c867db91.pth" to /root/.cache/torch/hub/checkpoints/vit_b_16-c867db91.pth
+757.9s 88 0%|          | 0.00/330M [00:00<?, ?B/s]
+758.0s 89 0%|          | 0.00/330M [00:00<?, ?B/s]  6%|▌         | 19.4M/330M [00:00<00:01, 202MB/s]
+758.1s 90 6%|▌         | 19.4M/330M [00:00<00:01, 202MB/s] 12%|█▏        | 40.1M/330M [00:00<00:01, 210MB/s]
+758.2s 91 12%|█▏        | 40.1M/330M [00:00<00:01, 210MB/s] 19%|█▉        | 63.5M/330M [00:00<00:01, 226MB/s]
+758.3s 92 19%|█▉        | 63.5M/330M [00:00<00:01, 226MB/s] 26%|██▌       | 85.1M/330M [00:00<00:01, 220MB/s]
+758.4s 93 26%|██▌       | 85.1M/330M [00:00<00:01, 220MB/s] 32%|███▏      | 106M/330M [00:00<00:01, 217MB/s]
+758.5s 94 32%|███▏      | 106M/330M [00:00<00:01, 217MB/s]  38%|███▊      | 127M/330M [00:00<00:01, 213MB/s]
+758.6s 95 38%|███▊      | 127M/330M [00:00<00:01, 213MB/s] 45%|████▍     | 148M/330M [00:00<00:00, 214MB/s]
+758.7s 96 45%|████▍     | 148M/330M [00:00<00:00, 214MB/s] 51%|█████     | 169M/330M [00:00<00:00, 215MB/s]
+758.8s 97 51%|█████     | 169M/330M [00:00<00:00, 215MB/s] 57%|█████▋    | 189M/330M [00:00<00:00, 216MB/s]
+758.9s 98 57%|█████▋    | 189M/330M [00:00<00:00, 216MB/s] 64%|██████▎   | 210M/330M [00:01<00:00, 217MB/s]
+759.0s 99 64%|██████▎   | 210M/330M [00:01<00:00, 217MB/s] 70%|██████▉   | 231M/330M [00:01<00:00, 216MB/s]
+759.1s 100 70%|██████▉   | 231M/330M [00:01<00:00, 216MB/s] 76%|███████▋  | 252M/330M [00:01<00:00, 216MB/s]
+759.2s 101 76%|███████▋  | 252M/330M [00:01<00:00, 216MB/s] 83%|████████▎ | 272M/330M [00:01<00:00, 215MB/s]
+759.3s 102 83%|████████▎ | 272M/330M [00:01<00:00, 215MB/s] 89%|████████▊ | 293M/330M [00:01<00:00, 214MB/s]
+759.4s 103 89%|████████▊ | 293M/330M [00:01<00:00, 214MB/s] 95%|█████████▍| 314M/330M [00:01<00:00, 214MB/s]
+759.5s 104 95%|█████████▍| 314M/330M [00:01<00:00, 214MB/s]100%|██████████| 330M/330M [00:01<00:00, 216MB/s]
+759.5s 105 100%|██████████| 330M/330M [00:01<00:00, 216MB/s]
+759.5s 106 
+759.5s 107 
+759.8s 108 Toplam parametre: 85,800,194 | Egitilebilir: 14,178,818 (16.5%)
+759.9s 109 ====================================================================
+759.9s 110 AKCIGER-ODAKLI ViT EGITIMI | batch=16 | 15 epoch | sadece CE
+759.9s 111 ====================================================================
+1030.8s 112 Ep  1 | TR loss 0.1938 f1 0.9290 | VAL loss 0.1502 f1 0.9454 acc 0.9456 *
+1298.2s 113 Ep  2 | TR loss 0.1401 f1 0.9532 | VAL loss 0.1945 f1 0.9314 acc 0.9352
+1566.1s 114 Ep  3 | TR loss 0.1155 f1 0.9603 | VAL loss 0.1007 f1 0.9689 acc 0.9688 *
+1833.9s 115 Ep  4 | TR loss 0.1044 f1 0.9646 | VAL loss 0.1045 f1 0.9708 acc 0.9711 *
+2102.0s 116 Ep  5 | TR loss 0.1018 f1 0.9638 | VAL loss 0.1108 f1 0.9684 acc 0.9688
+2370.1s 117 Ep  6 | TR loss 0.0903 f1 0.9706 | VAL loss 0.1450 f1 0.9543 acc 0.9560
+2637.1s 118 Ep  7 | TR loss 0.0762 f1 0.9726 | VAL loss 0.0923 f1 0.9717 acc 0.9722 *
+2904.9s 119 Ep  8 | TR loss 0.0709 f1 0.9749 | VAL loss 0.0836 f1 0.9732 acc 0.9734 *
+3173.6s 120 Ep  9 | TR loss 0.0617 f1 0.9783 | VAL loss 0.0983 f1 0.9753 acc 0.9757 *
+3440.5s 121 Ep 10 | TR loss 0.0546 f1 0.9826 | VAL loss 0.0949 f1 0.9733 acc 0.9734
+3705.7s 122 Ep 11 | TR loss 0.0477 f1 0.9838 | VAL loss 0.0834 f1 0.9790 acc 0.9792 *
+3974.2s 123 Ep 12 | TR loss 0.0426 f1 0.9850 | VAL loss 0.0912 f1 0.9742 acc 0.9745
+4242.6s 124 Ep 13 | TR loss 0.0381 f1 0.9875 | VAL loss 0.0828 f1 0.9802 acc 0.9803 *
+4510.5s 125 Ep 14 | TR loss 0.0349 f1 0.9894 | VAL loss 0.0850 f1 0.9791 acc 0.9792
+4778.2s 126 Ep 15 | TR loss 0.0323 f1 0.9893 | VAL loss 0.0848 f1 0.9803 acc 0.9803 *
+4778.2s 127 
+4778.2s 128 En iyi Val F1 = 0.9803 yuklendi.
+4792.5s 129 Test Kaybi    : 0.0868
+4792.5s 130 Test Dogruluk : 0.9780 (97.8%)
+4792.5s 131 Test F1       : 0.9779
+4792.5s 132 
+4792.5s 133 precision    recall  f1-score   support
+4792.5s 134 
+4792.5s 135 NORMAL     0.9747    0.9815    0.9781       432
+4792.5s 136 PNEUMONIA     0.9814    0.9745    0.9779       432
+4792.5s 137 
+4792.5s 138 accuracy                         0.9780       864
+4792.5s 139 macro avg     0.9780    0.9780    0.9780       864
+4792.5s 140 weighted avg     0.9780    0.9780    0.9780       864
+4792.5s 141 
+4793.2s 142 Attention Rollout hazir — 12 katman izleniyor.
+4801.0s 143 [TRAIN] NORMAL: n=60 LFR=0.858 | PNEUMONIA: n=60 LFR=0.953
+4804.4s 144 [VAL  ] NORMAL: n=60 LFR=0.879 | PNEUMONIA: n=60 LFR=0.914
+4807.5s 145 [TEST ] NORMAL: n=60 LFR=0.881 | PNEUMONIA: n=60 LFR=0.935
+4808.9s 146 
+4808.9s 147 ==========================================================
+4808.9s 148 AKCIGER-ODAK DOGRULAMASI — SONUC
+4808.9s 149 ==========================================================
+4808.9s 150 Analiz edilen goruntu : 360
+4808.9s 151 Global LFR            : 0.903 +/- 0.088  (median 0.931)
+4808.9s 152 -> Dikkat agirlikli olarak gorunur akciger dokusunda.
+4808.9s 153 NOT: Girdi zaten maskeli oldugundan LFR kismen tasarim geregidir (bkz. 11. bolum).
+4808.9s 154 ==========================================================
+4809.4s 155 ==========================================================
+4809.4s 156 MODEL KAYDEDILDI
+4809.4s 157 ==========================================================
+4809.4s 158 Dosya        : /kaggle/working/lung_focused_vit_pneumonia.pth
+4809.4s 159 Boyut        : 343.3 MB
+4809.4s 160 En iyi Val F1: 0.9803
+4809.4s 161 Siniflar     : {'NORMAL': 0, 'PNEUMONIA': 1}
+4809.4s 162 ==========================================================
+4809.4s 163 -> Output panelinden indirip 'lung-focused-vit-pneumonia'
+4809.4s 164 adiyla yeni bir Kaggle Dataset olarak yukleyin.
+4809.4s 165 ==========================================================
+4815.0s 166 /usr/local/lib/python3.12/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\|'
+4815.0s 167 cells[i][c] = re.sub('\\\\\|', '|', cell)
+4815.2s 168 /usr/local/lib/python3.12/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\_'
+4815.2s 169 text = re.sub(r'_', '\_', text) # Escape underscores in display text
+4815.8s 170 /usr/local/lib/python3.12/dist-packages/traitlets/traitlets.py:2915: FutureWarning: --Exporter.preprocessors=["remove_papermill_header.RemovePapermillHeader"] for containers is deprecated in traitlets 5.0. You can pass `--Exporter.preprocessors item` ... multiple times to add items to a list.
+4815.8s 171 warn(
+4815.8s 172 [NbConvertApp] Converting notebook __notebook__.ipynb to notebook
+4816.2s 173 [NbConvertApp] Writing 4691378 bytes to __notebook__.ipynb
+4818.6s 174 /usr/local/lib/python3.12/dist-packages/traitlets/traitlets.py:2915: FutureWarning: --Exporter.preprocessors=["nbconvert.preprocessors.ExtractOutputPreprocessor"] for containers is deprecated in traitlets 5.0. You can pass `--Exporter.preprocessors item` ... multiple times to add items to a list.
+4818.6s 175 warn(
+4818.6s 176 [NbConvertApp] Converting notebook __notebook__.ipynb to html
+4819.7s 177 [NbConvertApp] Support files will be in __results___files/
+4819.7s 178 [NbConvertApp] Making directory __results___files
+4819.7s 179 [NbConvertApp] Making directory __results___files
+4819.7s 180 [NbConvertApp] Making directory __results___files
+4819.7s 181 [NbConvertApp] Making directory __results___files
+4819.7s 182 [NbConvertApp] Making directory __results___files
+4819.7s 183 [NbConvertApp] Making directory __results___files
+4819.7s 184 [NbConvertApp] Writing 580109 bytes to __results__.html

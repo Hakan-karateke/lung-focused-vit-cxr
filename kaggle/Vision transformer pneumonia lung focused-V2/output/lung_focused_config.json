@@ -1,0 +1,26 @@
+{
+    "img_size": 224,
+    "patch_size": 16,
+    "batch_size": 16,
+    "epochs": 15,
+    "lr": 0.0001,
+    "weight_decay": 0.01,
+    "dropout": 0.1,
+    "num_classes": 2,
+    "mean": [
+        0.4769,
+        0.4769,
+        0.4769
+    ],
+    "std": [
+        0.2414,
+        0.2414,
+        0.2414
+    ],
+    "orig_short_max": 512,
+    "mask_dilate_frac": 0.025,
+    "roi_pad_frac": 0.05,
+    "mask_feather": 9,
+    "fill_mode": "mean",
+    "cache_root": "/kaggle/working/lung_focused"
+}

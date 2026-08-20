@@ -1,0 +1,390 @@
+10.7s	1	0.00s - Debugger warning: It seems that frozen modules are being used, which may
+10.7s	2	0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
+10.7s	3	0.00s - to python to disable frozen modules.
+10.7s	4	0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
+11.6s	5	0.00s - Debugger warning: It seems that frozen modules are being used, which may
+11.6s	6	0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
+11.6s	7	0.00s - to python to disable frozen modules.
+11.6s	8	0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
+32.5s	9	====================================================
+32.5s	10	  Cihaz : cuda
+32.5s	11	  GPU   : Tesla T4
+32.5s	12	  VRAM  : 15.6 GB
+32.5s	13	====================================================
+32.5s	14	
+32.5s	15	✅ Hazır | PyTorch 2.9.0+cu126
+35.9s	16	Collecting lungmask
+36.0s	17	  Downloading lungmask-0.2.21-py3-none-any.whl.metadata (7.1 kB)
+36.0s	18	Requirement already satisfied: pydicom in /usr/local/lib/python3.12/dist-packages (from lungmask) (3.0.1)
+36.0s	19	Requirement already satisfied: numpy in /usr/local/lib/python3.12/dist-packages (from lungmask) (2.0.2)
+36.0s	20	Requirement already satisfied: torch in /usr/local/lib/python3.12/dist-packages (from lungmask) (2.9.0+cu126)
+36.0s	21	Requirement already satisfied: scipy in /usr/local/lib/python3.12/dist-packages (from lungmask) (1.16.3)
+36.0s	22	Requirement already satisfied: SimpleITK in /usr/local/lib/python3.12/dist-packages (from lungmask) (2.5.3)
+36.0s	23	Requirement already satisfied: tqdm in /usr/local/lib/python3.12/dist-packages (from lungmask) (4.67.1)
+36.2s	24	Collecting scikit-image>=0.26.0 (from lungmask)
+36.2s	25	  Downloading scikit_image-0.26.0-cp312-cp312-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl.metadata (15 kB)
+36.4s	26	Collecting fill_voids (from lungmask)
+36.4s	27	  Downloading fill_voids-2.1.2-cp312-cp312-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl.metadata (4.4 kB)
+36.4s	28	Requirement already satisfied: more-itertools in /usr/local/lib/python3.12/dist-packages (from lungmask) (10.8.0)
+36.4s	29	Requirement already satisfied: networkx>=3.0 in /usr/local/lib/python3.12/dist-packages (from scikit-image>=0.26.0->lungmask) (3.6.1)
+36.4s	30	Requirement already satisfied: pillow>=10.1 in /usr/local/lib/python3.12/dist-packages (from scikit-image>=0.26.0->lungmask) (11.3.0)
+36.4s	31	Requirement already satisfied: imageio!=2.35.0,>=2.33 in /usr/local/lib/python3.12/dist-packages (from scikit-image>=0.26.0->lungmask) (2.37.2)
+36.4s	32	Requirement already satisfied: tifffile>=2022.8.12 in /usr/local/lib/python3.12/dist-packages (from scikit-image>=0.26.0->lungmask) (2026.1.14)
+36.4s	33	Requirement already satisfied: packaging>=21 in /usr/local/lib/python3.12/dist-packages (from scikit-image>=0.26.0->lungmask) (25.0)
+36.4s	34	Requirement already satisfied: lazy-loader>=0.4 in /usr/local/lib/python3.12/dist-packages (from scikit-image>=0.26.0->lungmask) (0.4)
+36.6s	35	Collecting fastremap (from fill_voids->lungmask)
+36.6s	36	  Downloading fastremap-1.19.0-cp312-cp312-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl.metadata (10 kB)
+36.6s	37	Requirement already satisfied: filelock in /usr/local/lib/python3.12/dist-packages (from torch->lungmask) (3.20.3)
+36.6s	38	Requirement already satisfied: typing-extensions>=4.10.0 in /usr/local/lib/python3.12/dist-packages (from torch->lungmask) (4.15.0)
+36.7s	39	Requirement already satisfied: setuptools in /usr/local/lib/python3.12/dist-packages (from torch->lungmask) (75.2.0)
+36.7s	40	Requirement already satisfied: sympy>=1.13.3 in /usr/local/lib/python3.12/dist-packages (from torch->lungmask) (1.14.0)
+36.7s	41	Requirement already satisfied: jinja2 in /usr/local/lib/python3.12/dist-packages (from torch->lungmask) (3.1.6)
+36.7s	42	Requirement already satisfied: fsspec>=0.8.5 in /usr/local/lib/python3.12/dist-packages (from torch->lungmask) (2025.3.0)
+36.7s	43	Requirement already satisfied: nvidia-cuda-nvrtc-cu12==12.6.77 in /usr/local/lib/python3.12/dist-packages (from torch->lungmask) (12.6.77)
+36.7s	44	Requirement already satisfied: nvidia-cuda-runtime-cu12==12.6.77 in /usr/local/lib/python3.12/dist-packages (from torch->lungmask) (12.6.77)
+36.7s	45	Requirement already satisfied: nvidia-cuda-cupti-cu12==12.6.80 in /usr/local/lib/python3.12/dist-packages (from torch->lungmask) (12.6.80)
+36.7s	46	Requirement already satisfied: nvidia-cudnn-cu12==9.10.2.21 in /usr/local/lib/python3.12/dist-packages (from torch->lungmask) (9.10.2.21)
+36.7s	47	Requirement already satisfied: nvidia-cublas-cu12==12.6.4.1 in /usr/local/lib/python3.12/dist-packages (from torch->lungmask) (12.6.4.1)
+36.7s	48	Requirement already satisfied: nvidia-cufft-cu12==11.3.0.4 in /usr/local/lib/python3.12/dist-packages (from torch->lungmask) (11.3.0.4)
+36.7s	49	Requirement already satisfied: nvidia-curand-cu12==10.3.7.77 in /usr/local/lib/python3.12/dist-packages (from torch->lungmask) (10.3.7.77)
+36.7s	50	Requirement already satisfied: nvidia-cusolver-cu12==11.7.1.2 in /usr/local/lib/python3.12/dist-packages (from torch->lungmask) (11.7.1.2)
+36.7s	51	Requirement already satisfied: nvidia-cusparse-cu12==12.5.4.2 in /usr/local/lib/python3.12/dist-packages (from torch->lungmask) (12.5.4.2)
+36.7s	52	Requirement already satisfied: nvidia-cusparselt-cu12==0.7.1 in /usr/local/lib/python3.12/dist-packages (from torch->lungmask) (0.7.1)
+36.7s	53	Requirement already satisfied: nvidia-nccl-cu12==2.27.5 in /usr/local/lib/python3.12/dist-packages (from torch->lungmask) (2.27.5)
+36.7s	54	Requirement already satisfied: nvidia-nvshmem-cu12==3.3.20 in /usr/local/lib/python3.12/dist-packages (from torch->lungmask) (3.3.20)
+36.7s	55	Requirement already satisfied: nvidia-nvtx-cu12==12.6.77 in /usr/local/lib/python3.12/dist-packages (from torch->lungmask) (12.6.77)
+36.7s	56	Requirement already satisfied: nvidia-nvjitlink-cu12==12.6.85 in /usr/local/lib/python3.12/dist-packages (from torch->lungmask) (12.6.85)
+36.7s	57	Requirement already satisfied: nvidia-cufile-cu12==1.11.1.6 in /usr/local/lib/python3.12/dist-packages (from torch->lungmask) (1.11.1.6)
+36.7s	58	Requirement already satisfied: triton==3.5.0 in /usr/local/lib/python3.12/dist-packages (from torch->lungmask) (3.5.0)
+36.7s	59	Requirement already satisfied: mpmath<1.4,>=1.1.0 in /usr/local/lib/python3.12/dist-packages (from sympy>=1.13.3->torch->lungmask) (1.3.0)
+36.7s	60	Requirement already satisfied: MarkupSafe>=2.0 in /usr/local/lib/python3.12/dist-packages (from jinja2->torch->lungmask) (3.0.3)
+36.8s	61	Downloading lungmask-0.2.21-py3-none-any.whl (20 kB)
+36.8s	62	Downloading scikit_image-0.26.0-cp312-cp312-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl (13.6 MB)
+37.0s	63	[?25l   [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m0.0/13.6 MB[0m [31m?[0m eta [36m-:--:--[0m
+[2K   [91m━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m0.5/13.6 MB[0m [31m14.4 MB/s[0m eta [36m0:00:01[0m
+[2K   [91m━━━━━━━━━━━[0m[91m╸[0m[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m4.0/13.6 MB[0m [31m57.9 MB/s[0m eta [36m0:00:01[0m
+[2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━[0m [32m12.3/13.6 MB[0m [31m221.0 MB/s[0m eta [36m0:00:01[0m
+[2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m[91m╸[0m [32m13.6/13.6 MB[0m [31m234.1 MB/s[0m eta [36m0:00:01[0m
+[2K   [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m13.6/13.6 MB[0m [31m102.0 MB/s[0m eta [36m0:00:00[0m
+37.0s	64	[?25hDownloading fill_voids-2.1.2-cp312-cp312-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl (1.5 MB)
+37.0s	65	[?25l   [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m0.0/1.5 MB[0m [31m?[0m eta [36m-:--:--[0m
+[2K   [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m1.5/1.5 MB[0m [31m59.6 MB/s[0m eta [36m0:00:00[0m
+37.0s	66	[?25hDownloading fastremap-1.19.0-cp312-cp312-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl (7.1 MB)
+37.1s	67	[?25l   [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m0.0/7.1 MB[0m [31m?[0m eta [36m-:--:--[0m
+[2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m[91m╸[0m [32m7.1/7.1 MB[0m [31m252.5 MB/s[0m eta [36m0:00:01[0m
+[2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m[91m╸[0m [32m7.1/7.1 MB[0m [31m252.5 MB/s[0m eta [36m0:00:01[0m
+[2K   [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m7.1/7.1 MB[0m [31m102.0 MB/s[0m eta [36m0:00:00[0m
+39.3s	68	[?25hInstalling collected packages: fastremap, scikit-image, fill_voids, lungmask
+39.5s	69	  Attempting uninstall: scikit-image
+39.6s	70	    Found existing installation: scikit-image 0.25.2
+39.7s	71	    Uninstalling scikit-image-0.25.2:
+40.7s	72	      Successfully uninstalled scikit-image-0.25.2
+41.3s	73	Successfully installed fastremap-1.19.0 fill_voids-2.1.2 lungmask-0.2.21 scikit-image-0.26.0
+43.5s	74	v2 Hata Teşhisi: Rollout matris değerleri neden büyüyor?
+43.5s	75	============================================================
+43.5s	76	  v2 (normalize edilmemiş): min=3.87e-03, max=6.68e-03
+43.5s	77	  → Değerler çok küçük/büyük, oran hesabı anlamsız hale geliyor!
+43.5s	78	
+43.5s	79	  v3 (adım-adım normalize): min=0.0022, max=0.9073
+43.5s	80	  → Değerler [0,1] aralığında, oran hesabı anlamlı!
+43.5s	81	
+43.5s	82	  Sonuç: border/center oranı artık 0-5 arasında çıkacak (milyon DEĞİL)
+69.1s	83	==============================================================
+69.1s	84	  Havuz: Val(1700) + Test(30) = 1730
+80.8s	85	  ✅ Veri sızıntısı yok — train ile çakışan dosya bulunamadı.
+80.8s	86	  Havuzda NORMAL: 865, PNEUMONIA: 865
+80.8s	87	  Her sette sınıf başına: 432
+80.8s	88	  Her set toplam: 864
+80.8s	89	
+80.8s	90	==============================================================
+80.8s	91	  SON DURUM (Dengeli Bölümleme)
+80.8s	92	==============================================================
+80.8s	93	  TRAIN :  6800  | NORMAL:3400(50%) PNOM:3400(50%)
+80.8s	94	  VAL   :   864  | NORMAL: 432(50%) PNOM: 432(50%)
+80.8s	95	  TEST  :   864  | NORMAL: 432(50%) PNOM: 432(50%)
+80.8s	96	==============================================================
+80.8s	97	  ✅ Val↔Test çakışma yok — setler tamamen ayrık.
+80.8s	98	  ✅ Train↔Val/Test çakışma yok — veri sızıntısı engellendi.
+80.8s	99	
+80.8s	100	  Pipeline: Resize(256) → CenterCrop(224) → Resize(224) → CornerLetterMask(0.04)
+80.8s	101	  PA/AP köşe farkı: elendi | R/L harfleri: gürültüyle kapatıldı
+86.8s	102	Kenar bolge analizi (CenterCrop sonrasi)...
+88.1s	103	Kenar p=0.5468 → TEMIZ - kisayol yok
+88.1s	104	Merkez p=0.0153 → klinik bilgi
+90.2s	105	Downloading: "https://download.pytorch.org/models/vit_b_16-c867db91.pth" to /root/.cache/torch/hub/checkpoints/vit_b_16-c867db91.pth
+90.2s	106	
+  0%|          | 0.00/330M [00:00<?, ?B/s]
+90.3s	107	
+  0%|          | 0.00/330M [00:00<?, ?B/s]
+  2%|▏         | 7.38M/330M [00:00<00:04, 76.9MB/s]
+90.4s	108	
+  2%|▏         | 7.38M/330M [00:00<00:04, 76.9MB/s]
+  7%|▋         | 24.1M/330M [00:00<00:02, 134MB/s] 
+90.5s	109	
+  7%|▋         | 24.1M/330M [00:00<00:02, 134MB/s] 
+ 12%|█▏        | 41.1M/330M [00:00<00:01, 154MB/s]
+90.6s	110	
+ 12%|█▏        | 41.1M/330M [00:00<00:01, 154MB/s]
+ 17%|█▋        | 57.4M/330M [00:00<00:01, 160MB/s]
+90.7s	111	
+ 17%|█▋        | 57.4M/330M [00:00<00:01, 160MB/s]
+ 23%|██▎       | 74.4M/330M [00:00<00:01, 166MB/s]
+90.8s	112	
+ 23%|██▎       | 74.4M/330M [00:00<00:01, 166MB/s]
+ 28%|██▊       | 91.2M/330M [00:00<00:01, 170MB/s]
+90.9s	113	
+ 28%|██▊       | 91.2M/330M [00:00<00:01, 170MB/s]
+ 33%|███▎      | 108M/330M [00:00<00:01, 171MB/s] 
+91.0s	114	
+ 33%|███▎      | 108M/330M [00:00<00:01, 171MB/s] 
+ 38%|███▊      | 126M/330M [00:00<00:01, 176MB/s]
+91.1s	115	
+ 38%|███▊      | 126M/330M [00:00<00:01, 176MB/s]
+ 44%|████▎     | 144M/330M [00:00<00:01, 179MB/s]
+91.2s	116	
+ 44%|████▎     | 144M/330M [00:00<00:01, 179MB/s]
+ 49%|████▊     | 161M/330M [00:01<00:00, 179MB/s]
+91.3s	117	
+ 49%|████▊     | 161M/330M [00:01<00:00, 179MB/s]
+ 54%|█████▍    | 179M/330M [00:01<00:00, 180MB/s]
+91.4s	118	
+ 54%|█████▍    | 179M/330M [00:01<00:00, 180MB/s]
+ 59%|█████▉    | 196M/330M [00:01<00:00, 176MB/s]
+91.5s	119	
+ 59%|█████▉    | 196M/330M [00:01<00:00, 176MB/s]
+ 65%|██████▍   | 213M/330M [00:01<00:00, 172MB/s]
+91.6s	120	
+ 65%|██████▍   | 213M/330M [00:01<00:00, 172MB/s]
+ 70%|██████▉   | 231M/330M [00:01<00:00, 175MB/s]
+91.7s	121	
+ 70%|██████▉   | 231M/330M [00:01<00:00, 175MB/s]
+ 75%|███████▌  | 249M/330M [00:01<00:00, 179MB/s]
+91.8s	122	
+ 75%|███████▌  | 249M/330M [00:01<00:00, 179MB/s]
+ 81%|████████  | 267M/330M [00:01<00:00, 181MB/s]
+91.9s	123	
+ 81%|████████  | 267M/330M [00:01<00:00, 181MB/s]
+ 86%|████████▌ | 285M/330M [00:01<00:00, 183MB/s]
+92.0s	124	
+ 86%|████████▌ | 285M/330M [00:01<00:00, 183MB/s]
+ 92%|█████████▏| 302M/330M [00:01<00:00, 184MB/s]
+92.1s	125	
+ 92%|█████████▏| 302M/330M [00:01<00:00, 184MB/s]
+ 97%|█████████▋| 320M/330M [00:01<00:00, 185MB/s]
+92.2s	126	
+ 97%|█████████▋| 320M/330M [00:01<00:00, 185MB/s]
+100%|██████████| 330M/330M [00:01<00:00, 174MB/s]
+92.2s	127	
+100%|██████████| 330M/330M [00:01<00:00, 174MB/s]
+92.2s	128	
+92.2s	129	
+92.5s	130	  Toplam: 85,800,194 | Eğitilebilir: 14,178,818 (16.5%)
+92.7s	131	========================================================================
+92.7s	132	  ANATOMY-GUIDED RRR TRAINING | lambda=5.0 | batch=8 | 15 Epoch
+92.7s	133	========================================================================
+93.3s	134	  [LungSeg] Initializing LMInferer (R231 model)...
+93.3s	135	Downloading: "https://github.com/JoHof/lungmask/releases/download/v0.0/unet_r231-d5d2fc3d.pth" to /root/.cache/torch/hub/checkpoints/unet_r231-d5d2fc3d.pth
+93.4s	136	
+  0%|          | 0.00/119M [00:00<?, ?B/s]
+93.5s	137	
+  0%|          | 0.00/119M [00:00<?, ?B/s]
+  9%|▊         | 10.1M/119M [00:00<00:01, 103MB/s]
+93.6s	138	
+  9%|▊         | 10.1M/119M [00:00<00:01, 103MB/s]
+ 32%|███▏      | 38.0M/119M [00:00<00:00, 213MB/s]
+93.7s	139	
+ 32%|███▏      | 38.0M/119M [00:00<00:00, 213MB/s]
+ 54%|█████▍    | 64.0M/119M [00:00<00:00, 240MB/s]
+93.8s	140	
+ 54%|█████▍    | 64.0M/119M [00:00<00:00, 240MB/s]
+ 77%|███████▋  | 91.5M/119M [00:00<00:00, 259MB/s]
+93.9s	141	
+ 77%|███████▋  | 91.5M/119M [00:00<00:00, 259MB/s]
+100%|██████████| 119M/119M [00:00<00:00, 254MB/s] 
+93.9s	142	
+100%|██████████| 119M/119M [00:00<00:00, 254MB/s] 
+93.9s	143	
+93.9s	144	
+94.6s	145	  [LungSeg] Model ready.
+537.7s	146	Ep  1 | TR Loss:18.2593 | CE:0.2667 | AnatPen:3.598517 | VL F1:0.9387 ★
+976.4s	147	Ep  2 | TR Loss:0.1892 | CE:0.1438 | AnatPen:0.009085 | VL F1:0.9425 ★
+1415.0s	148	Ep  3 | TR Loss:0.1514 | CE:0.1313 | AnatPen:0.004023 | VL F1:0.9467 ★
+1857.6s	149	Ep  4 | TR Loss:0.1324 | CE:0.1205 | AnatPen:0.002386 | VL F1:0.9619 ★
+2302.2s	150	Ep  5 | TR Loss:0.1171 | CE:0.1088 | AnatPen:0.001656 | VL F1:0.9588
+2744.2s	151	Ep  6 | TR Loss:0.1066 | CE:0.1006 | AnatPen:0.001203 | VL F1:0.9659 ★
+3186.4s	152	Ep  7 | TR Loss:0.1034 | CE:0.0987 | AnatPen:0.000939 | VL F1:0.9642
+3628.1s	153	Ep  8 | TR Loss:0.0920 | CE:0.0882 | AnatPen:0.000764 | VL F1:0.9599
+4070.0s	154	Ep  9 | TR Loss:0.0897 | CE:0.0861 | AnatPen:0.000719 | VL F1:0.9671 ★
+4514.4s	155	Ep 10 | TR Loss:0.0922 | CE:0.0897 | AnatPen:0.000502 | VL F1:0.9558
+4962.1s	156	Ep 11 | TR Loss:0.0833 | CE:0.0810 | AnatPen:0.000461 | VL F1:0.9769 ★
+5410.3s	157	Ep 12 | TR Loss:0.0842 | CE:0.0823 | AnatPen:0.000381 | VL F1:0.9659
+5857.7s	158	Ep 13 | TR Loss:0.0807 | CE:0.0787 | AnatPen:0.000406 | VL F1:0.9737
+6305.5s	159	Ep 14 | TR Loss:0.0685 | CE:0.0669 | AnatPen:0.000320 | VL F1:0.9685
+6755.8s	160	Ep 15 | TR Loss:0.0761 | CE:0.0743 | AnatPen:0.000368 | VL F1:0.9683
+6755.8s	161	
+6755.8s	162	★ Best Val F1: 0.9769 loaded.
+6774.3s	163	  Test Kaybı   : 0.1117
+6774.3s	164	  Test Doğruluk: 0.9676 (96.8%)
+6774.3s	165	  Test F1      : 0.9680
+6774.3s	166	
+6774.3s	167	              precision    recall  f1-score   support
+6774.3s	168	
+6774.3s	169	      NORMAL     0.9787    0.9560    0.9672       432
+6774.3s	170	   PNEUMONIA     0.9570    0.9792    0.9680       432
+6774.3s	171	
+6774.3s	172	    accuracy                         0.9676       864
+6774.3s	173	   macro avg     0.9678    0.9676    0.9676       864
+6774.3s	174	weighted avg     0.9678    0.9676    0.9676       864
+6774.3s	175	
+6775.2s	176	Attention Rollout v4 hazir — Son-adim-normalize, discard=0.95
+6775.2s	177	   12 katman izleniyor
+6775.2s	178	GradCAM v5 hazir — logit backward + differential mode
+6775.2s	179	   (softmax doyumu / vanishing gradient sorunu cozuldu)
+6775.4s	180	Skor v4 dogrulanıyor...
+6775.4s	181	  Merkez odakli: skor=0.000 → DUSUK bekleniyor
+6775.4s	182	  Kose odakli : skor=1000000.000 → YUKSEK bekleniyor
+6775.4s	183	  Kisayol esigi v4: >2.0 (v3: >1.3)
+6775.4s	184	compute_shortcut_score_v4 hazir
+6775.4s	185	compute_shortcut_score_v5 hazir (kalibrasyon: esik=1.55)
+6775.5s	186	✅ visualize_xai_v3 hazır
+6775.6s	187	XAI v5 analizi basliyor...
+6775.6s	188	
+6775.6s	189	=======================================================  SINIF: NORMAL
+6777.6s	190	  #1: patch_skor=0.944 pixel_skor=0.944 DUSUK p=0.1404 OK [GradCAM vanish → Attention'a fallback]
+6778.8s	191	  #2: patch_skor=0.927 pixel_skor=0.927 DUSUK p=0.0389 OK [GradCAM vanish → Attention'a fallback]
+6780.1s	192	  #3: patch_skor=1.085 pixel_skor=1.085 DUSUK p=0.1619 OK [GradCAM vanish → Attention'a fallback]
+6781.4s	193	  #4: patch_skor=0.692 pixel_skor=0.692 DUSUK p=0.7196 OK [GradCAM vanish → Attention'a fallback]
+6781.4s	194	=======================================================  SINIF: PNEUMONIA
+6782.6s	195	  #5: patch_skor=1.522 pixel_skor=1.522 ORTA p=0.0545 OK [GradCAM vanish → Attention'a fallback]
+6783.9s	196	  #6: patch_skor=1.201 pixel_skor=1.201 DUSUK p=0.0446 OK [GradCAM vanish → Attention'a fallback]
+6785.2s	197	  #7: patch_skor=1.014 pixel_skor=1.014 DUSUK p=0.1209 OK [GradCAM vanish → Attention'a fallback]
+6786.2s	198	  #8: patch_skor=1.192 pixel_skor=1.192 DUSUK p=0.0341 OK [GradCAM vanish → Attention'a fallback]
+6786.2s	199	
+6786.2s	200	8 goruntu analiz edildi.
+6786.2s	201	  NORMAL      : Ort=0.912  Kisayol=0/4
+6786.2s	202	  PNEUMONIA   : Ort=1.232  Kisayol=0/4
+6787.0s	203	Köşe Maskeleme Etkisi: Ham vs Maskeli Görüntü Attention'ı
+6792.5s	204	
+6792.5s	205	  Ort. Skor (Ham)    : 1.1484
+6792.5s	206	  Ort. Skor (Maskeli): 0.7653
+6792.5s	207	  Değişim            : +0.3830  (↓ İyileşme ✅)
+6792.8s	208	Test seti toplu kısayol analizi (v3)...
+6792.8s	209	
+6793.8s	210	  ✓ 15/60
+6794.1s	211	  ✓ 30/60
+6794.5s	212	  ✓ 45/60
+6794.8s	213	  ✓ 60/60
+6794.8s	214	
+6794.8s	215	✅ 60 görüntü analiz edildi.
+6794.8s	216	
+6794.8s	217	Sınıfa Göre Skor İstatistikleri:
+6794.8s	218	           count    mean     std     min     25%     50%     75%     max
+6794.8s	219	class                                                                   
+6794.8s	220	NORMAL      32.0  1.3849  0.7249  0.6473  0.9686  1.1015  1.4023  3.5662
+6794.8s	221	PNEUMONIA   28.0  1.2175  0.3954  0.6248  0.9837  1.1640  1.5216  2.0619
+6794.8s	222	
+6794.8s	223	  Kısayol Tespit Oranı: 10.0%
+6796.0s	224	
+6796.0s	225	=========================================================
+6796.0s	226	  KLİNİK DEĞERLENDİRME (v3)
+6796.0s	227	=========================================================
+6796.0s	228	  v1 Kısayol Oranı : %100 (hatalı normalizasyon)
+6796.0s	229	  v2 Kısayol Oranı : %93  (kısmen düzeltildi)
+6796.0s	230	  v3 Kısayol Oranı : 10.0%  (RRR + doğru norm)
+6796.0s	231	  🟢 BAŞARILI: RRR loss kısayol öğrenmesini büyük ölçüde önledi!
+6796.0s	232	=========================================================
+6818.9s	233	Hazır Akciğer Segmentasyon Modeli (ianpan) yükleniyor...
+6819.1s	234	Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+6819.1s	235	
+6819.1s	236	Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+6819.5s	237	A new version of the following files was downloaded from https://huggingface.co/ianpan/chest-x-ray-basic:
+6819.5s	238	- configuration.py
+6819.5s	239	. Make sure to double-check they do not contain any added malicious code. To avoid downloading new versions of the code file, you can pin a revision.
+6819.5s	240	
+6819.5s	241	A new version of the following files was downloaded from https://huggingface.co/ianpan/chest-x-ray-basic:
+6819.5s	242	- configuration.py
+6819.5s	243	. Make sure to double-check they do not contain any added malicious code. To avoid downloading new versions of the code file, you can pin a revision.
+6825.1s	244	A new version of the following files was downloaded from https://huggingface.co/ianpan/chest-x-ray-basic:
+6825.1s	245	- unet.py
+6825.1s	246	. Make sure to double-check they do not contain any added malicious code. To avoid downloading new versions of the code file, you can pin a revision.
+6825.1s	247	
+6825.1s	248	A new version of the following files was downloaded from https://huggingface.co/ianpan/chest-x-ray-basic:
+6825.1s	249	- unet.py
+6825.1s	250	. Make sure to double-check they do not contain any added malicious code. To avoid downloading new versions of the code file, you can pin a revision.
+6825.1s	251	A new version of the following files was downloaded from https://huggingface.co/ianpan/chest-x-ray-basic:
+6825.1s	252	- modeling.py
+6825.1s	253	- unet.py
+6825.1s	254	. Make sure to double-check they do not contain any added malicious code. To avoid downloading new versions of the code file, you can pin a revision.
+6825.1s	255	
+6825.1s	256	A new version of the following files was downloaded from https://huggingface.co/ianpan/chest-x-ray-basic:
+6825.1s	257	- modeling.py
+6825.1s	258	- unet.py
+6825.1s	259	. Make sure to double-check they do not contain any added malicious code. To avoid downloading new versions of the code file, you can pin a revision.
+6829.0s	260	✅ Segmentasyon modeli başarıyla yüklendi!
+6829.5s	261	Akciger maskesi (ORIJINAL goruntu) ornek dogrulama...
+6832.2s	262	Orijinal-goruntu akciger segmentasyonu hazir.
+6832.7s	263	Saglik kontrolu (orijinal segmentasyon ilk ornekler)...
+6832.7s	264	   NORMAL     orijinal=768x1106  akciger alan=20.0%
+6832.7s	265	   PNEUMONIA  orijinal=760x1064  akciger alan=22.9%
+6832.7s	266	
+6832.7s	267	[TRAIN] aggregate Rollout + ADIL LFR (max 40)...
+6837.3s	268	   NORMAL    : n= 18  ortalama ADIL LFR = 0.150
+6837.3s	269	   PNEUMONIA : n= 22  ortalama ADIL LFR = 0.183
+6837.3s	270	
+6837.3s	271	[VAL] aggregate Rollout + ADIL LFR (max 40)...
+6841.3s	272	   NORMAL    : n= 21  ortalama ADIL LFR = 0.101
+6841.3s	273	   PNEUMONIA : n= 19  ortalama ADIL LFR = 0.232
+6841.3s	274	
+6841.3s	275	[TEST] aggregate Rollout + ADIL LFR (max 40)...
+6845.0s	276	   NORMAL    : n= 18  ortalama ADIL LFR = 0.119
+6845.0s	277	   PNEUMONIA : n= 22  ortalama ADIL LFR = 0.169
+6845.0s	278	
+6845.0s	279	Aggregate (adil) hesap tamamlandi.
+6848.2s	280	
+6848.2s	281	============================================================
+6848.2s	282	  AKCIGER ODAK DOGRULAMASI — SONUC (ADIL LFR)
+6848.2s	283	============================================================
+6848.2s	284	  Toplam analiz edilen goruntu : 120
+6848.2s	285	  Global ADIL Lung Focus Ratio : 0.159 +/- 0.125
+6848.2s	286	  Median ADIL LFR              : 0.143
+6848.2s	287	  TRAIN  ortalama ADIL LFR     : 0.168  (n=40)
+6848.2s	288	  VAL    ortalama ADIL LFR     : 0.163  (n=40)
+6848.2s	289	  TEST   ortalama ADIL LFR     : 0.146  (n=40)
+6848.2s	290	------------------------------------------------------------
+6848.2s	291	  ZAYIF:    Model akciger disi alanlara fazla bakiyor — kisayol riski!
+6848.2s	292	  NOT: LFR yalnizca modelin gordugu KIRPIM ICI akciger uzerinde olculdu (adil).
+6848.2s	293	============================================================
+6858.0s	294	fig_12 — orijinal koordinatli birlesik akciger-odak gorseli hazir.
+6864.4s	295	/usr/local/lib/python3.12/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\|'
+6864.4s	296	  cells[i][c] = re.sub('\\\\\|', '|', cell)
+6864.5s	297	/usr/local/lib/python3.12/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\_'
+6864.5s	298	  text = re.sub(r'_', '\_', text) # Escape underscores in display text
+6865.1s	299	/usr/local/lib/python3.12/dist-packages/traitlets/traitlets.py:2915: FutureWarning: --Exporter.preprocessors=["remove_papermill_header.RemovePapermillHeader"] for containers is deprecated in traitlets 5.0. You can pass `--Exporter.preprocessors item` ... multiple times to add items to a list.
+6865.1s	300	  warn(
+6865.2s	301	[NbConvertApp] Converting notebook __notebook__.ipynb to notebook
+6865.9s	302	[NbConvertApp] Writing 14904062 bytes to __notebook__.ipynb
+6868.2s	303	/usr/local/lib/python3.12/dist-packages/traitlets/traitlets.py:2915: FutureWarning: --Exporter.preprocessors=["nbconvert.preprocessors.ExtractOutputPreprocessor"] for containers is deprecated in traitlets 5.0. You can pass `--Exporter.preprocessors item` ... multiple times to add items to a list.
+6868.2s	304	  warn(
+6868.2s	305	[NbConvertApp] Converting notebook __notebook__.ipynb to html
+6869.7s	306	[NbConvertApp] Support files will be in __results___files/
+6869.7s	307	[NbConvertApp] Making directory __results___files
+6869.7s	308	[NbConvertApp] Making directory __results___files
+6869.7s	309	[NbConvertApp] Making directory __results___files
+6869.7s	310	[NbConvertApp] Making directory __results___files
+6869.7s	311	[NbConvertApp] Making directory __results___files
+6869.7s	312	[NbConvertApp] Making directory __results___files
+6869.7s	313	[NbConvertApp] Making directory __results___files
+6869.7s	314	[NbConvertApp] Making directory __results___files
+6869.7s	315	[NbConvertApp] Making directory __results___files
+6869.7s	316	[NbConvertApp] Making directory __results___files
+6869.7s	317	[NbConvertApp] Making directory __results___files
+6869.7s	318	[NbConvertApp] Making directory __results___files
+6869.7s	319	[NbConvertApp] Making directory __results___files
+6869.7s	320	[NbConvertApp] Making directory __results___files
+6869.7s	321	[NbConvertApp] Making directory __results___files
+6869.7s	322	[NbConvertApp] Making directory __results___files
+6869.7s	323	[NbConvertApp] Making directory __results___files
+6869.7s	324	[NbConvertApp] Making directory __results___files
+6869.7s	325	[NbConvertApp] Making directory __results___files
+6869.7s	326	[NbConvertApp] Making directory __results___files
+6869.7s	327	[NbConvertApp] Writing 835179 bytes to __results__.html

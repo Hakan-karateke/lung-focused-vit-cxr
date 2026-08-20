@@ -1,0 +1,112 @@
+[{"stream_name":"stderr","time":7.013181545,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":7.013278207,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":7.013285666,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":7.013290034,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stderr","time":7.601507199,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":7.601540478,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":7.601544265,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":7.601559757,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stdout","time":22.970033467,"data":"Cihaz: cuda | PyTorch 2.10.0+cu128\n"}
+,{"stream_name":"stdout","time":22.970136626,"data":"MAX_PER_CLASS = 400, karar esigi = 0.5\n"}
+,{"stream_name":"stdout","time":174.042911574,"data":"Bulunanlar:\n"}
+,{"stream_name":"stdout","time":174.04294988,"data":"  Model (.pth) : /kaggle/input/models/hakankarateke/lung-focused-vit-pneumonia/pytorch/vit-b16/1/lung_focused_vit_pneumonia.pth\n"}
+,{"stream_name":"stdout","time":174.042956174,"data":"  RSNA tabani  : /kaggle/input/competitions/rsna-pneumonia-detection-challenge\n"}
+,{"stream_name":"stdout","time":174.04296177,"data":"  NIH tabani   : /kaggle/input/datasets/organizations/nih-chest-xrays/data\n"}
+,{"stream_name":"stdout","time":177.867509636,"data":"Model yuklendi.\n"}
+,{"stream_name":"stdout","time":177.867561256,"data":"  Mimari        : vit_b_16\n"}
+,{"stream_name":"stdout","time":177.867568132,"data":"  Egitim ValF1  : 0.9803012746234068\n"}
+,{"stream_name":"stdout","time":177.867576937,"data":"  Siniflar      : {'NORMAL': 0, 'PNEUMONIA': 1}\n"}
+,{"stream_name":"stdout","time":177.867581026,"data":"  Girdi boyutu  : 224 | mean=0.4769 std=0.2414\n"}
+,{"stream_name":"stdout","time":177.867597651,"data":"  Maske payi    : dilate=0.025 roi_pad=0.05 feather=9 fill=mean\n"}
+,{"stream_name":"stdout","time":188.877865373,"data":"ianpan/chest-x-ray-basic yukleniyor... (transformers 5.0.0 )\n"}
+,{"stream_name":"stderr","time":188.972294944,"data":"Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stderr","time":188.9723433,"data":"\n"}
+,{"stream_name":"stderr","time":188.97235047,"data":"Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stderr","time":189.0906564,"data":"A new version of the following files was downloaded from https://huggingface.co/ianpan/chest-x-ray-basic:\n"}
+,{"stream_name":"stderr","time":189.090681462,"data":"- configuration.py\n"}
+,{"stream_name":"stderr","time":189.090687102,"data":". Make sure to double-check they do not contain any added malicious code. To avoid downloading new versions of the code file, you can pin a revision.\n"}
+,{"stream_name":"stderr","time":189.090692355,"data":"\n"}
+,{"stream_name":"stderr","time":189.090697066,"data":"A new version of the following files was downloaded from https://huggingface.co/ianpan/chest-x-ray-basic:\n"}
+,{"stream_name":"stderr","time":189.090702275,"data":"- configuration.py\n"}
+,{"stream_name":"stderr","time":189.090706944,"data":". Make sure to double-check they do not contain any added malicious code. To avoid downloading new versions of the code file, you can pin a revision.\n"}
+,{"stream_name":"stderr","time":193.459860087,"data":"A new version of the following files was downloaded from https://huggingface.co/ianpan/chest-x-ray-basic:\n"}
+,{"stream_name":"stderr","time":193.459898419,"data":"- unet.py\n"}
+,{"stream_name":"stderr","time":193.459903494,"data":". Make sure to double-check they do not contain any added malicious code. To avoid downloading new versions of the code file, you can pin a revision.\n"}
+,{"stream_name":"stderr","time":193.459907886,"data":"\n"}
+,{"stream_name":"stderr","time":193.459911346,"data":"A new version of the following files was downloaded from https://huggingface.co/ianpan/chest-x-ray-basic:\n"}
+,{"stream_name":"stderr","time":193.459915661,"data":"- unet.py\n"}
+,{"stream_name":"stderr","time":193.459919236,"data":". Make sure to double-check they do not contain any added malicious code. To avoid downloading new versions of the code file, you can pin a revision.\n"}
+,{"stream_name":"stderr","time":193.460760198,"data":"A new version of the following files was downloaded from https://huggingface.co/ianpan/chest-x-ray-basic:\n"}
+,{"stream_name":"stderr","time":193.460777582,"data":"- modeling.py\n"}
+,{"stream_name":"stderr","time":193.46078179,"data":"- unet.py\n"}
+,{"stream_name":"stderr","time":193.460785109,"data":". Make sure to double-check they do not contain any added malicious code. To avoid downloading new versions of the code file, you can pin a revision.\n"}
+,{"stream_name":"stderr","time":193.460789028,"data":"\n"}
+,{"stream_name":"stderr","time":193.460792486,"data":"A new version of the following files was downloaded from https://huggingface.co/ianpan/chest-x-ray-basic:\n"}
+,{"stream_name":"stderr","time":193.460796382,"data":"- modeling.py\n"}
+,{"stream_name":"stderr","time":193.460799664,"data":"- unet.py\n"}
+,{"stream_name":"stderr","time":193.460803064,"data":". Make sure to double-check they do not contain any added malicious code. To avoid downloading new versions of the code file, you can pin a revision.\n"}
+,{"stream_name":"stdout","time":200.440676097,"data":"Segmentasyon modeli hazir.\n"}
+,{"stream_name":"stdout","time":200.480204737,"data":"On-isleme hatti hazir.\n"}
+,{"stream_name":"stdout","time":200.682014343,"data":"RSNA : 800 goruntu (400 pnomoni / 400 normal)\n"}
+,{"stream_name":"stdout","time":231.230813241,"data":"NIH  : 800 goruntu (400 pnomoni / 400 normal)\n"}
+,{"stream_name":"stdout","time":231.230862289,"data":"\n"}
+,{"stream_name":"stdout","time":231.23099762,"data":"Degerlendirilecek set sayisi: 2\n"}
+,{"stream_name":"stdout","time":231.425771607,"data":"\n"}
+,{"stream_name":"stdout","time":231.425827264,"data":"\u003e\u003e\u003e RSNA (yetiskin) cikarimi basliyor (800 goruntu)...\n"}
+,{"stream_name":"stdout","time":239.943346436,"data":"  [RSNA (yetiskin)] 100/800 ...\n"}
+,{"stream_name":"stdout","time":247.256587531,"data":"  [RSNA (yetiskin)] 200/800 ...\n"}
+,{"stream_name":"stdout","time":254.669932968,"data":"  [RSNA (yetiskin)] 300/800 ...\n"}
+,{"stream_name":"stdout","time":262.116189942,"data":"  [RSNA (yetiskin)] 400/800 ...\n"}
+,{"stream_name":"stdout","time":269.455693783,"data":"  [RSNA (yetiskin)] 500/800 ...\n"}
+,{"stream_name":"stdout","time":276.761239989,"data":"  [RSNA (yetiskin)] 600/800 ...\n"}
+,{"stream_name":"stdout","time":284.268760399,"data":"  [RSNA (yetiskin)] 700/800 ...\n"}
+,{"stream_name":"stdout","time":291.638468585,"data":"  [RSNA (yetiskin)] 800/800 ...\n"}
+,{"stream_name":"stdout","time":291.638514889,"data":"  [RSNA (yetiskin)] bitti: 800 goruntu, 60 sn, fallback %0.0\n"}
+,{"stream_name":"stdout","time":291.638537862,"data":"\n"}
+,{"stream_name":"stdout","time":291.638542852,"data":"\u003e\u003e\u003e NIH ChestX-ray14 (yetiskin) cikarimi basliyor (800 goruntu)...\n"}
+,{"stream_name":"stdout","time":299.696953437,"data":"  [NIH ChestX-ray14 (yetiskin)] 100/800 ...\n"}
+,{"stream_name":"stdout","time":307.784807704,"data":"  [NIH ChestX-ray14 (yetiskin)] 200/800 ...\n"}
+,{"stream_name":"stdout","time":316.017266369,"data":"  [NIH ChestX-ray14 (yetiskin)] 300/800 ...\n"}
+,{"stream_name":"stdout","time":324.260878376,"data":"  [NIH ChestX-ray14 (yetiskin)] 400/800 ...\n"}
+,{"stream_name":"stdout","time":333.03187165,"data":"  [NIH ChestX-ray14 (yetiskin)] 500/800 ...\n"}
+,{"stream_name":"stdout","time":341.408799794,"data":"  [NIH ChestX-ray14 (yetiskin)] 600/800 ...\n"}
+,{"stream_name":"stdout","time":349.864360724,"data":"  [NIH ChestX-ray14 (yetiskin)] 700/800 ...\n"}
+,{"stream_name":"stdout","time":357.838892385,"data":"  [NIH ChestX-ray14 (yetiskin)] 800/800 ...\n"}
+,{"stream_name":"stdout","time":357.838940895,"data":"  [NIH ChestX-ray14 (yetiskin)] bitti: 800 goruntu, 66 sn, fallback %0.0\n"}
+,{"stream_name":"stdout","time":359.168665575,"data":"  [RSNA (yetiskin)] Duyarlilik=0.965 Ozgulluk=0.640 Kesinlik=0.728 | oracle esik=0.95 -\u003e F1=0.838\n"}
+,{"stream_name":"stdout","time":360.033536567,"data":"  [NIH ChestX-ray14 (yetiskin)] Duyarlilik=0.850 Ozgulluk=0.432 Kesinlik=0.600 | oracle esik=0.10 -\u003e F1=0.709\n"}
+,{"stream_name":"stdout","time":360.231195713,"data":"==============================================================================\n"}
+,{"stream_name":"stdout","time":360.231245233,"data":"  DIS DOGRULAMA OZETI\n"}
+,{"stream_name":"stdout","time":360.23125221,"data":"==============================================================================\n"}
+,{"stream_name":"stdout","time":360.23125667,"data":"                               N   AUC    AP  Acc@thr  F1@thr  Duyarlilik  Ozgulluk  Brier   ECE\n"}
+,{"stream_name":"stdout","time":360.231261541,"data":"set                                                                                             \n"}
+,{"stream_name":"stdout","time":360.231266432,"data":"RSNA (yetiskin)              800 0.930 0.927    0.802   0.830       0.965     0.640  0.190 0.193\n"}
+,{"stream_name":"stdout","time":360.231271744,"data":"NIH ChestX-ray14 (yetiskin)  800 0.702 0.677    0.641   0.703       0.850     0.432  0.350 0.350\n"}
+,{"stream_name":"stdout","time":360.231276654,"data":"==============================================================================\n"}
+,{"stream_name":"stdout","time":360.755033456,"data":"============================================================================================\n"}
+,{"stream_name":"stdout","time":360.755064117,"data":"  ESIK YENIDEN KALIBRASYONU  (gorulmemis %50 test yarisinda, esik=0.5)\n"}
+,{"stream_name":"stdout","time":360.755070953,"data":"============================================================================================\n"}
+,{"stream_name":"stdout","time":360.755076287,"data":" Set    Yontem   Acc    F1  Duyarlilik  Ozgulluk  Brier   ECE\n"}
+,{"stream_name":"stdout","time":360.755081631,"data":"RSNA Ham (0.5) 0.808 0.834       0.970     0.645  0.188 0.191\n"}
+,{"stream_name":"stdout","time":360.755086868,"data":"RSNA     Platt 0.815 0.840       0.970     0.660  0.141 0.015\n"}
+,{"stream_name":"stdout","time":360.755091913,"data":"RSNA  Isotonic 0.852 0.857       0.885     0.820  0.109 0.047\n"}
+,{"stream_name":"stdout","time":360.755096885,"data":" NIH Ham (0.5) 0.652 0.706       0.835     0.470  0.342 0.347\n"}
+,{"stream_name":"stdout","time":360.755102271,"data":" NIH     Platt 0.645 0.698       0.820     0.470  0.224 0.017\n"}
+,{"stream_name":"stdout","time":360.755118731,"data":" NIH  Isotonic 0.632 0.667       0.735     0.530  0.220 0.061\n"}
+,{"stream_name":"stdout","time":360.755124787,"data":"============================================================================================\n"}
+,{"stream_name":"stdout","time":360.755159806,"data":"  RSNA (yetiskin): test AUC=0.927  (kalibrasyon monoton -\u003e AUC degismez)\n"}
+,{"stream_name":"stdout","time":360.755164859,"data":"  NIH ChestX-ray14 (yetiskin): test AUC=0.701  (kalibrasyon monoton -\u003e AUC degismez)\n"}
+,{"stream_name":"stderr","time":367.510263735,"data":"/usr/local/lib/python3.12/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":367.510306541,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":367.661821011,"data":"/usr/local/lib/python3.12/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":367.661879144,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":368.322440758,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to notebook\n"}
+,{"stream_name":"stderr","time":368.666940863,"data":"[NbConvertApp] Writing 775974 bytes to __notebook__.ipynb\n"}
+,{"stream_name":"stderr","time":371.100261109,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to html\n"}
+,{"stream_name":"stderr","time":372.042319345,"data":"[NbConvertApp] Support files will be in __results___files/\n"}
+,{"stream_name":"stderr","time":372.042348334,"data":"[NbConvertApp] Making directory __results___files\n"}
+,{"stream_name":"stderr","time":372.042569704,"data":"[NbConvertApp] Making directory __results___files\n"}
+,{"stream_name":"stderr","time":372.042953303,"data":"[NbConvertApp] Making directory __results___files\n"}
+,{"stream_name":"stderr","time":372.043168214,"data":"[NbConvertApp] Making directory __results___files\n"}
+,{"stream_name":"stderr","time":372.043620061,"data":"[NbConvertApp] Writing 506706 bytes to __results__.html\n"}
+]
