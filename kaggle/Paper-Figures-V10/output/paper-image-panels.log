@@ -1,0 +1,70 @@
+[{"stream_name":"stderr","time":7.208871529,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":7.208939849,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":7.208946761,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":7.208950958,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stderr","time":7.835561409,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":7.835608208,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":7.835614238,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":7.835618226,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stdout","time":20.588028316,"data":"Cihaz: cuda | tek kolon 3.5\" | cift kolon 7.16\"\n"}
+,{"stream_name":"stdout","time":256.401337416,"data":"veri kumesi: /kaggle/input/datasets/yusufmurtaza01/chest-xray-pneumonia-balanced-dataset\n"}
+,{"stream_name":"stdout","time":256.401430458,"data":"RSNA       : /kaggle/input/competitions/rsna-pneumonia-detection-challenge\n"}
+,{"stream_name":"stdout","time":256.401442098,"data":"  ckpt raw  : ablation_vit_raw.pth\n"}
+,{"stream_name":"stdout","time":256.401447355,"data":"  ckpt roi  : ablation_vit_roi.pth\n"}
+,{"stream_name":"stdout","time":256.401451515,"data":"  ckpt lung : ablation_vit_lung.pth\n"}
+,{"stream_name":"stdout","time":269.436529426,"data":"Modeller yuklendi | girdi 224 | dolgu 122\n"}
+,{"stream_name":"stderr","time":286.242489047,"data":"Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stderr","time":286.242529275,"data":"\n"}
+,{"stream_name":"stderr","time":286.242535945,"data":"Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stderr","time":286.355292205,"data":"A new version of the following files was downloaded from https://huggingface.co/ianpan/chest-x-ray-basic:\n"}
+,{"stream_name":"stderr","time":286.355329367,"data":"- configuration.py\n"}
+,{"stream_name":"stderr","time":286.355336243,"data":". Make sure to double-check they do not contain any added malicious code. To avoid downloading new versions of the code file, you can pin a revision.\n"}
+,{"stream_name":"stderr","time":286.35534181,"data":"\n"}
+,{"stream_name":"stderr","time":286.35534677,"data":"A new version of the following files was downloaded from https://huggingface.co/ianpan/chest-x-ray-basic:\n"}
+,{"stream_name":"stderr","time":286.355352246,"data":"- configuration.py\n"}
+,{"stream_name":"stderr","time":286.35535661,"data":". Make sure to double-check they do not contain any added malicious code. To avoid downloading new versions of the code file, you can pin a revision.\n"}
+,{"stream_name":"stderr","time":291.076770954,"data":"A new version of the following files was downloaded from https://huggingface.co/ianpan/chest-x-ray-basic:\n"}
+,{"stream_name":"stderr","time":291.076808071,"data":"- unet.py\n"}
+,{"stream_name":"stderr","time":291.076815069,"data":". Make sure to double-check they do not contain any added malicious code. To avoid downloading new versions of the code file, you can pin a revision.\n"}
+,{"stream_name":"stderr","time":291.076948708,"data":"\n"}
+,{"stream_name":"stderr","time":291.076969218,"data":"A new version of the following files was downloaded from https://huggingface.co/ianpan/chest-x-ray-basic:\n"}
+,{"stream_name":"stderr","time":291.076985,"data":"- unet.py\n"}
+,{"stream_name":"stderr","time":291.076989426,"data":". Make sure to double-check they do not contain any added malicious code. To avoid downloading new versions of the code file, you can pin a revision.\n"}
+,{"stream_name":"stderr","time":291.078569918,"data":"A new version of the following files was downloaded from https://huggingface.co/ianpan/chest-x-ray-basic:\n"}
+,{"stream_name":"stderr","time":291.078587676,"data":"- modeling.py\n"}
+,{"stream_name":"stderr","time":291.078622564,"data":"- unet.py\n"}
+,{"stream_name":"stderr","time":291.078627239,"data":". Make sure to double-check they do not contain any added malicious code. To avoid downloading new versions of the code file, you can pin a revision.\n"}
+,{"stream_name":"stderr","time":291.078631664,"data":"\n"}
+,{"stream_name":"stderr","time":291.078635857,"data":"A new version of the following files was downloaded from https://huggingface.co/ianpan/chest-x-ray-basic:\n"}
+,{"stream_name":"stderr","time":291.078641064,"data":"- modeling.py\n"}
+,{"stream_name":"stderr","time":291.078645036,"data":"- unet.py\n"}
+,{"stream_name":"stderr","time":291.078649568,"data":". Make sure to double-check they do not contain any added malicious code. To avoid downloading new versions of the code file, you can pin a revision.\n"}
+,{"stream_name":"stdout","time":297.101694265,"data":"Segmentasyon modeli hazir.\n"}
+,{"stream_name":"stdout","time":297.126363184,"data":"On-isleme hatti hazir.\n"}
+,{"stream_name":"stdout","time":297.327125496,"data":"Secilen ornekler:\n"}
+,{"stream_name":"stdout","time":297.327200598,"data":"  NORMAL     NORMAL2-IM-0325-0001.jpeg  (ozgun)\n"}
+,{"stream_name":"stdout","time":297.327207811,"data":"  PNEUMONIA  person122_bacteria_584.jpeg  (ozgun)\n"}
+,{"stream_name":"stdout","time":298.388345827,"data":"  NORMAL: orijinal (512, 709)  akciger alani %26.7\n"}
+,{"stream_name":"stdout","time":298.388455629,"data":"  PNEUMONIA: orijinal (512, 666)  akciger alani %21.5\n"}
+,{"stream_name":"stdout","time":304.618528522,"data":"fig1_pipeline.pdf / .png yazildi\n"}
+,{"stream_name":"stdout","time":306.899915449,"data":"fig_occlusion_conditions.pdf / .png yazildi\n"}
+,{"stream_name":"stdout","time":312.322104945,"data":"fig_attention_examples.pdf / .png yazildi\n"}
+,{"stream_name":"stdout","time":312.66943996,"data":"Kaydedilenler:\n"}
+,{"stream_name":"stdout","time":312.669473317,"data":"  fig1_pipeline.pdf                       1.80 MB\n"}
+,{"stream_name":"stdout","time":312.669478292,"data":"  fig1_pipeline.png                       1.45 MB\n"}
+,{"stream_name":"stdout","time":312.669482051,"data":"  fig_attention_examples.pdf              1.58 MB\n"}
+,{"stream_name":"stdout","time":312.669485732,"data":"  fig_attention_examples.png              1.86 MB\n"}
+,{"stream_name":"stdout","time":312.669489761,"data":"  fig_occlusion_conditions.pdf            0.54 MB\n"}
+,{"stream_name":"stdout","time":312.6694934,"data":"  fig_occlusion_conditions.png            0.23 MB\n"}
+,{"stream_name":"stdout","time":312.669497081,"data":"  paper_panel_arrays.npz                  1.96 MB\n"}
+,{"stream_name":"stdout","time":312.669500662,"data":"\n"}
+,{"stream_name":"stdout","time":312.669504097,"data":"Not: PDF'ler IEEE kolon genisliginde uretildi; LaTeX icinde \\includegraphics[width=\\textwidth]{...} ile OLCEKLENMEDEN kullanilmalidir.\n"}
+,{"stream_name":"stderr","time":318.706633266,"data":"/usr/local/lib/python3.12/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":318.706687908,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":318.862868506,"data":"/usr/local/lib/python3.12/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":318.862923408,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":319.545285938,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to notebook\n"}
+,{"stream_name":"stderr","time":319.889000759,"data":"[NbConvertApp] Writing 118912 bytes to __notebook__.ipynb\n"}
+,{"stream_name":"stderr","time":322.522363541,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to html\n"}
+,{"stream_name":"stderr","time":323.488666647,"data":"[NbConvertApp] Writing 469972 bytes to __results__.html\n"}
+]

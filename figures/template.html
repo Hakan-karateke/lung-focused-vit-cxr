@@ -1,0 +1,390 @@
+<title>Akciğer-Odaklı ViT Yöntem Şemaları</title>
+
+<style>
+:root{
+  --ground:#F0F3F3; --surface:#FFFFFF; --surface-2:#E7ECEC;
+  --ink:#1B2327; --ink-2:#5A686F;
+  --line:#C2CDCE; --line-soft:#DBE2E3;
+  --panel:#F4F6F7; --panel-line:#D8DFE1;
+  --fig-line:#7C888E; --soft-line:#A9B4B8; --edge:#6E7A80; --tissue:#CBD2D5;
+  --accent:#17616B; --accent-soft:#DDEBED; --accent-ink:#0E4952;
+  --alt:#96421F; --alt-soft:#F4E5DC; --alt-ink:#7A3418;
+  --font-display:"Palatino Linotype","Book Antiqua",Palatino,"Iowan Old Style",Cambria,Georgia,serif;
+  --font-ui:"Segoe UI",-apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif;
+  --font-fig:"Helvetica Neue",Helvetica,Arial,sans-serif;
+  --font-mono:Consolas,"Cascadia Mono","SF Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --ground:#0B0F13; --surface:#121A20; --surface-2:#18232A;
+    --ink:#E3EBEE; --ink-2:#9AAAB1;
+    --line:#2B3A43; --line-soft:#1F2C33;
+    --panel:#18232A; --panel-line:#2A393F;
+    --fig-line:#4C5C64; --soft-line:#3E4E56; --edge:#78888F; --tissue:#2C3A41;
+    --accent:#4FBFCC; --accent-soft:#0F3239; --accent-ink:#8ADBE4;
+    --alt:#E0925F; --alt-soft:#33211A; --alt-ink:#F0B58D;
+  }
+}
+:root[data-theme="dark"]{
+  --ground:#0B0F13; --surface:#121A20; --surface-2:#18232A;
+  --ink:#E3EBEE; --ink-2:#9AAAB1;
+  --line:#2B3A43; --line-soft:#1F2C33;
+  --panel:#18232A; --panel-line:#2A393F;
+  --fig-line:#4C5C64; --soft-line:#3E4E56; --edge:#78888F; --tissue:#2C3A41;
+  --accent:#4FBFCC; --accent-soft:#0F3239; --accent-ink:#8ADBE4;
+  --alt:#E0925F; --alt-soft:#33211A; --alt-ink:#F0B58D;
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0; background:var(--ground); color:var(--ink);
+  font-family:var(--font-ui); font-size:16px; line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+@media (prefers-reduced-motion: no-preference){ html{scroll-behavior:smooth} }
+
+.shell{max-width:1400px; margin:0 auto; padding:44px 32px 96px}
+@media (min-width:1200px){
+  .shell{display:grid; grid-template-columns:196px minmax(0,1fr); column-gap:48px; align-items:start}
+  .masthead{grid-column:1 / -1}
+}
+
+/* ── masthead ─────────────────────────────────────────────── */
+.masthead{border-bottom:1px solid var(--line); padding-bottom:34px; margin-bottom:44px}
+.eyebrow{
+  font-family:var(--font-mono); font-size:11.5px; letter-spacing:.17em;
+  text-transform:uppercase; color:var(--accent); margin:0 0 14px
+}
+.masthead h1{
+  font-family:var(--font-display); font-weight:600;
+  font-size:clamp(30px,4.2vw,50px); line-height:1.14; letter-spacing:-.01em;
+  margin:0 0 18px; text-wrap:balance; max-width:19ch;
+}
+.lede{font-size:16.5px; line-height:1.62; color:var(--ink-2); max-width:66ch; margin:0}
+.meta{
+  display:flex; flex-wrap:wrap; gap:10px 34px; margin:28px 0 0;
+  padding-top:22px; border-top:1px solid var(--line-soft);
+}
+.meta div{display:flex; flex-direction:column; gap:3px}
+.meta dt{
+  font-family:var(--font-mono); font-size:10.5px; letter-spacing:.13em;
+  text-transform:uppercase; color:var(--ink-2); margin:0
+}
+.meta dd{margin:0; font-size:14px; color:var(--ink)}
+
+/* ── rail ─────────────────────────────────────────────────── */
+.rail{display:none}
+@media (min-width:1200px){
+  .rail{display:block; position:sticky; top:36px; align-self:start}
+  .rail h2{
+    font-family:var(--font-mono); font-size:10.5px; letter-spacing:.15em;
+    text-transform:uppercase; color:var(--ink-2); margin:0 0 16px; font-weight:600;
+  }
+  .rail ol{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:2px}
+  .rail a{
+    display:grid; grid-template-columns:26px 1fr; gap:8px; align-items:baseline;
+    padding:7px 8px 7px 12px; margin-left:-14px; text-decoration:none;
+    color:var(--ink-2); border-left:2px solid transparent;
+  }
+  .rail a:hover{color:var(--accent); border-left-color:var(--accent)}
+  .rail b{font-family:var(--font-mono); font-size:11px; color:var(--accent); font-weight:600}
+  .rail span{font-size:13px; line-height:1.35}
+}
+a:focus-visible{outline:2px solid var(--accent); outline-offset:3px; border-radius:2px}
+
+/* ── figures ──────────────────────────────────────────────── */
+.sheet{display:flex; flex-direction:column; gap:34px; min-width:0}
+figure{
+  margin:0; background:var(--surface); border:1px solid var(--line-soft);
+  border-radius:5px; padding:28px 28px 22px;
+  display:flex; flex-direction:column; gap:18px; scroll-margin-top:28px;
+}
+.fig-head{display:flex; flex-direction:column; gap:7px}
+.fig-num{
+  font-family:var(--font-mono); font-size:11px; letter-spacing:.16em;
+  text-transform:uppercase; color:var(--accent);
+}
+figure h3{
+  font-family:var(--font-display); font-weight:600; font-size:clamp(19px,2.1vw,26px);
+  line-height:1.24; margin:0; text-wrap:balance; color:var(--ink);
+}
+.deck{margin:2px 0 0; font-size:14.5px; line-height:1.58; color:var(--ink-2); max-width:72ch}
+.canvas{overflow-x:auto; overflow-y:hidden; padding:2px 0 8px}
+figcaption{
+  border-top:1px solid var(--line-soft); padding-top:16px;
+  font-size:13.5px; line-height:1.62; color:var(--ink-2); max-width:82ch;
+}
+figcaption b{color:var(--ink); font-weight:600}
+.src{
+  margin:12px 0 0; font-family:var(--font-mono); font-size:11px;
+  color:var(--ink-2); opacity:.8;
+}
+
+/* ── diagram styling ──────────────────────────────────────── */
+.dg{display:block; height:auto; width:100%; max-width:980px; min-width:720px; margin-inline:auto}
+
+.dg .n{fill:var(--surface); stroke:var(--fig-line); stroke-width:1.1}
+.dg .n-a{fill:var(--accent-soft); stroke:var(--accent); stroke-width:1.6}
+.dg .n-b{fill:var(--alt-soft); stroke:var(--alt); stroke-width:1.3; stroke-dasharray:5 3}
+.dg .n-p{fill:var(--panel); stroke:var(--panel-line); stroke-width:1}
+
+.dg text{font-family:var(--font-fig)}
+.dg .tp{font-size:15px; font-weight:700; fill:var(--ink)}
+.dg .tb{font-size:12px; font-weight:600; fill:var(--ink-2); letter-spacing:.9px}
+.dg .tt{font-size:13.5px; font-weight:600; fill:var(--ink)}
+.dg .td{font-size:11.5px; fill:var(--ink-2)}
+.dg .te{font-size:11px; fill:var(--ink-2)}
+.dg .tc{font-size:11.5px; fill:var(--ink-2)}
+.dg .tk{font-size:11.5px; fill:var(--ink-2)}
+.dg .tv{font-size:11.5px; fill:var(--ink); font-variant-numeric:tabular-nums}
+
+.dg .e{fill:none; stroke:var(--edge); stroke-width:1.3}
+.dg .e-a{stroke:var(--accent); stroke-width:1.6}
+.dg .e-b{stroke:var(--alt); stroke-width:1.4}
+.dg .gl{fill:none; stroke:var(--soft-line); stroke-width:.8}
+.dg .go{fill:none; stroke:var(--ink-2); stroke-width:1}
+.dg .gk{fill:none; stroke:var(--accent); stroke-width:1.6}
+.dg .ax{fill:none; stroke:var(--ink-2); stroke-width:.9}
+.dg .ref{fill:none; stroke:var(--soft-line); stroke-width:.8; stroke-dasharray:3 2}
+.dg .pl{fill:none; stroke:var(--accent); stroke-width:1.4}
+.dg .dsh{stroke-dasharray:5 3}
+
+.dg .gs{fill:var(--tissue); stroke:none}
+.dg .gf{fill:var(--surface); stroke:none}
+.dg .gkf{fill:var(--accent-soft); stroke:none}
+.dg .gb{fill:var(--panel); stroke:var(--ink-2); stroke-width:1}
+.dg .gfr{fill:none; stroke:var(--soft-line); stroke-width:1}
+.dg .gpg{fill:var(--panel); stroke:var(--ink-2); stroke-width:1}
+.dg .gpl{fill:var(--surface); stroke:var(--ink-2); stroke-width:.9}
+.dg .hc{fill:var(--accent); stroke:none}
+.dg .bar{fill:var(--accent); stroke:none}
+.dg .hh{fill:none; stroke:var(--surface); stroke-width:2.8}
+.dg .hl{fill:none; stroke:var(--ink); stroke-width:1; stroke-dasharray:4 2.5}
+
+.dg .mk{fill:var(--edge)}
+.dg .mk-a{fill:var(--accent)}
+.dg .mk-b{fill:var(--alt)}
+
+/* ── closing ──────────────────────────────────────────────── */
+.files{
+  margin-top:40px; padding:26px 28px; border:1px solid var(--line-soft);
+  border-radius:5px; background:var(--surface-2);
+}
+.files h2{
+  font-family:var(--font-mono); font-size:11px; letter-spacing:.15em;
+  text-transform:uppercase; color:var(--ink-2); margin:0 0 16px; font-weight:600;
+}
+.files ul{margin:0; padding:0; list-style:none; display:flex; flex-direction:column; gap:8px}
+.files li{display:flex; flex-wrap:wrap; gap:4px 14px; align-items:baseline;
+  font-size:13.5px; color:var(--ink-2)}
+.files code{
+  font-family:var(--font-mono); font-size:12.5px; color:var(--ink);
+  background:var(--surface); border:1px solid var(--line-soft);
+  border-radius:3px; padding:1px 7px;
+}
+.files p{margin:18px 0 0; font-size:13px; line-height:1.65; color:var(--ink-2); max-width:78ch}
+.specs{
+  display:flex; flex-wrap:wrap; gap:8px 28px; margin:18px 0 0; padding-top:16px;
+  border-top:1px solid var(--line-soft); font-size:12.5px; color:var(--ink-2);
+}
+.specs b{color:var(--ink); font-weight:600}
+</style>
+
+<div class="shell">
+
+  <header class="masthead">
+    <p class="eyebrow">Yöntem Şemaları · Yüksek Lisans Semineri · 2026</p>
+    <h1>Göğüs radyografisinde akciğer-odaklı pnömoni sınıflandırması</h1>
+    <p class="lede">
+      Çalışmada uygulanan algoritmaların yayın düzeyinde akış şemaları. Şekiller çift
+      kolon genişliğine (180 mm) göre ölçeklendirilmiş, tek yazı tipi ailesiyle kurulmuş
+      ve gri tonlamalı baskıda ayrışacak biçimde tonlanmıştır. Anatomik durumlar
+      şematik çizimlerle gösterilir; böylece hangi dokunun korunduğu ve hangisinin
+      silindiği şeklin kendisinden okunur.
+    </p>
+    <dl class="meta">
+      <div><dt>Sınıflandırıcı</dt><dd>ViT-B/16 · ImageNet ön-eğitimli</dd></div>
+      <div><dt>Segmentasyon</dt><dd>ianpan/chest-x-ray-basic · U-Net</dd></div>
+      <div><dt>Eğitim verisi</dt><dd>8.528 göğüs radyografisi</dd></div>
+      <div><dt>Dış doğrulama</dt><dd>RSNA · NIH ChestX-ray14</dd></div>
+      <div><dt>Açıklanabilirlik</dt><dd>Attention Rollout · LFR</dd></div>
+    </dl>
+  </header>
+
+  <nav class="rail" aria-label="Şekil dizini">
+    <h2>Şekiller</h2>
+    <ol>
+      <li><a href="#s1"><b>1</b><span>Önerilen çerçeve</span></a></li>
+      <li><a href="#s2"><b>2</b><span>Maskeleme algoritması</span></a></li>
+      <li><a href="#s3"><b>3</b><span>Veri ve eğitim</span></a></li>
+      <li><a href="#s4"><b>4</b><span>Dış doğrulama</span></a></li>
+      <li><a href="#s5"><b>5</b><span>Rollout ve LFR</span></a></li>
+      <li><a href="#s6"><b>6</b><span>Karşılaştırma</span></a></li>
+    </ol>
+  </nav>
+
+  <main class="sheet">
+
+    <figure id="s1">
+      <div class="fig-head">
+        <p class="fig-num">Şekil 1</p>
+        <h3>Önerilen akciğer-odaklı Vision Transformer çerçevesi</h3>
+        <p class="deck">
+          Ön-işleme hattı, sınıflandırıcı ve değerlendirme protokolünün uçtan uca görünümü.
+        </p>
+      </div>
+      <div class="canvas"><!--FIG1--></div>
+      <figcaption>
+        <b>(a)</b> Her radyograf, çok merkezli veriyle eğitilmiş bir U-Net ile
+        segmentlenir; yalnızca sağ ve sol akciğer alanları korunur, kalp ve mediasten
+        silinerek yerine veri kümesi ortalama grisi doldurulur; kalan akciğer bölgesi
+        ilgi alanına kırpılıp 224² boyutuna ölçeklenir. <b>(b)</b> Elde edilen girdi
+        16 × 16 yamalara bölünerek ViT-B/16'ya verilir; gövde dondurulur ve yalnızca
+        son iki kodlayıcı bloğu, katman normalizasyonu ile sınıflandırma başlığı
+        güncellenir. <b>(c)</b> Model, iç test kümesinin ardından eğitim dağıtımından
+        bağımsız iki yetişkin kümede sınanır ve olasılıkları küçük bir etiketli
+        örneklemle yeniden kalibre edilir.
+        <p class="src">kaynak · V2 eğitim ve dış doğrulama notebook koşum logları</p>
+      </figcaption>
+    </figure>
+
+    <figure id="s2">
+      <div class="fig-head">
+        <p class="fig-num">Şekil 2</p>
+        <h3>Anatomik maskeleme ve ilgi alanı çıkarım algoritması</h3>
+        <p class="deck">
+          Çekirdek dönüşümün adımları, geri çekilme dalı ve ön-işleme parametreleri.
+        </p>
+      </div>
+      <div class="canvas"><!--FIG2--></div>
+      <figcaption>
+        Adım 2, sağ ve sol akciğeri korurken kalp ve mediasteni (segmentasyon çıktısının
+        üçüncü sınıfı) kasıtlı olarak dışlar; önceki sürümde saptanan omurga/mediasten
+        kısayolunun bulunduğu bölge burasıdır. Adım 3-4, segmentasyonun yaklaşık %5'lik
+        sınır hatasını telafi eden tolerans katmanını oluşturur: genişletme periferik
+        patolojinin dışarıda kalmasını, kenar yumuşatma yapay bir keskin sınırın yeni
+        bir öznitelik olarak öğrenilmesini, ortalama gri dolgu ise normalizasyon sonrası
+        nötr bir zemini sağlar. İşlem çevrimdışı uygulanıp önbelleğe alınır. Geri çekilme
+        dalı, işlenen 10.128 görüntünün hiçbirinde tetiklenmemiştir.
+        <p class="src">kaynak · V2 eğitim notebook, hücre 7 — load_image / lung_mask_ianpan / make_lung_focused</p>
+      </figcaption>
+    </figure>
+
+    <figure id="s3">
+      <div class="fig-head">
+        <p class="fig-num">Şekil 3</p>
+        <h3>Veri bölümleme, sızıntı denetimi ve eğitim protokolü</h3>
+        <p class="deck">
+          Bölmelerin oluşturulması ve parametre-verimli ince ayar stratejisi.
+        </p>
+      </div>
+      <div class="canvas"><!--FIG3--></div>
+      <figcaption>
+        <b>(a)</b> Özgün doğrulama kümesi F1 tahmini için fazla küçük olduğundan
+        (yaklaşık 30 örnek), doğrulama ve test havuzları birleştirilip her sınıftan eşit
+        sayıda örnek içeren iki ayrık alt kümeye bölünmüştür; bölmeler arasında dosya
+        imzası tabanlı çakışma denetimi uygulanmıştır. <b>(b)</b> Kayıp yalnızca çapraz
+        entropidir — önceki sürümdeki anatomik ceza terimi tamamen kaldırılmıştır, çünkü
+        akciğer dışına bakmama kısıtı artık girdinin yapısıyla sağlanmaktadır. Geri
+        yayılım yalnızca ince ayarlı katmanları günceller.
+        <p class="src">kaynak · V2 eğitim notebook, hücreler 11–18</p>
+      </figcaption>
+    </figure>
+
+    <figure id="s4">
+      <div class="fig-head">
+        <p class="fig-num">Şekil 4</p>
+        <h3>Dış doğrulama ve eşik yeniden kalibrasyonu</h3>
+        <p class="deck">
+          Bağımsız kümelerde sınama protokolü ve kalibratörlerin güvenilirlik eğrilerine etkisi.
+        </p>
+      </div>
+      <div class="canvas"><!--FIG4--></div>
+      <figcaption>
+        Kontrol noktası yalnızca ağırlıkları değil, tüm ön-işleme parametrelerini de
+        taşır; böylece doğrulama hattı eğitimle birebir aynı maske payı, dolgu ve
+        normalizasyonu kullanır. Her iki kümede de yüksek duyarlılık ve düşük özgüllük
+        gözlenir; bu bir ayrıştırma değil, kalibrasyon davranışıdır. Kalibratörler
+        yalnızca %50'lik kalibrasyon yarısında öğrenilir ve tüm ölçütler görülmemiş
+        yarıda raporlanır. Alt sıradaki küçük grafikler RSNA güvenilirlik eğrileridir:
+        ham çıktı uç değerlere yığılmışken isotonik kalibrasyon eğriyi köşegene taşır
+        ve özgüllüğü 0,645'ten 0,820'ye çıkarır. Dönüşümler monoton olduğundan AUC
+        değişmez (RSNA 0,927; NIH 0,701).
+        <p class="src">kaynak · dış doğrulama notebook, hücreler 5–20</p>
+      </figcaption>
+    </figure>
+
+    <figure id="s5">
+      <div class="fig-head">
+        <p class="fig-num">Şekil 5</p>
+        <h3>Attention Rollout ve akciğer-odak oranı</h3>
+        <p class="deck">
+          Dikkat akışının katmanlar boyunca bütünleştirilmesi ve odak metriğinin türetilmesi.
+        </p>
+      </div>
+      <div class="canvas"><!--FIG5--></div>
+      <figcaption>
+        <b>(a)</b> Her katmanın kafalar üzerinde ortalanmış dikkat matrisine birim matris
+        eklenip satır normalizasyonu uygulanır; artık bağlantıları hesaba katan bu
+        matrislerin ardışık çarpımı, sınıf belirtecinden yamalara akan toplam dikkati
+        verir. <b>(b)</b> Akciğer-odak oranı, yalnızca gürültü eşiğinin üstünde kalan
+        dikkat kütlesini önbellekteki akciğer maskesiyle karşılaştırır. Önerilen
+        yöntemde girdi zaten yalnızca akciğerden ibaret olduğundan yüksek oran kısmen
+        tasarım gereğidir; metrik burada dikkatin görünür parankim dokusunda mı yoksa
+        maskelenmiş kenar ve dolgu bölgesinde mi harcandığını ölçer.
+        <p class="src">kaynak · V2 eğitim notebook, hücreler 23–27 — AttentionRollout / lung_focus_ratio</p>
+      </figcaption>
+    </figure>
+
+    <figure id="s6">
+      <div class="fig-head">
+        <p class="fig-num">Şekil 6</p>
+        <h3>Yumuşak ceza ile girdi düzeyinde maskelemenin karşılaştırılması</h3>
+        <p class="deck">
+          İki kol aynı veri kümesinde eğitilmiştir; aralarındaki tek yapısal fark,
+          sınıflandırıcıya ulaşan bilgidir.
+        </p>
+      </div>
+      <div class="canvas"><!--FIG6--></div>
+      <figcaption>
+        <b>(a)</b> Taban çizgide tüm toraks girdide bulunur ve akciğer dışına bakmak
+        yalnızca türevlenebilir bir ceza terimiyle caydırılır. Ceza ilk epoch içinde
+        dört büyüklük mertebesi düşer; ancak akciğer dışı yamaların gömme normunu
+        küçültmek, o bölgeden okunan bilgiyi karardan çıkarmakla aynı şey değildir —
+        dikkat omurga/mediasten ekseninde kalır ve odak oranı 0,159 düzeyinde seyreder.
+        <b>(b)</b> Önerilen yöntemde akciğer dışı pikseller sınıflandırıcı görüntüyü hiç
+        görmeden silinir; kısıt kayıp fonksiyonundan girdinin yapısına taşındığı için
+        dolanılamaz hale gelir. Dikkat görünür parankime yönelir ve model bağımsız
+        yetişkin kümede ayrıştırma yeteneğini korur.
+        <p class="src">kaynak · V1 notebook hücreler 18–19 ve V2 notebook hücreler 23–27</p>
+      </figcaption>
+    </figure>
+
+    <section class="files">
+      <h2>Şekil dosyaları</h2>
+      <ul>
+        <li><code>sekil_01_onerilen_cerceve.svg</code> Önerilen çerçeve</li>
+        <li><code>sekil_02_maskeleme_algoritmasi.svg</code> Maskeleme ve ilgi alanı algoritması</li>
+        <li><code>sekil_03_veri_ve_egitim.svg</code> Veri bölümleme ve eğitim</li>
+        <li><code>sekil_04_dis_dogrulama.svg</code> Dış doğrulama ve kalibrasyon</li>
+        <li><code>sekil_05_rollout_lfr.svg</code> Attention Rollout ve LFR</li>
+        <li><code>sekil_06_karsilastirma.svg</code> Taban çizgi karşılaştırması</li>
+      </ul>
+      <div class="specs">
+        <span><b>Tuval genişliği</b> 900 birim = 180 mm (çift kolon)</span>
+        <span><b>Gövde metni</b> 13,5 birim ≈ 7,9 pt</span>
+        <span><b>Ayrıntı metni</b> 11,5 birim ≈ 6,5 pt</span>
+        <span><b>Yazı tipi</b> Helvetica / Arial</span>
+        <span><b>Çizgi kalınlığı</b> 0,8–1,6 birim</span>
+      </div>
+      <p>
+        Şekiller <code>figures/make_figures.py</code> tarafından üretilir. Vektör
+        biçiminde olduklarından Word, LaTeX veya dergi şablonuna kayıpsız yerleştirilir;
+        tek kolon (85 mm) yerleşimi gerekirse betikteki tuval genişliği ve tipografi
+        ölçeği birlikte küçültülmelidir. Renkler gri tonlamada da ayrışır: önerilen
+        yöntem dolu ve koyu çerçeveli, taban çizgi kesik çerçeveli kutularla gösterilir.
+      </p>
+    </section>
+
+  </main>
+</div>
