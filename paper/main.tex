@@ -1,0 +1,396 @@
+\documentclass[journal,twoside,web]{ieeecolor}
+\usepackage{generic}
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{hyperref}
+\hypersetup{hidelinks=true}
+\usepackage{textcomp}
+
+\markboth{\hskip25pc IEEE JOURNAL OF BIOMEDICAL AND HEALTH INFORMATICS}
+{Karateke \MakeLowercase{\textit{and}} Karaduman: Discrimination Metrics Are Blind to Anatomical Grounding}
+
+\begin{document}
+
+\title{Discrimination Metrics Are Blind to Anatomical Grounding: A Controlled Ablation of Lung Masking in Chest Radiograph Pneumonia Classification}
+
+\author{Hakan Karateke and G\"{u}l\c{s}ah Karaduman
+\thanks{Manuscript submitted \today.}
+\thanks{This research received no specific grant from any funding agency in the public, commercial, or not-for-profit sectors. The authors declare no competing financial interests or personal relationships that could have influenced the work reported in this paper.}
+\thanks{H. Karateke is with the Department of Computer Engineering, Faculty of Engineering, F\i rat University, 23119 Elaz\i \u{g}, T\"{u}rkiye, and also with the Software Development Division, Limak Technology, Ankara, T\"{u}rkiye (e-mail: 252129102@firat.edu.tr).}
+\thanks{G. Karaduman is with the Department of Computer Engineering, Faculty of Engineering, F\i rat University, 23119 Elaz\i \u{g}, T\"{u}rkiye (e-mail: gkaraduman@firat.edu.tr).}}
+
+\maketitle
+
+\begin{abstract}
+Deep networks report near-perfect discrimination on chest radiograph pneumonia benchmarks, yet whether such scores reflect the use of clinically relevant anatomy remains unverified. We ask two questions: does anatomical lung masking improve discrimination, and can discrimination metrics distinguish a model that uses the lungs from one that does not? Three Vision Transformers were trained under identical data splits, seeds, and hyperparameters, differing only in input preparation: no segmentation, region-of-interest cropping alone, and lung masking combined with cropping. Across an internal test set and two independent adult cohorts, the three arms were statistically indistinguishable in area under the receiver operating characteristic curve; a 0.010 advantage observed with a single training seed collapsed to 0.001 when averaged over three seeds. The arms nevertheless differed radically in where the decision was grounded. On independent data, attention overlap with the lung mask was 0.011 for the segmentation-free model against a chance level of 0.236 defined by mean lung area, and 0.951 for the masked model, with complete separation across one thousand images. Region occlusion established causality: erasing both lung fields reduced internal performance of the segmentation-free model from 0.998 to 0.990, whereas erasing everything outside the lungs reduced it to 0.780. We additionally document class-asymmetric augmentation leakage in a widely used public dataset and quantify its limited effect. Discrimination metrics are blind to anatomical grounding; trustworthiness must be measured on a separate axis.
+\end{abstract}
+
+\begin{IEEEkeywords}
+Chest radiography, deep learning, explainable artificial intelligence, external validation, medical image analysis, pneumonia, shortcut learning.
+\end{IEEEkeywords}
+
+\section{Introduction}
+\label{sec:intro}
+
+\IEEEPARstart{C}{hest} radiography is the first-line imaging modality for suspected pneumonia because it is inexpensive and widely available. Deep learning classifiers report performance approaching that of radiologists on this task \cite{rajpurkar2017}, and reported areas under the receiver operating characteristic curve (AUC) above 0.95 on same-distribution test sets are now routine.
+
+High discrimination, however, does not establish clinical trustworthiness. Deep networks preferentially learn \emph{shortcuts}: decision rules that correlate with the label in the training distribution but bear no causal relation to the target pathology \cite{geirhos2020}. In medical imaging the canonical demonstration is that models believed to detect COVID-19 were in fact reading acquisition source and positional artefacts \cite{degrave2021}. Such models perform well in-distribution and degrade unpredictably elsewhere; pneumonia classifiers in particular have been shown to generalise poorly across hospitals \cite{zech2018}.
+
+A natural remedy is to remove the shortcut at its source. If non-pulmonary pixels never reach the classifier, they cannot be exploited. Anatomical segmentation is mature enough to make this practical: models trained on large multi-centre annotation sets delineate lung fields with Dice coefficients above 0.94 \cite{gaggion2024}. Lung masking is therefore an increasingly common preprocessing step, and it is widely assumed to improve performance.
+
+That assumption is rarely tested. Three methodological gaps recur. First, masking is seldom compared against a matched control that isolates it from the \emph{cropping} it is normally bundled with: masking a lung field also enlarges it within the frame, and a gain attributable to effective resolution can be misread as a gain from anatomical constraint. Second, comparisons are typically reported from a single training run, although run-to-run variability in fine-tuned transformers is of the same order as the differences being claimed. Third, evidence that a model attends to the lungs is usually \emph{correlational}, drawn from saliency or attention maps; a map showing weight over a region does not establish that the decision depends on it.
+
+This work addresses all three. We train three Vision Transformers under identical splits, seeds, augmentation, and optimisation, differing only in input preparation: (A) no segmentation, (B) region-of-interest (ROI) cropping alone, and (C) lung masking combined with the identical crop. Because arms B and C share the same crop box by construction, the B\,$\rightarrow$\,C contrast isolates masking and the A\,$\rightarrow$\,B contrast isolates cropping. We then ask, separately, whether performance metrics can detect the difference that masking makes.
+
+Our contributions are as follows.
+\begin{enumerate}
+\item A controlled three-arm ablation, repeated over three training seeds and two external sample sizes, showing that anatomical masking leaves discrimination unchanged within the noise floor of training itself.
+\item An attention-alignment measurement referenced to an explicit chance level, showing that the segmentation-free model places its attention on lung tissue at roughly one twenty-second of chance on two independent adult cohorts.
+\item A causal occlusion analysis with area-matched random controls, showing that erasing both lung fields costs the segmentation-free model almost nothing, while erasing everything else is catastrophic --- and that no single peripheral sub-region is individually necessary.
+\item An integrity audit of a widely used public benchmark, documenting class-asymmetric augmentation leakage affecting 86.6\% of negative test images, together with a leakage-free re-evaluation quantifying its effect.
+\end{enumerate}
+
+Taken together these results support a single conclusion with direct consequences for evaluation practice: two models with statistically indistinguishable AUC can ground their decisions in entirely different anatomy, so discrimination metrics cannot serve as evidence of anatomical validity.
+
+\section{Methods}
+\label{sec:methods}
+
+Fig.~\ref{fig:pipeline} summarises the preprocessing chain and the three ablation arms.
+
+\begin{figure*}[!t]
+\centering
+\includegraphics[width=\textwidth]{figures/karat1.pdf}
+\caption{Preprocessing chain and the three ablation arms, for one negative (top) and one positive (bottom) example. Columns 1--2: input radiograph and the segmentation output, with the lung contour (solid) and the derived square ROI box (dashed). Columns 3--5: the final $224\times224$ inputs seen by each arm. Because the lung bounding box spans most of the thorax, the square ROI typically covers a large fraction of the frame, so arms A and B differ mainly in framing scale; arms B and C share the identical crop box, and the only difference between them is whether non-pulmonary pixels are retained.}
+\label{fig:pipeline}
+\end{figure*}
+
+\subsection{Datasets and Integrity Audit}
+\label{sec:data}
+
+Training used a publicly available balanced derivative of the paediatric chest radiograph collection of Kermany \textit{et al.} \cite{kermany2018}, comprising 8\,530 frontal images with 4\,265 per class. The distributor's data card states that balance was achieved by controlled undersampling and augmentation.
+
+Because such balancing can introduce leakage that filename or file-size comparison cannot detect, we audited the release before training. The audit comprised: (i) comparison of filename schemes against the naming conventions of the source collection; (ii) extraction of a study/patient key from filenames; (iii) cross-split overlap at patient level; (iv) exact duplicate detection by content digest; (v) near-duplicate detection by perceptual hashing; and (vi) inspection of the class-conditional resolution distribution. To distinguish augmented copies from originals we defined a \emph{source key} by stripping the augmentation suffix from each filename; two files sharing a source key derive from the same radiograph.
+
+Because the distributed validation partition is too small (approximately 30 images) for a stable estimate, the validation and test partitions were pooled and re-split into two disjoint, class-balanced subsets of 864 images each, leaving 6\,800 for training. The split was generated deterministically and its content digest recorded, so every subsequent experiment verified automatically that it used the identical partition.
+
+External validation used two adult cohorts fully independent of the training source: the RSNA Pneumonia Detection Challenge, whose binary labels were radiologist-adjudicated (lung opacity versus normal, with the indeterminate class excluded), and NIH ChestX-ray14 \cite{wang2017}, whose labels were extracted from reports by natural language processing. The COVID-19 Radiography database was deliberately excluded because part of its content originates from the same source collection used for training.
+
+\subsection{Lung-Focused Preprocessing}
+\label{sec:prep}
+
+Lung fields were delineated with a U-Net trained on the CheXmask multi-centre annotation set \cite{gaggion2024}, retaining only the right and left lung classes. The cardiac and mediastinal class was deliberately excluded: in preliminary work the model's attention concentrated precisely on this central axis, and leaving it inside the mask would preserve the shortcut.
+
+Imperfect segmentation is compensated by a tolerance layer. The mask is morphologically dilated by 2.5\% of the short image side so that peripheral pathology at the lung margin is not excluded; its edge is Gaussian-smoothed ($k=9$) so that the mask boundary does not itself become a learnable discontinuity; and the region outside the mask is filled with the dataset mean grey level rather than black, giving a neutral background after normalisation. The mask bounding box is then expanded by 5\% of the short side, squared while preserving aspect ratio, and resized to $224\times224$. Where segmentation returns an empty mask the image is resized directly and flagged; this fallback was not triggered for any of the 10\,128 images processed in this study.
+
+\subsection{Controlled Ablation Design}
+\label{sec:ablation}
+
+Three arms were trained from scratch under identical data splits, random seeds, architecture, augmentation, and optimisation schedule. They differ only in input preparation, as summarised in Table~\ref{tab:arms}.
+
+\begin{table}[!t]
+\caption{The three ablation arms and the effect each isolates}
+\label{tab:arms}
+\centering
+\small
+\begin{tabular}{@{}p{0.07\columnwidth}p{0.42\columnwidth}p{0.37\columnwidth}@{}}
+\toprule
+\textbf{Arm} & \textbf{Input preparation} & \textbf{Isolated effect} \\
+\midrule
+A & Image resized directly to $224^2$ & None (baseline) \\
+B & Segmentation used \emph{only} to locate the ROI box; no pixel removed & Framing / effective resolution \\
+C & Non-pulmonary pixels replaced, then identical ROI crop & Anatomical masking \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The design hinges on arms B and C sharing a single crop box computed once per image. Consequently the B\,$\rightarrow$\,C difference reflects masking alone and the A\,$\rightarrow$\,B difference reflects framing alone. Without this decomposition, a performance change could not be attributed to anatomical constraint rather than to the lungs occupying a larger fraction of the frame.
+
+Before each arm, all random number generators were reset and the data loader shuffling generator was constructed from a fixed seed, so that the arms share weight initialisation, batch ordering, and augmentation draws. The only quantity that differs between them is the pixels.
+
+\subsection{Model and Training}
+\label{sec:model}
+
+The classifier is a ViT-B/16 \cite{dosovitskiy2021} pre-trained on ImageNet. The backbone is frozen; only the last two encoder blocks, the final layer normalisation, and a new two-class head are updated, giving 14.18\,M trainable of 85.80\,M total parameters (16.5\%). The loss is plain cross-entropy: no explanation-regularisation term is used, because the constraint against attending outside the lungs is imposed by the input rather than by a penalty.
+
+Optimisation used AdamW \cite{loshchilov2019} (learning rate $10^{-4}$, weight decay $10^{-2}$) with cosine annealing to $10^{-6}$ over 15 epochs at batch size 16. Augmentation was deliberately mild --- horizontal flip, $8^{\circ}$ rotation, 4\% translation, 0.95--1.05 scaling, and 0.15 brightness/contrast jitter --- because aggressive random cropping risks removing pathological lung tissue from the frame. Inputs were normalised with dataset statistics ($\mu=0.4769$, $\sigma=0.2414$). The checkpoint with the best validation F1 was retained.
+
+\subsection{External Validation and Threshold Recalibration}
+\label{sec:external}
+
+Each external cohort was sampled with a fixed seed to a class-balanced subset and passed through the identical preprocessing chain, reconstructed from the parameters stored in the training checkpoint. The primary analysis used 400 images per class. To establish whether the sample was adequately powered, the analysis was repeated on an enlarged superset drawn with the same seed (1\,000 per class for RSNA; 1\,431 per class for NIH, the maximum its positive pool permits). Because the enlarged draw extends rather than replaces the original, its first 400 images per class are identical, allowing the primary results to be reproduced as an internal consistency check.
+
+To examine probability quality under distribution shift, each cohort was split by stratified sampling into equal calibration and evaluation halves. Platt scaling and isotonic regression \cite{guo2017} were fitted on the calibration half only and all metrics reported on the held-out half. Both transformations are monotone and therefore leave AUC unchanged; they affect only probability reliability and the meaning of the operating threshold.
+
+\subsection{Attention Alignment}
+\label{sec:lfr}
+
+Attention was integrated across layers by attention rollout \cite{abnar2020}. Let $S(u)\in[0,1]$ be the min--max normalised rollout map, $L(u)\in\{0,1\}$ the lung mask in the same coordinate frame, and $\tau=0.20$ a noise threshold defining the high-energy set $\Omega=\{u: S(u)>\tau\}$. The lung-focus ratio is
+\begin{equation}
+\mathrm{LFR}=\frac{\sum_{u\in\Omega}S(u)\,L(u)}{\sum_{u\in\Omega}S(u)}.
+\label{eq:lfr}
+\end{equation}
+
+Interpretation requires a reference. A spatially uninformative attention map has expected LFR equal to the mean fractional lung area of the cohort, which we report alongside the measurement and treat as the chance level. The ratio of the observed LFR to this chance level, rather than its absolute value, indicates whether attention is drawn towards or away from the lungs.
+
+\subsection{Causal Occlusion Analysis}
+\label{sec:occ}
+
+Attention maps are correlational. To test dependence causally, following the occlusion methodology of \cite{zeiler2014}, image regions were replaced with the dataset mean grey level --- the same fill used by the masking pipeline --- and the resulting change in AUC measured.
+
+Occluding any region perturbs the input distribution and therefore degrades performance to some extent regardless of that region's relevance. Every targeted occlusion was consequently paired with a random rectangle of matched area, redrawn per image, and the causal contribution of a region defined as
+\begin{equation}
+\text{net effect}=\Delta\mathrm{AUC}_{\text{region}}-\Delta\mathrm{AUC}_{\text{random, matched area}} .
+\label{eq:net}
+\end{equation}
+Regions comprised the lung mask (mean area 25\%), its complement, and five geometric regions: corners (19.1\%), border strip (29.6\%), sub-diaphragmatic band (28.1\%), upper band (20.1\%), and central column (19.6\%). Two automatic consistency checks were applied: for arm C, occluding the region outside the lungs must be inconsequential, since it already contains only fill, and occluding the lungs must be destructive.
+
+\subsection{Statistical Analysis}
+\label{sec:stats}
+
+The primary endpoint is AUC, which is threshold-free and therefore comparable across cohorts of differing prevalence and label definition. Because arms are evaluated on the same images, their ROC curves are correlated and differences were tested with the DeLong test \cite{delong1988}. Confidence intervals were obtained by class-stratified paired bootstrap over 2\,000 resamples, with identical resampling indices applied to all arms so that the difference distribution is paired. Threshold-dependent comparisons at 0.50 used McNemar's test. Lung-focus ratios are bounded and skewed, and are paired because each image passes through all three arms, so they were compared by the Wilcoxon signed-rank test.
+
+To separate the effect of interest from training stochasticity, every arm was retrained with three independent training seeds while the data split and external sampling seeds were held fixed; only weight initialisation, batch order, and augmentation draws varied. The within-arm standard deviation across seeds is reported as a noise floor on the same scale as the between-arm difference. In addition, the per-seed probabilities of each arm were averaged into a seed ensemble; comparing ensembles removes most training noise and provides the cleanest estimate of the preprocessing effect.
+
+\section{Results}
+\label{sec:results}
+
+\subsection{Dataset Integrity and Leakage-Free Evaluation}
+\label{sec:res-integrity}
+
+The audit revealed a systematic, class-asymmetric structure (Table~\ref{tab:data}). Augmentation expanded the negative class from 1\,575 source radiographs to 4\,265 files, averaging 2.71 copies per source, while the positive class contains no augmented copies at all. Consequently 86.6\% of negative test images are augmentation copies of an image present in training, against 0.0\% of positive images; for the validation split as distributed the figure is 87.3\%. Content-digest matching identified a further 62 exactly duplicated files, 11 groups of which span partitions.
+
+\begin{table}[!t]
+\caption{Dataset composition and integrity audit}
+\label{tab:data}
+\centering
+\small
+\begin{tabular}{@{}lrr@{}}
+\toprule
+& \textbf{Negative} & \textbf{Positive} \\
+\midrule
+Files & 4\,265 & 4\,265 \\
+Unique source radiographs & 1\,575 & 4\,265 \\
+Augmentation copies & 2\,690 & 0 \\
+Mean copies per source & 2.71 & 1.00 \\
+Test images sharing a source with training & 86.6\% & 0.0\% \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+We therefore re-evaluated the trained models on subsets sharing no source radiograph with training. Under the strictest criterion, patient-level disjointness, 40 negative and 138 positive images remain. AUC fell only marginally: from 0.9981 to 0.9893 (95\% CI 0.9745--0.9987) for arm A, from 0.9976 to 0.9873 for arm B, and from 0.9982 to 0.9951 for arm C (Fig.~\ref{fig:integrity}). Holding the positive set fixed and exchanging only the negative set, leakage contributed 0.005, 0.007, and 0.002 AUC to arms A, B, and C respectively, and the predicted-probability distributions of leaked and clean negatives were indistinguishable.
+
+The leakage is thus real but did not drive internal performance: the models reach approximately 0.99 AUC on patients never seen during training. This sharpens rather than weakens the central question, since the segmentation-free model achieves that figure while, as shown below, placing almost no attention on lung tissue.
+
+\begin{figure}[!t]
+\centering
+\includegraphics[width=\columnwidth]{figures/karat2.pdf}
+\caption{Internal AUC as distributed (left), on source-disjoint images (centre), and on patient-disjoint images (right). Error bars are 95\% bootstrap confidence intervals. Removing all leakage costs at most 0.010 AUC.}
+\label{fig:integrity}
+\end{figure}
+
+\subsection{Anatomical Masking Does Not Change Discrimination}
+\label{sec:res-disc}
+
+No arm separated from any other on any cohort (Table~\ref{tab:disc}, Fig.~\ref{fig:disc}a). All nine paired comparisons produced bootstrap confidence intervals containing zero and DeLong $p>0.19$, and the ROC curves overlap throughout.
+
+\begin{table}[!t]
+\caption{ROC-AUC by arm and cohort, and paired comparisons against arm A. $p$ values are from the DeLong test}
+\label{tab:disc}
+\centering
+\footnotesize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{@{}lccc@{}}
+\toprule
+& \textbf{Internal} & \textbf{RSNA} & \textbf{NIH} \\
+\midrule
+\multicolumn{4}{@{}l}{\textit{Single seed, 400 images per class}}\\
+A: no segmentation & 0.9981 & 0.9163 & 0.6787 \\
+B: ROI crop only & 0.9976 & 0.9182 & 0.6785 \\
+C: mask + ROI & 0.9982 & 0.9264 & 0.6887 \\
+C $-$ A ($p$) & $+$0.000 (0.98) & $+$0.010 (0.19) & $+$0.010 (0.42) \\
+\midrule
+\multicolumn{4}{@{}l}{\textit{Enlarged sample}}\\
+Images per class & --- & 1\,000 & 1\,431 \\
+C $-$ A ($p$) & --- & $+$0.010 (0.06) & $+$0.010 (0.14) \\
+\midrule
+\multicolumn{4}{@{}l}{\textit{Three training seeds, mean $\pm$ SD}}\\
+A & 0.9980\,$\pm$\,0.0006 & 0.9154\,$\pm$\,0.0052 & 0.6758\,$\pm$\,0.0174 \\
+C & 0.9976\,$\pm$\,0.0009 & 0.9180\,$\pm$\,0.0091 & 0.6874\,$\pm$\,0.0040 \\
+\midrule
+\multicolumn{4}{@{}l}{\textit{Seed ensemble}}\\
+C $-$ A ($p$) & $-$0.000 (0.51) & $+$0.001 (0.94) & $+$0.015 (0.25) \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Two follow-up analyses determine whether this is a power problem or a genuine null. Enlarging the external samples by factors of 2.5 and 3.6 left the effect size essentially unchanged ($+$0.0099 on RSNA and $+$0.0098 on NIH) while narrowing the intervals as expected; RSNA reached $p=0.056$ without crossing the conventional threshold. The decisive analysis is the seed repetition. On RSNA the three seeds of arm C gave 0.9264, 0.9191, and 0.9084, so the run used in the single-seed analysis was the best of its three; the within-arm standard deviation, 0.0091, is of the same magnitude as the effect being sought. Averaging over seeds reduced the C\,$-$\,A difference to $+$0.0026, and comparing seed ensembles reduced it to $+$0.0006 ($p=0.94$). Fig.~\ref{fig:disc}(b--c) shows the per-seed spread.
+
+\begin{figure*}[!t]
+\centering
+\includegraphics[width=\textwidth]{figures/karat3.pdf}
+\caption{(a)~ROC-AUC by arm and cohort with 95\% bootstrap confidence intervals; the dotted line marks chance. (b--c)~Per-seed AUC on the two external cohorts, plotted on independent scales; horizontal bars are means and vertical bars one standard deviation. Within-arm spread across seeds is comparable to the between-arm differences.}
+\label{fig:disc}
+\end{figure*}
+
+Some threshold-dependent comparisons at 0.50 did reach significance under McNemar's test --- on RSNA, arm B was markedly more accurate than arm A ($p<10^{-6}$) despite an AUC difference of only $+$0.002 --- but these reflect operating point rather than ranking quality. Between 88\% and 98\% of predicted probabilities fall below 0.05 or above 0.95, so threshold metrics are sensitive to where that saturated mass lies and should not be read as differences in discrimination.
+
+\subsection{External Validation and Calibration}
+\label{sec:res-ext}
+
+On the proposed pipeline (arm C), AUC was 0.930 on RSNA and 0.702 on NIH at 400 images per class. Both cohorts showed high sensitivity with low specificity (0.965/0.640 and 0.850/0.432 at threshold 0.50) and poor probability calibration (expected calibration error 0.193 and 0.350).
+
+Recalibration on a held-out half repaired probability quality: expected calibration error fell to 0.015 on RSNA and 0.017 on NIH under Platt scaling, and on RSNA isotonic regression additionally raised specificity from 0.645 to 0.820. On NIH specificity was essentially unchanged, indicating a discrimination limit imposed by label noise rather than a threshold problem. AUC was unaffected, as expected for monotone transformations (0.927 and 0.701).
+
+One qualification follows from the ablation: this cross-cohort degradation cannot be read as a shortcut test, because all three arms declined comparably (Table~\ref{tab:disc}) --- including the arm from which every non-pulmonary pixel had been removed. The decline reflects population shift and differing label definitions, not peripheral artefacts.
+
+\subsection{Attention Alignment}
+\label{sec:res-lfr}
+
+Arms that are indistinguishable in discrimination differ radically in where their decisions are grounded (Table~\ref{tab:lfr}, Fig.~\ref{fig:att}). The measurement was repeated on both independent adult cohorts to confirm that the pattern is not specific to the training distribution.
+
+\begin{table}[!t]
+\caption{Lung-focus ratio by arm and cohort, with the chance level}
+\label{tab:lfr}
+\centering
+\small
+\begin{tabular}{@{}lcccc@{}}
+\toprule
+\textbf{Cohort} & \textbf{A} & \textbf{B} & \textbf{C} & \textbf{Chance} \\
+\midrule
+Internal ($n=120$) & 0.005 & 0.111 & 0.909 & --- \\
+RSNA ($n=500$) & 0.011 & 0.043 & 0.952 & 0.236 \\
+NIH ($n=500$) & 0.017 & 0.048 & 0.951 & 0.237 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The chance column is essential to interpretation. Because lung fields occupy 23.6\% of the frame on average, a spatially uninformative attention map would yield a lung-focus ratio near 0.236. The segmentation-free model attains 0.011 on RSNA --- approximately one twenty-second of chance. It does not merely fail to attend to the lungs; its attention is displaced away from them. The paired Wilcoxon test gives median differences of $+$0.955 (RSNA) and $+$0.957 (NIH) for C\,$-$\,A, with arm C higher in 500 of 500 images on each cohort and no overlap between the distributions.
+
+Aggregate maps (Fig.~\ref{fig:att}b--d) show the same pattern spatially: for arm A attention concentrates in the corners, the border strip, and the sub-diaphragmatic region while the lung fields remain nearly empty; for arm C it lies squarely within the parenchyma. ROI cropping alone (arm B) does not repair the alignment.
+
+Two secondary checks support these measurements. Segmentation behaved acceptably on adult images, with implausible mask areas in only 5.6\% (RSNA) and 4.4\% (NIH) of cases and no degenerate masks, so the assumption underlying the lung mask holds outside the training population. Lung-focus ratio was not associated with prediction correctness in any cohort (all $p>0.08$).
+
+\begin{figure*}[!t]
+\centering
+\includegraphics[width=\textwidth]{figures/karat4.pdf}
+\caption{(a)~Lung-focus ratio per image for each arm and cohort; horizontal bars are medians and the dashed line is the chance level set by mean fractional lung area. (b--d)~Aggregate attention maps on RSNA for arms A, B, and C, with the mean lung contour overlaid in white. Attention of the segmentation-free model lies almost entirely outside the lung fields.}
+\label{fig:att}
+\end{figure*}
+
+\subsection{Causal Occlusion}
+\label{sec:res-occ}
+
+Occlusion converts the attention observation into a causal finding (Table~\ref{tab:occ}, Fig.~\ref{fig:occ}). Both consistency checks passed: for arm C, occluding the region outside the lungs cost 0.001 AUC internally, whereas occluding the lungs cost 0.259.
+
+\begin{table}[!t]
+\caption{ROC-AUC under region occlusion. Net effect is relative to an area-matched random occlusion}
+\label{tab:occ}
+\centering
+\small
+\begin{tabular}{@{}llcccc@{}}
+\toprule
+\textbf{Cohort} & \textbf{Arm} & \textbf{Intact} & \textbf{Lungs} & \textbf{Outside} & \textbf{Net} \\
+\midrule
+\multirow{2}{*}{Internal} & A & 0.9981 & 0.9896 & 0.7799 & $+$0.004 \\
+ & C & 0.9982 & 0.7395 & 0.9968 & $+$0.227 \\
+\multirow{2}{*}{RSNA} & A & 0.9238 & 0.8950 & 0.8046 & $-$0.013 \\
+ & C & 0.9364 & 0.6822 & 0.9231 & $+$0.149 \\
+\multirow{2}{*}{NIH} & A & 0.6912 & 0.6610 & 0.6318 & $+$0.023 \\
+ & C & 0.7051 & 0.6022 & 0.6933 & $+$0.031 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Erasing both lung fields left the segmentation-free model with 99\% of its internal AUC (0.9981 to 0.9896). Against the area-matched control the net effect is $+$0.004 internally, $-$0.013 on RSNA, and $+$0.023 on NIH: removing the lungs is no more damaging than removing an arbitrary region of the same size. For arm C the identical comparison yields $+$0.227 and $+$0.149. The two arms are near-perfect mirror images.
+
+Erasing everything outside the lungs reduced arm A to 0.7799 internally, 25.6 times the loss incurred by erasing the lungs themselves. We note that this contrast is not area-matched, since the complement covers roughly three times the area; the methodologically airtight evidence is the area-matched lung-versus-random comparison above, and the complement result is reported as corroboration.
+
+No individual geometric sub-region proved necessary: net effects for corners, border, sub-diaphragmatic band, upper band, and central column were all within $\pm$0.015 and mostly negative (Fig.~\ref{fig:occ}c). The exploited signal is therefore distributed redundantly across the non-pulmonary field rather than concentrated in one artefact, which explains why ROI cropping alone --- which removes only part of the periphery --- changed neither performance nor alignment.
+
+\begin{figure*}[!t]
+\centering
+\includegraphics[width=\textwidth]{figures/karat5.pdf}
+\caption{(a--b)~ROC-AUC of arms A and C when the input is intact, when an area-matched random region is erased, when the lung fields are erased, and when everything outside the lungs is erased. (c)~Net effect of occluding individual geometric sub-regions on the internal test set; all lie within $\pm$0.015, indicating that no single region is individually necessary.}
+\label{fig:occ}
+\end{figure*}
+
+\section{Discussion}
+\label{sec:discussion}
+
+The two questions posed at the outset receive opposite answers, and their combination is the contribution of this work.
+
+Anatomical masking did not improve discrimination. Across three cohorts, three training seeds, and two external sample sizes, the masked and unmasked arms were statistically indistinguishable. The result is not an artefact of insufficient power: enlarging the external samples by factors of 2.5 and 3.6 left the effect size unchanged while narrowing the confidence intervals, and comparing seed ensembles --- which removes most training stochasticity --- reduced the difference to 0.001 on RSNA. The finding therefore challenges the common assumption that segmentation-based preprocessing improves classification, at least for this task and architecture.
+
+It also carries a methodological warning. Had we reported the single-seed experiment alone, we would have published a $+0.010$ AUC improvement that three seeds show to be a favourable draw: the seed used in that experiment happened to be the best of the three for the masked arm, and the within-arm standard deviation across seeds is of the same magnitude as the effect. Claims of small improvements from a single training run should be treated with corresponding caution.
+
+At the same time, masking changed the model's decision basis completely. The segmentation-free model placed its attention on lung tissue at roughly one twenty-second of the chance level defined by mean lung area, and the occlusion analysis shows this is causal rather than merely correlational: erasing both lung fields cost it 0.9\% of its internal AUC, no more than erasing a random region of equal size, whereas erasing everything outside the lungs cost it 20 percentage points. The masked model exhibits the exact mirror of this pattern. Two models that no discrimination metric can separate thus rest on entirely different evidence.
+
+Performance metrics answer whether a model ranks cases correctly; they are silent on whether it does so for reasons a clinician would accept. Evaluation protocols supporting deployment decisions therefore need a second axis --- attention alignment referenced to chance, and causal region analysis --- because the first cannot detect the difference. On that reading anatomical masking remains defensible even though it does not raise AUC: it makes the model auditable at no measured cost.
+
+What the segmentation-free model actually uses remains open. Memorisation of augmentation duplicates is excluded, since it reaches approximately 0.99 AUC on patients absent from training; the exploited regularity is therefore genuinely generalisable but lies outside the lung fields. Occlusion indicates it is distributed redundantly rather than localised, since no individual peripheral region proved necessary --- which also explains why ROI cropping alone repaired neither performance nor alignment. Acquisition characteristics, positioning, and soft-tissue habitus are plausible candidates, but identifying the factor requires acquisition metadata unavailable here.
+
+Our results also correct a common interpretation of external degradation. The drop from internal to external performance is frequently read as evidence of shortcut reliance. Here all three arms declined by comparable margins, including the arm from which every non-pulmonary pixel had been removed. Cross-cohort degradation therefore reflects population shift and label-definition differences rather than peripheral artefacts, and should not be used on its own as a shortcut test.
+
+Finally, the integrity audit has implications beyond this study. The public release we used balances its classes by augmenting the negative class alone, so that 86.6\% of negative test images are transformations of an image seen in training while no positive image is. Filename or file-size comparison cannot detect this. Its measured effect on discrimination here was small (0.005 AUC), but the asymmetry is a latent hazard for any work using the same release, and splits should be constructed at the level of source radiographs.
+
+\subsection{Limitations}
+\label{sec:limits}
+
+Training data were paediatric and single-centre while external cohorts were adult, so part of the cross-cohort decline reflects population shift rather than model deficiency. External labels are proxies: the RSNA positive class is lung opacity rather than pneumonia specifically, and NIH labels are extracted from reports, imposing a ceiling on attainable AUC. The leakage-free internal subset is small (40 negative, 138 positive after patient-level de-duplication), so its intervals are wide; this follows from the structure of the public release. Patient keys were inferred from filenames because true identifiers are unpublished, making patient-level disjointness an upper-bound estimate. Occlusion produces out-of-distribution inputs, which area-matched controls mitigate but do not eliminate. Each arm used three seeds; more would tighten the noise-floor estimate. Finally, only one architecture was studied.
+
+\section{Conclusion}
+\label{sec:conclusion}
+
+We compared three otherwise identical chest radiograph pneumonia classifiers that differ only in whether non-pulmonary pixels reach the network. Anatomical masking left discrimination unchanged on an internal test set and two independent adult cohorts, with differences falling inside the seed-to-seed noise floor. The same intervention moved attention alignment from roughly one twenty-second of chance to 0.95, and occlusion confirmed the change is causal: the segmentation-free model retains 99\% of its internal AUC when both lung fields are erased. Discrimination metrics cannot distinguish these two models, and so cannot serve as evidence that a model uses clinically relevant anatomy. Reporting attention alignment against an explicit chance level, together with area-matched causal occlusion, provides that evidence at negligible additional cost and should accompany performance metrics whenever anatomical validity is claimed.
+
+\section*{Code and Data Availability}
+
+Code to reproduce all experiments is available at \url{https://github.com/Hakan-karateke/lung-focused-vit-cxr}. All datasets used are publicly available: the training collection from Kermany \textit{et al.} \cite{kermany2018}, the RSNA Pneumonia Detection Challenge, and NIH ChestX-ray14 \cite{wang2017}.
+
+\begin{thebibliography}{00}
+
+\bibitem{rajpurkar2017}
+P. Rajpurkar \textit{et al.}, ``CheXNet: Radiologist-level pneumonia detection on chest X-rays with deep learning,'' 2017, \textit{arXiv:1711.05225}.
+
+\bibitem{geirhos2020}
+R. Geirhos \textit{et al.}, ``Shortcut learning in deep neural networks,'' \textit{Nature Machine Intelligence}, vol. 2, no. 11, pp. 665--673, 2020.
+
+\bibitem{degrave2021}
+A. J. DeGrave, J. D. Janizek, and S.-I. Lee, ``AI for radiographic COVID-19 detection selects shortcuts over signal,'' \textit{Nature Machine Intelligence}, vol. 3, no. 7, pp. 610--619, 2021.
+
+\bibitem{zech2018}
+J. R. Zech, M. A. Badgeley, M. Liu, A. B. Costa, J. J. Titano, and E. K. Oermann, ``Variable generalization performance of a deep learning model to detect pneumonia in chest radiographs: A cross-sectional study,'' \textit{PLoS Medicine}, vol. 15, no. 11, e1002683, 2018.
+
+\bibitem{gaggion2024}
+N. Gaggion \textit{et al.}, ``CheXmask: A large-scale dataset of anatomical segmentation masks for multi-center chest X-ray images,'' \textit{Scientific Data}, vol. 11, 511, 2024.
+
+\bibitem{kermany2018}
+D. S. Kermany \textit{et al.}, ``Identifying medical diagnoses and treatable diseases by image-based deep learning,'' \textit{Cell}, vol. 172, no. 5, pp. 1122--1131.e9, 2018.
+
+\bibitem{wang2017}
+X. Wang, Y. Peng, L. Lu, Z. Lu, M. Bagheri, and R. M. Summers, ``ChestX-ray8: Hospital-scale chest X-ray database and benchmarks on weakly-supervised classification and localization of common thorax diseases,'' in \textit{Proc. IEEE Conf. Computer Vision and Pattern Recognition (CVPR)}, 2017, pp. 2097--2106.
+
+\bibitem{dosovitskiy2021}
+A. Dosovitskiy \textit{et al.}, ``An image is worth 16x16 words: Transformers for image recognition at scale,'' in \textit{Proc. Int. Conf. Learning Representations (ICLR)}, 2021.
+
+\bibitem{abnar2020}
+S. Abnar and W. Zuidema, ``Quantifying attention flow in Transformers,'' in \textit{Proc. 58th Annu. Meeting Assoc. Computational Linguistics (ACL)}, 2020, pp. 4190--4197.
+
+\bibitem{zeiler2014}
+M. D. Zeiler and R. Fergus, ``Visualizing and understanding convolutional networks,'' in \textit{Proc. European Conf. Computer Vision (ECCV)}, 2014, pp. 818--833.
+
+\bibitem{delong1988}
+E. R. DeLong, D. M. DeLong, and D. L. Clarke-Pearson, ``Comparing the areas under two or more correlated receiver operating characteristic curves: A nonparametric approach,'' \textit{Biometrics}, vol. 44, no. 3, pp. 837--845, 1988.
+
+\bibitem{loshchilov2019}
+I. Loshchilov and F. Hutter, ``Decoupled weight decay regularization,'' in \textit{Proc. Int. Conf. Learning Representations (ICLR)}, 2019.
+
+\bibitem{guo2017}
+C. Guo, G. Pleiss, Y. Sun, and K. Q. Weinberger, ``On calibration of modern neural networks,'' in \textit{Proc. 34th Int. Conf. Machine Learning (ICML)}, 2017, pp. 1321--1330.
+
+\end{thebibliography}
+
+\end{document}
