@@ -1,10 +1,16 @@
 \documentclass[journal,twoside,web]{ieeecolor}
 \usepackage{generic}
-\usepackage{cite}
 \usepackage{amsmath,amssymb,amsfonts}
 \usepackage{graphicx}
 \usepackage{booktabs}
 \usepackage{multirow}
+% ieeecolor.cls, hyperref'i natbib yuklu sanmasi icin sahte bir \NAT@parse
+% tanimlar ve bunun sonucunda atif numaralari baglanti olmaz. Sinif bu
+% davranisi kendi yorumunda belgeliyor ve geri alma yolunu da veriyor.
+% Kaldirinca [N] kutulari kaynakca girdisine baglanir.
+\makeatletter
+\let\NAT@parse\undefined
+\makeatother
 \usepackage{hyperref}
 \hypersetup{hidelinks=true}
 % URL'ler her karakterde bolunebilsin: aksi halde uzun bir URL yalnizca "/"
@@ -365,40 +371,40 @@ During the preparation of this work, the authors used Anthropic Claude, a large 
 P. Rajpurkar \textit{et al.}, ``CheXNet: Radiologist-level pneumonia detection on chest X-rays with deep learning,'' 2017, \textit{arXiv:1711.05225}.
 
 \bibitem{geirhos2020}
-R. Geirhos \textit{et al.}, ``Shortcut learning in deep neural networks,'' \textit{Nature Machine Intelligence}, vol. 2, no. 11, pp. 665--673, 2020.
+R. Geirhos \textit{et al.}, ``Shortcut learning in deep neural networks,'' \textit{Nature Mach. Intell.}, vol. 2, no. 11, pp. 665--673, Nov. 2020, doi: 10.1038/s42256-020-00257-z.
 
 \bibitem{degrave2021}
-A. J. DeGrave, J. D. Janizek, and S.-I. Lee, ``AI for radiographic COVID-19 detection selects shortcuts over signal,'' \textit{Nature Machine Intelligence}, vol. 3, no. 7, pp. 610--619, 2021.
+A. J. DeGrave, J. D. Janizek, and S.-I. Lee, ``AI for radiographic COVID-19 detection selects shortcuts over signal,'' \textit{Nature Mach. Intell.}, vol. 3, no. 7, pp. 610--619, Jul. 2021, doi: 10.1038/s42256-021-00338-7.
 
 \bibitem{zech2018}
-J. R. Zech, M. A. Badgeley, M. Liu, A. B. Costa, J. J. Titano, and E. K. Oermann, ``Variable generalization performance of a deep learning model to detect pneumonia in chest radiographs: A cross-sectional study,'' \textit{PLoS Medicine}, vol. 15, no. 11, e1002683, 2018.
+J. R. Zech, M. A. Badgeley, M. Liu, A. B. Costa, J. J. Titano, and E. K. Oermann, ``Variable generalization performance of a deep learning model to detect pneumonia in chest radiographs: A cross-sectional study,'' \textit{PLoS Med.}, vol. 15, no. 11, p. e1002683, Nov. 2018, doi: 10.1371/journal.pmed.1002683.
 
 \bibitem{gaggion2024}
-N. Gaggion \textit{et al.}, ``CheXmask: A large-scale dataset of anatomical segmentation masks for multi-center chest X-ray images,'' \textit{Scientific Data}, vol. 11, 511, 2024.
+N. Gaggion \textit{et al.}, ``CheXmask: A large-scale dataset of anatomical segmentation masks for multi-center chest X-ray images,'' \textit{Sci. Data}, vol. 11, no. 1, p. 511, May 2024, doi: 10.1038/s41597-024-03358-1.
 
 \bibitem{kermany2018}
-D. S. Kermany \textit{et al.}, ``Identifying medical diagnoses and treatable diseases by image-based deep learning,'' \textit{Cell}, vol. 172, no. 5, pp. 1122--1131.e9, 2018.
+D. S. Kermany \textit{et al.}, ``Identifying medical diagnoses and treatable diseases by image-based deep learning,'' \textit{Cell}, vol. 172, no. 5, pp. 1122--1131.e9, 2018, doi: 10.1016/j.cell.2018.02.010.
 
 \bibitem{wang2017}
-X. Wang, Y. Peng, L. Lu, Z. Lu, M. Bagheri, and R. M. Summers, ``ChestX-ray8: Hospital-scale chest X-ray database and benchmarks on weakly-supervised classification and localization of common thorax diseases,'' in \textit{Proc. IEEE Conf. Computer Vision and Pattern Recognition (CVPR)}, 2017, pp. 2097--2106.
+X. Wang, Y. Peng, L. Lu, Z. Lu, M. Bagheri, and R. M. Summers, ``ChestX-ray8: Hospital-scale chest X-ray database and benchmarks on weakly-supervised classification and localization of common thorax diseases,'' in \textit{Proc. IEEE Conf. Comput. Vis. Pattern Recognit. (CVPR)}, Honolulu, HI, USA, 2017, pp. 3462--3471, doi: 10.1109/CVPR.2017.369.
 
 \bibitem{dosovitskiy2021}
-A. Dosovitskiy \textit{et al.}, ``An image is worth 16x16 words: Transformers for image recognition at scale,'' in \textit{Proc. Int. Conf. Learning Representations (ICLR)}, 2021.
+A. Dosovitskiy \textit{et al.}, ``An image is worth 16x16 words: Transformers for image recognition at scale,'' in \textit{Proc. Int. Conf. Learn. Represent. (ICLR)}, 2021.
 
 \bibitem{abnar2020}
-S. Abnar and W. Zuidema, ``Quantifying attention flow in Transformers,'' in \textit{Proc. 58th Annu. Meeting Assoc. Computational Linguistics (ACL)}, 2020, pp. 4190--4197.
+S. Abnar and W. Zuidema, ``Quantifying attention flow in transformers,'' in \textit{Proc. 58th Annu. Meeting Assoc. Comput. Linguistics (ACL)}, Jul. 2020, pp. 4190--4197, doi: 10.18653/v1/2020.acl-main.385.
 
 \bibitem{zeiler2014}
-M. D. Zeiler and R. Fergus, ``Visualizing and understanding convolutional networks,'' in \textit{Proc. European Conf. Computer Vision (ECCV)}, 2014, pp. 818--833.
+M. D. Zeiler and R. Fergus, ``Visualizing and understanding convolutional networks,'' in \textit{Proc. Eur. Conf. Comput. Vis. (ECCV)}, 2014, pp. 818--833.
 
 \bibitem{delong1988}
-E. R. DeLong, D. M. DeLong, and D. L. Clarke-Pearson, ``Comparing the areas under two or more correlated receiver operating characteristic curves: A nonparametric approach,'' \textit{Biometrics}, vol. 44, no. 3, pp. 837--845, 1988.
+E. R. DeLong, D. M. DeLong, and D. L. Clarke-Pearson, ``Comparing the areas under two or more correlated receiver operating characteristic curves: A nonparametric approach,'' \textit{Biometrics}, vol. 44, no. 3, pp. 837--845, 1988, doi: 10.2307/2531595.
 
 \bibitem{loshchilov2019}
-I. Loshchilov and F. Hutter, ``Decoupled weight decay regularization,'' in \textit{Proc. Int. Conf. Learning Representations (ICLR)}, 2019.
+I. Loshchilov and F. Hutter, ``Decoupled weight decay regularization,'' in \textit{Proc. Int. Conf. Learn. Represent. (ICLR)}, 2019.
 
 \bibitem{guo2017}
-C. Guo, G. Pleiss, Y. Sun, and K. Q. Weinberger, ``On calibration of modern neural networks,'' in \textit{Proc. 34th Int. Conf. Machine Learning (ICML)}, 2017, pp. 1321--1330.
+C. Guo, G. Pleiss, Y. Sun, and K. Q. Weinberger, ``On calibration of modern neural networks,'' in \textit{Proc. 34th Int. Conf. Mach. Learn. (ICML)}, 2017, pp. 1321--1330.
 
 \end{thebibliography}
 
