@@ -7,6 +7,11 @@
 \usepackage{multirow}
 \usepackage{hyperref}
 \hypersetup{hidelinks=true}
+% URL'ler her karakterde bolunebilsin: aksi halde uzun bir URL yalnizca "/"
+% sonrasinda bolunur, satiri dolduramaz ve onundeki kelime araligi gerilerek
+% buyuk bir bosluk olusur. xurl tire eklemeden bolme izni verir; sablonun
+% elle serpistirdigi \discretionary{}{}{} isaretlerinin otomatik karsiligi.
+\usepackage{xurl}
 \usepackage{textcomp}
 
 \markboth{\hskip25pc IEEE JOURNAL OF BIOMEDICAL AND HEALTH INFORMATICS}
@@ -400,7 +405,7 @@ C. Guo, G. Pleiss, Y. Sun, and K. Q. Weinberger, ``On calibration of modern neur
 \begin{IEEEbiography}[{\includegraphics[width=1in,height=1.25in,clip,keepaspectratio]{figures/photo_karateke.jpg}}]{Hakan Karateke}
 received the B.Sc. degree in computer engineering from Bing\"{o}l University, Bing\"{o}l, T\"{u}rkiye, in 2025. He is currently pursuing the M.Sc. degree in computer engineering at F\i rat University, Elaz\i \u{g}, T\"{u}rkiye.
 
-He is currently working as an Associate Software Developer at Limak Technology, Adana, T\"{u}rkiye, where he develops scalable full-stack solutions. His research interests include deep learning, Vision Transformers, medical image analysis, model calibration, and out-of-distribution generalization. His recent academic work focuses on anatomical masking and the application of Vision Transformers for pneumonia classification in chest radiography.
+He is currently working as an Associate Software Developer at Limak Technology, Ankara, T\"{u}rkiye, where he develops scalable full-stack solutions. His research interests include deep learning, Vision Transformers, medical image analysis, model calibration, and out-of-distribution generalization. His recent academic work focuses on anatomical masking and the application of Vision Transformers for pneumonia classification in chest radiography.
 
 Mr. Karateke is also a co-author of a research article published in IEEE Access.
 \end{IEEEbiography}
